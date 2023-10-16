@@ -1,27 +1,72 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Homepage from './pages/Homepage/Homepage';
-import Part from './components/PartDS';
-import Footer from './components/Footer';
-import Akademiki from './pages/Akademiki/Akademiki';
-import Error404 from './pages/Error404/Error404';
-import DS2 from './pages/DS2/DS2';
-
+import { Route, Routes, Navigate } from "react-router-dom";
+import Main from "./components/Main";
+import Information from "./components/Main/Information"
+import React, { useState } from "react";
+import Form from "./components/Form";
+import Login from "./components/Login";
+import Profile from "./components/Profile"
+import Info from "./components/Profile/Info";
+import Preference from "./components/Profile/Preference";
+import PreferenceEdit from "./components/Profile/PreferenceEdit";
 function App() {
+  const user = localStorage.getItem("token");
+  const [dane, setDane] = useState();
+  const handleSetDane = (data) => {
+    setDane(data);
+  }
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/akademiki" element={<Akademiki />} />
-        <Route path="/404" element={<Error404 />} />
-        <Route path="/DS2" element={<DS2 />} />
-        {/* Add more routes as needed */}
-      </Routes>
-      <Part />
-      <Footer />
-    </div>
+    <Routes>
+      {user &&
+        <Route
+          path="/profile"
+          element={
+            <div>
+              <Main setDane={handleSetDane} />
+              <Profile setDane={handleSetDane} />
+              <Info user={dane} />
+            </div>}
+        />
+      }
+      {user &&
+        <Route
+          path="/profile/preference"
+          element={
+            <div>
+              <Main />
+              <Profile setDane={handleSetDane} />
+              <Preference user={dane} />
+            </div>}
+        />
+      }
+      {user && <Route
+        path="/"
+        element={
+          <div>
+            <Main setDane={handleSetDane} />
+            <Information />
+          </div>
+        } />
+      }
+      {user &&
+        <Route
+          path="/profile/preference/edit"
+          element={
+            <div>
+              <Main setDane={handleSetDane}/>
+              <PreferenceEdit user={dane} />
+             </div>
+          } />
+      }
+      <Route path="/form" element={<Form />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<div>
+        <Main />
+        <Information />
+      </div>} />
+      <Route path="/profile" element={<Navigate replace to="/" />} />
+      <Route path="/profile/preferences" element={<Navigate replace to="/" />} />
+      <Route path="/profile/preferences/edit" element={<Navigate replace to="/" />} />
+    </Routes>
   );
 }
 

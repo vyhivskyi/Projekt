@@ -1,0 +1,278 @@
+.main_container {
+	display: flex;
+	padding-top: 40px;
+  }
+  
+  .navbar {
+	width: 200px;
+	min-height: 130px;
+	background-color: #007bff;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding-left: 0px;
+	padding-top: 40px;
+  }
+  
+  .navbar h1 {
+	color: white;
+	font-size: 25px;
+	margin-bottom: 20px;
+  }
+  
+  .white_btn {
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: white;
+	border-radius: 20px;
+	width: 120px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+	margin-bottom: 20px;
+  }
+  
+  .dane {
+	width: 40%;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	margin-top: 5px;
+	border: 2px solid #007bff;
+  }
+  
+  .name {
+	text-align: center;
+	margin-top: 10px;
+  }
+  
+  .field {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
+  }
+  
+  .fieldName {
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	height: 30px;
+	width: 150px;
+	margin-left: 20px;
+	background-color: #007bff;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 18px;
+	justify-content: center;
+	color: white;
+  }
+  
+  .info {
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+	height: 30px;
+	width: 180px;
+	margin-left: 20px;
+	background-color: #007bff;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 18px;
+	justify-content: center;
+	color: white;
+  }
+  
+  .fields {
+	display: flex;
+	align-items: center;
+	padding-right: 10px;
+	height: 30px;
+	width: 450px;
+	margin-right: 20px;
+	background-color: #007bff;
+	border-radius: 20px;
+	justify-content: flex-end;
+	text-align: right;
+	font-weight: bold;
+	color: white;
+  }
+  
+  .pref {
+	width: 40%;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	margin-top: -70px;
+	border: 2px solid #007bff;
+	
+  }
+  
+  @media only screen and (max-width: 600px) {
+	.main_container {
+	  flex-wrap: wrap;
+	}
+  
+	.navbar {
+	  width: 100%;
+	  min-height: 80px;
+	  padding: 10px;
+	  justify-content: center;
+	}
+  
+	.navbar h1 {
+	  margin-bottom: 10px;
+	}
+  
+	.dane {
+	  width: 80%;
+	  margin-top: 20px;
+	}
+  
+	.fieldName,
+	.info,
+	.fields {
+	  width: 100%;
+	  margin-left: 0;
+	  margin-right: 0;
+	}
+  }
+  .btn{
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: #007bff;
+	color: white;
+	
+}
+.signup_container {
+	width: 100%;
+	min-height: 100vh;
+	background-color: #f5f5f5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .signup_form_container {
+	width: 900px;
+	height: 900px;
+	display: flex;
+	border-radius: 10px;
+	box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+	  0px 3px 4px 0px rgb(0 0 0 / 14%),
+	  0px 1px 8px 0px rgb(0 0 0 / 12%);
+  }
+  
+  .left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #007bff;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+  }
+  
+  .left h1 {
+	margin-top: 0;
+	color: white;
+	font-size: 35px;
+	align-self: center;
+  }
+  
+  .right {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+  }
+  
+  .form_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  .form_container h1 {
+	font-size: 30px;
+	margin-top: -10px;
+  }
+  
+  .input {
+	outline: none;
+	border: none;
+	width: 370px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 14px;
+  }
+  
+  .select {
+	outline: none;
+	border: none;
+	width: 400px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 14px;
+  }
+  
+  .error_msg {
+	width: 370px;
+	padding: 15px;
+	margin: 5px 0;
+	font-size: 14px;
+	background-color: #f34646;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+  }
+  
+  .white_btn,
+  .green_btn {
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: white;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+  }
+  
+  .green_btn {
+	background-color: #007bff;
+	color: white;
+	margin: 10px;
+  }
+  .formContainer {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+  }
+  .formContainer2 {
+	display: flex;
+	justify-content: center;
+  }
+  
