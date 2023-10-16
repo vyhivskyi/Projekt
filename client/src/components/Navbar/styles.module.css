@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&display=swap');
+
+body {
+    margin: 0; /* Remove default body margin */
+  }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Jost', sans-serif;
+    margin: 0 30px; /* Add margin to create space */
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    
+  }
+  
+  .logo {
+    width: 50px; /* Adjust width as needed */
+    height: auto;
+  }
+
+  .logoText {
+    margin-left: 10px; /* Adjust the margin as needed */
+    font-size: 18px; /* Adjust the font size as needed */
+    color: #292F36; /* Adjust the color as needed */
+    font-family: 'DM Serif Display', serif;
+  }
+  
+  .navItem {
+    color: #292F36;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 18px;
+    margin-left: 20px;
+  }
+  
+  .navItem:hover {
+    background-color: #C49E85;
+  }
+
+
+  

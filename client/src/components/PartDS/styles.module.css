@@ -1,0 +1,60 @@
+.containerWniosek {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+  }
+
+  .containerPart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 1200px;
+    height: 450px; 
+    border-radius: 70px;
+    background-color: #292F36;
+  }
+
+  .containerContent {
+    width: 570px;
+    height: 290px; 
+    margin: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .contentText {
+    font-family: 'DM Serif Display', serif;
+    font-size: 35px;
+    font-weight: normal;
+    color: #fff;
+  }
+
+  .buttonOverlay {
+    align-items: center;
+    width: 235px;
+    height: 75px;
+    padding: 10px 20px;
+    background-color: #C49E85;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+    z-index: 1; /* Ensure button appears over the image */
+  }
+
+  .vectorIcon {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #C49E85; /* Color of the vector icon */
+    stroke: #292F36; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }

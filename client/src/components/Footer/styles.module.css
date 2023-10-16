@@ -1,0 +1,132 @@
+.footer {
+    width: 1870px;
+    height: 300px;
+    color: #ffffff;
+    margin: 100px 20px 0px 20px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .footerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1540px;
+    height: 300px;
+  }
+  
+  .leftSection {
+    align-items: center;
+    margin-left: 7%;
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .logo {
+    width: 50px; /* Adjust width as needed */
+    height: auto;
+  }
+
+  .logoText {
+    margin-left: 10px; /* Adjust the margin as needed */
+    font-size: 18px; /* Adjust the font size as needed */
+    color: #292F36; /* Adjust the color as needed */
+    font-family: 'DM Serif Display', serif;
+  }
+  
+  .socialIcons {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 45px;
+  }
+  
+  .icon {
+    width: 30px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .centralSection {
+    width: 125px;
+    height: 370px;
+    align-items: center;
+    margin-top: 5%;
+  }
+
+  .pageLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .pagesHeader {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'DM Serif Display', serif;
+    color: #292F36;
+    margin-bottom: 20px;
+  }
+  
+  .page {
+    font-size: 16px;
+    font-family: 'Jost', serif;
+    color: #292F36;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+  
+  .page:hover {
+    color: #C49E85;
+    /* Add additional styles for hover effect if needed */
+  }
+  
+  .rightSection {
+    width: 260px;
+    height: 285px;
+    align-items: center;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .contactHeader {
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'DM Serif Display', serif;
+    color: #292F36;
+    margin-bottom: 20px;
+  }
+
+  .kontakt {
+    font-size: 16px;
+    font-family: 'Jost', serif;
+    color: #292F36;
+    margin-bottom: 20px;
+  }
+  
+  .rightSection p {
+    margin: 5px 0 5px;
+  }
+
+  .copyright {
+    color: #292F36;
+    font-family: 'Jost', serif;
+  }
+  
+  

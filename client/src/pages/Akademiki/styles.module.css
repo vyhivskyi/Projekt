@@ -1,0 +1,132 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1895px;
+    height: 355px;
+    background-color: #292F36;
+}
+
+.bannerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 37px 37px 0px 0px;
+}
+
+.Name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.akademikiContainer {
+    display: flex;
+    flex-direction: column;
+    width: 1450px;
+    height: 3300px;
+    background-color: #F4F0EC;
+    margin-top: 10%;
+    margin-left: 10%;
+    border-radius: 70px;
+    align-items: center;
+}
+
+.heading {
+    width: 570px;
+    height: 80px;
+    text-align: center;
+    margin: 50px;
+}
+
+.headingText {
+    font-family: 'DM Serif Display', serif;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.akademik {
+    display: flex;
+    width: 1200px;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    z-index: 1;
+}
+
+.image {
+    height: 680px;
+    width: 650px;
+    border-radius: 326px 0px 123px 0px;
+    background-image: url('./images/Banner.jpg');
+    margin: 40px;
+  }
+
+  .content{
+    height: 375px;
+    width: 455px;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .number {
+    color: #86A397;
+    text-align: center;
+    font-family: 'DM Serif Display';
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 0px; /* Added margin to separate from firstName */
+  }
+
+  .name {
+    color: #292F36;
+    text-align: center;
+    font-family: 'DM Serif Display';
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+
+  .button {
+    align-items: center;
+    width: 244px;
+    height: 75px;
+    transform: translate(-50%, -50%);
+    background-color: #292F36;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 50%;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #86A397; /* Change the background color on hover */
+  }  
+
+  .vector {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #292F36; /* Color of the vector icon */
+    stroke: #c49e85; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #86A397; /* Change the fill color on hover */
+    stroke: #292F36;
+  }

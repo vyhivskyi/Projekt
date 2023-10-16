@@ -1,0 +1,323 @@
+.bannerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  background-color: #f4f0ec;
+  text-align: center;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 50px; /* Optional: Add some border radius for styling */
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(244, 240, 236, 0.7); /* F4F0EC with 70% brightness */
+}
+
+.textOverlay {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: #292f36; /* Text color */
+  font-size: 20px;
+  font-family: 'DM Serif Display', serif;
+  z-index: 1; /* Ensure text appears over the image */
+}
+
+.overlayAdditional{
+  font-family: 'Jost', serif;
+}
+
+.buttonOverlay {
+  position: absolute;
+  align-items: center;
+  width: 244px;
+  height: 75px;
+  top: 70%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #292F36;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Jost', serif;
+  cursor: pointer;
+  z-index: 1; /* Ensure button appears over the image */
+  transition: background-color 0.3s;
+}
+
+.buttonOverlay:hover {
+  background-color: #C49E85; /* Change the background color on hover */
+}  
+
+.vectorBanner {
+  width: 17px; /* Adjust the width as needed */
+  height: 15px; /* Adjust the height as needed */
+  margin-left: 15px; /* Adjust the margin as needed */
+  fill: #292F36; /* Color of the vector icon */
+  stroke: #c49e85; /* Color of the vector stroke */
+  transition: fill 0.3s, stroke 0.3s;
+}
+
+.buttonOverlay:hover .vectorBanner {
+  fill: #C49E85; /* Change the fill color on hover */
+  stroke: #292F36;
+}
+
+.opcjeContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 130px;
+    align-items: center;
+  }
+  
+  .smallContainer {
+    align-items: center;
+    width: 340px;
+    height: 230px; 
+    border-radius: 10px;
+  }
+
+  .smallContainerText {
+    width: auto;
+    text-align: center;
+    color: #292F36; /* Adjust the text color as needed */
+    font-size: 25px; /* Adjust the font size as needed */
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif; /* Use the Jost font-family */
+  }
+
+  .smallContainerOpis {
+    text-align: center;
+    color: #292F36; /* Adjust the text color as needed */
+    font-size: 22px; /* Adjust the font size as needed */
+    font-weight: 400;
+    font-family: 'Jost', serif; /* Use the Jost font-family */
+  }
+
+  .smallContainerButton{
+    position: absolute;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    margin-top: 40px;
+    margin-left: 9%;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+    color: #292F36;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .smallContainerButton:hover {
+    background-color: #292F36;
+    color: #ffffff;
+  }
+  .vectorIcon {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #ffffff; /* Color of the vector icon */
+    stroke: #c49e85; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .smallContainerButton:hover .vectorIcon {
+    fill: #292F36;
+    stroke: #c49e85;
+  }
+
+  .ContainerContact {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10%;
+    align-items: center;
+  }
+
+  .ContainerMiasto {
+    align-items: center;
+    width: 1200px;
+    height: 700px; 
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  .ContainerMiastoOverlay{
+    position: absolute;
+  }
+
+  .ContainerMiastoTextOverlay {
+    position: relative;
+    width: 470px;
+    height: 470px;
+    margin-left: 10%;
+    text-align: left;
+    color: #292F36;
+    font-size: 40px;
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .ContainerMiastoTextOverlayAdditional {
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Jost', serif;
+  }
+
+  .button {
+    position: absolute;
+    align-items: center;
+    width: 244px;
+    height: 75px;
+    margin-top: 80px;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #292F36;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #C49E85; /* Change the background color on hover */
+  }  
+
+  .vector {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #292F36; /* Color of the vector icon */
+    stroke: #c49e85; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #C49E85; /* Change the fill color on hover */
+    stroke: #292F36;
+  }
+
+  .ContainerMiastoImage {
+    position: absolute;
+    height: 700px;
+    width: 650px;
+    margin-left: 30%;
+    border-radius: 0px 326px 0px 123px;
+    background-image: url('./images/Banner.jpg');
+  }
+
+  .containerReviews {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10%;
+    align-items: center;
+  }
+
+  .reviews {
+    align-items: center;
+    text-align: center;
+    width: 1200px;
+    height: 650px; 
+    border-radius: 70px;
+    background-color: #86A397;
+  }
+
+  .reviewsHeader{
+    font-family: 'DM Serif Display', serif;
+    font-size: 50px;
+    color: #292F36;
+    margin-top: 5%;
+  }
+
+  .peopleReviews {
+    width: 1150px;
+    height: 340px;
+    margin: 25px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .review {
+    width: 370px;
+    height: 340px;
+    background-color:#ffffff;
+    border-radius: 30px;
+  }
+
+  .person {
+    display: flex;
+    width: 330px;
+    height: 75px;
+    margin: 20px;
+  }
+
+  .personDetails {
+    margin-top: 5px;
+  }
+
+  .reviewText {
+    text-align: left;
+    margin: 5px;
+  }
+
+  .personName {
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 23px;
+  }
+
+  .personDepartment {
+    font-size: 15px;
+    font-family: 'Jost', serif;
+  }
+
+  .personImage {
+    border-radius: 50%;
+    margin: 5px;
+  }
+  
+  .personOpis {
+    margin: 5px;
+  }
+
+  .reviewOpis {
+    font-family: 'Jost', serif;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  
+
+  
+  
