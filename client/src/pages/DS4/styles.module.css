@@ -1,0 +1,66 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1895px;
+    height: 355px;
+    background-color: #292F36;
+}
+
+.bannerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 37px 37px 0px 0px;
+}
+
+.Name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.dom  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    height: 75px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 18px;
+    border: 2px solid #c49e85;
+}
+
+.korytarz,
+.kuchnia,
+.pokoj {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.name {
+    color: #292F36;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 18px;
+    margin-left: 20px;
+}
+
+.galeria {
+    position: relative;
+    width: 1150px;
+    height: 1040px;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}

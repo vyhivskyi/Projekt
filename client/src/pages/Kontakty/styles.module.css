@@ -1,0 +1,178 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1895px;
+    height: 355px;
+    background-color: #292F36;
+}
+
+.bannerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 37px 37px 0px 0px;
+}
+
+.Name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.KontaktA {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 1400px;
+  height: 770px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+}
+
+.contentImageA {
+  width: 1150px;
+  height: 460px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10%;
+  border: 1px solid #E7E7E7;
+  border-radius: 30px;
+}
+
+.contentA {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  height: 345px;
+  padding: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 3%;
+  margin-right: 5%;
+  border-radius: 30px;
+}
+
+.aKontakt {
+  display: flex;
+  flex-direction: column;
+}
+
+.aKontaktName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.partA {
+  font-family: 'DM Serif Display';
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.kierownik {
+    font-family: 'DM Serif Display';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 0.5;
+}
+
+.portiernia {
+    font-family: 'Jost';
+    font-size: 15px;
+    line-height: 1;
+}
+
+.imageContainerA {
+  position: relative;
+  width: 550px;
+  height: 430px;
+  border-radius: 40px;
+  background-image: url('./images/Banner.jpg');
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.KontaktB {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 1400px;
+    height: 770px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+  }
+
+  .contentImageB {
+    width: 1150px;
+    height: 460px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+    border: 1px solid #E7E7E7;
+    border-radius: 30px;
+  }
+
+  .contentB {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    height: 345px;
+    padding: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 3%;
+    margin-right: 5%;
+    border-radius: 30px;
+  }
+
+  .bKontakt {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bKontaktName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .partB {
+    font-family: 'DM Serif Display';
+    font-weight: 400;
+    font-size: 30px;
+  }
+
+  .imageContainerB {
+    position: relative;
+    width: 550px;
+    height: 430px;
+    border-radius: 40px;
+    background-image: url('./images/Banner.jpg');
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+

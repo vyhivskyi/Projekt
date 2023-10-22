@@ -1,0 +1,294 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1895px;
+    height: 355px;
+    background-color: #292F36;
+}
+
+.bannerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 37px 37px 0px 0px;
+}
+
+.Name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.signup_container {
+	width: 1200px;
+	height: 1450px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2%;
+  }
+  
+  .form_container {
+	width: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(196, 158, 133, 0.4);
+	border-radius: 55px;
+	padding-top: 50px;
+	margin-top: 20px;
+  }
+  
+  .nameContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	height: 40px;
+	margin-bottom: 40px;
+}
+
+.signName {
+  font-family: 'DM Serif Display';
+  font-weight: 400;
+  font-size: 45px;
+  color: #292F36;
+}
+
+.inputRow {
+    display: flex;
+    justify-content: space-between;
+	width: 745px;
+}
+  
+.input {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+    background-color: transparent; /* Remove background color */
+}
+
+.label {
+	font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-right: 30px;
+}
+  
+  .select {
+	outline: none;
+	border: none;
+	width: 400px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 14px;
+  }
+  
+  .error_msg {
+	width: 370px;
+	padding: 15px;
+	margin: 5px 0;
+	font-size: 14px;
+	background-color: #f34646;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+  }
+  
+  .white_btn,
+  .green_btn {
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	background-color: white;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+  }
+  
+  .green_btn {
+	background-color: #007bff;
+	color: white;
+	margin: 10px;
+  }
+
+  .genderLabel {
+	font-family: 'Jost';
+	font-size: 16px;
+    color: #333;
+  }
+  
+
+/* Container for radio buttons */
+.genderContainer {
+    display: flex;
+    align-items: center;
+	margin: 20px;
+}
+
+/* Custom styles for radio buttons */
+.genderOption {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    outline: none;
+    margin-right: 5px;
+}
+
+/* Change color of the custom radio when checked */
+.genderOption:checked {
+    background-color: #c49e85;
+    border-color: #292F36;
+}
+
+/* Label styles */
+.genderLabel {
+    font-family: 'Jost';
+    font-size: 18px;
+    color: #333;
+}
+
+.info {
+	font-family: 'DM Serif Display';
+	font-size: 30px;
+	font-weight: 400;
+	color: #292F36;
+}
+
+.wydzialSelect {
+	margin-bottom: 10px;
+}
+
+.kierunekSelect {
+	margin-bottom: 10px;
+}
+
+.rokSelect {
+	margin-bottom: 10px;
+}
+
+.select {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Jost';
+    margin-top: 5px;
+    background-color: transparent;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #292F36;
+    pointer-events: none;
+}
+
+.select::-ms-expand {
+    display: none;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.checkboxContainer input {
+    margin-right: 10px;
+    -webkit-appearance: none; /* Remove default appearance */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Style for the checkbox label */
+.checkboxContainer label {
+    font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.checkboxContainer input:checked {
+    background-color: #c49e85;
+    border-color: #292f36;
+}
+
+.button {
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background-color: #c49e85;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+	margin-top: 7%;
+	margin-left: 17%;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #86A397; /* Change the background color on hover */
+  }  
+
+  .vector {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #c49e85; /* Color of the vector icon */
+    stroke: #292F36; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #86A397; /* Change the fill color on hover */
+    stroke: #292F36;
+  }
+
+
+

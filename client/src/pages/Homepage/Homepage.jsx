@@ -1,11 +1,10 @@
-import React from 'react';
-import styles from './styles.module.css';
+import styles from "./styles.module.css"
 import Person1Image from './images/Person1.png';
 import bannerImage from './images/Banner.jpg';
 
-const Homepage = () => {
-  return ( 
-    <div className={styles.pageContainer}>
+const Homepage = ({user}) => {
+    return (
+        <div className={styles.pageContainer}>
       <div className={styles.bannerContainer}>
       <img src={bannerImage} alt="Banner" className={styles.bannerImage} />
       <div className={styles.overlay}></div>
@@ -188,7 +187,8 @@ const Homepage = () => {
       </div>
     </div>
   </div>
-  );
-};
+    );
 
-export default Homepage;
+}
+
+export default Homepage

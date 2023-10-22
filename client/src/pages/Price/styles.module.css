@@ -1,0 +1,177 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1895px;
+    height: 355px;
+    background-color: #292F36;
+}
+
+.bannerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 37px 37px 0px 0px;
+}
+
+.Name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    width: 1600px;
+    height: 685px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+}
+
+.priceDS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 365px;
+    height: 685px;
+    background-color: #F4F0EC;
+    margin: auto;
+    border-radius: 40px;
+}
+
+.nameDS {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 0;
+}
+
+.optionFirst {
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.optionFirst::after {
+    content: '';
+    width: 280px;
+    height: 2px;
+    background-color: #c49e85;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.nameOption {
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+
+.currency {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
+    margin-right: 3px; 
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.amount {
+    font-size: 75px;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.month {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.optionSecond {
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 10px; 
+    position: relative;
+}
+
+.optionSecond::after {
+    content: '';
+    width: 280px;
+    height: 2px; 
+    background-color: #c49e85; 
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.button {
+    align-items: center;
+    width: 244px;
+    height: 75px;
+    transform: translate(-50%, -50%);
+    background-color: #c49e85;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+    margin-top: 15%;
+    margin-left: 70%;
+    z-index: 1; 
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #292F36; 
+  }  
+
+  .vector {
+    width: 17px; 
+    height: 15px;
+    margin-left: 15px; 
+    fill: #c49e85; 
+    stroke: #292F36; 
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #292F36; 
+    stroke: #c49e85;
+  }
+
+  .textDescription {
+    font-family: 'Jost';
+    text-align: center;
+    font-size: 22px;
+    margin: auto; 
+    margin-top: 25px; 
+    line-height: 2.5;
+  }
+
+

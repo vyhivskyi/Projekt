@@ -1,0 +1,214 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1895px;
+    height: 355px;
+    background-color: #292F36;
+}
+
+.bannerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 37px 37px 0px 0px;
+}
+
+.Name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.dokumenty {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 1400px;
+  height: 770px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+}
+
+.dokumentyName {
+    font-family: 'DM Serif Display';
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.contentImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 510px;
+  height: 550px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 7%;
+  background-color: #F4F0EC;
+  border-radius: 30px;
+}
+
+.toggleArrowContainer {
+  display: flex;
+  align-items: center;
+}
+
+.toggleArrow {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.additionalText {
+  font-family: 'Jost';
+  font-size: 18px;
+  max-width: 500px;
+  margin-top: 0;
+  margin-bottom: 0; /* Add margin between firstName and additionalText */
+}
+
+.firstDoc {
+  display: flex;
+  flex-direction: column;
+}
+
+.firstNameContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+
+.firstName {
+  font-size: 25px;
+  font-family: 'DM Serif Display';
+  font-weight: 400;
+  cursor: pointer;
+  height: 40px; /* Set a fixed height */
+  margin-bottom: 5px; /* Add margin between each firstName */
+}
+
+.vector {
+  width: 17px; /* Adjust the width as needed */
+  height: 15px; /* Adjust the height as needed */
+  fill: #fff; /* Color of the vector icon */
+  stroke: #c49e85; /* Color of the vector stroke */
+  transition: fill 0.3s, stroke 0.3s;
+}
+
+.button {
+  align-items: center;
+  width: 220px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  background-color: #c49e85;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Jost', serif;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 50%;
+  margin-bottom: 0;
+  z-index: 1; /* Ensure button appears over the image */
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #292F36; /* Change the background color on hover */
+}  
+
+.vectorButton {
+  width: 17px; /* Adjust the width as needed */
+  height: 15px; /* Adjust the height as needed */
+  margin-left: 15px; /* Adjust the margin as needed */
+  fill: #c49e85; /* Color of the vector icon */
+  stroke: #292F36; /* Color of the vector stroke */
+  transition: fill 0.3s, stroke 0.3s;
+}
+
+.button:hover .vectorButton {
+  fill: #292F36; /* Change the fill color on hover */
+  stroke: #c49e85;
+}
+
+.imageContainer {
+  position: relative;
+  width: 505px;
+  height: 680px;
+  border-radius: 40px;
+  background-image: url('./images/Banner.jpg');
+  margin-left: 5%;
+  margin-right: 7%;
+  margin-top: 0;
+}
+
+.listy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 1400px;
+  height: 770px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+  margin-bottom: 15%;
+}
+
+.contentImageListy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.imageContainerListy {
+  position: relative;
+  width: 505px;
+  height: 680px;
+  border-radius: 40px;
+  background-image: url('./images/Banner.jpg');
+  margin-left: 8%;
+  margin-top: 7%;
+}
+
+.contentListy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 510px;
+  height: 550px;
+  padding: 10px;
+  margin-top:8%;
+  margin-right: 5%;
+  margin-bottom: 10%;
+  background-color: #F4F0EC;
+  border-radius: 30px;
+}
+
+.firstLista {
+  display: flex;
+  flex-direction: column;
+}
+
+.firstNameListy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}

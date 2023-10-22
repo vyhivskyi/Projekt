@@ -1,0 +1,18 @@
+/* styles.module.css */
+.circle {
+    position: absolute;
+    background-color: #292f36;
+    border-radius: 50%;
+    margin: 10px; /* Adjust the margin as needed */
+  }
+  
+  .circleHovered {
+    z-index: 1;
+    transition: z-index 0.3s;
+  }
+  
+  .circleSmall {
+    z-index: 0;
+    transition: z-index 0.3s;
+  }
+  

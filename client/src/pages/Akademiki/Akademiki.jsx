@@ -12,7 +12,17 @@ const Akademiki = () => {
 
   const handleDS2Click =() => {
     //Redirect to the DS2 page
-    navigate('/DS2')
+    navigate('/DS2/Korytarz')
+  }
+
+  const handleDS3Click =() => {
+    //Redirect to the DS3 page
+    navigate('/DS3/Korytarz')
+  }
+
+  const handleDS4Click =() => {
+    //Redirect to the DS3 page
+    navigate('/DS4/Korytarz')
   }
   return (
     <div className={styles.pageContainer}>
@@ -76,7 +86,7 @@ const Akademiki = () => {
           <div className={styles.content}>
             <h1 className={styles.number}>03</h1>
             <h2 className={styles.name}>Dom Studenta №3</h2>
-            <button className={styles.button}>
+            <button className={styles.button} onClick={handleDS3Click}>
               Więcej
               <svg
                 className={styles.vector}
@@ -97,7 +107,7 @@ const Akademiki = () => {
           <div className={styles.content}>
             <h1 className={styles.number}>04</h1>
             <h2 className={styles.name}>Dom Studenta №4</h2>
-            <button className={styles.button}>
+            <button className={styles.button} onClick={handleDS4Click}>
               Więcej
               <svg
                 className={styles.vector}

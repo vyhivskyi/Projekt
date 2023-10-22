@@ -1,0 +1,189 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1895px;
+    height: 355px;
+    background-color: #292F36;
+}
+
+.bannerName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 37px 37px 0px 0px;
+}
+
+.Name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+.login_container {
+	width: 1200px;
+	height: 565px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 7%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.nameContainer {
+	width: 600px;
+	height: 140px;
+	text-align: center;
+}
+
+.loginName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 45px;
+}
+
+.login_form_container {
+	width: 795px;
+	height: 170px;
+	display: flex;
+	justify-content: center;
+	border-radius: 10px;
+	background-color: #fff;
+	margin-top: 7%;
+}
+
+
+.form_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.input {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+	  font-family: 'Jost';
+    margin: 10px 0;
+    background-color: transparent; /* Remove background color */
+}
+
+.label {
+	font-family: 'Jost';
+	font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333; /* Add color for better visibility */
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.error_msg {
+	width: 370px;
+	padding: 15px;
+	margin: 5px 0;
+	font-size: 14px;
+	background-color: #f34646;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.button {
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background-color: #c49e85;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+	  margin-top: 18%;
+    margin-left: 50%;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #86A397; /* Change the background color on hover */
+  }  
+
+  .vector {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #c49e85; /* Color of the vector icon */
+    stroke: #292F36; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #86A397; /* Change the fill color on hover */
+    stroke: #292F36;
+  }
+
+  .right {
+	display: flex;
+  }
+
+  .rightName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 30px;
+	padding-right: 10px;
+  }
+
+  .rightButton {
+	margin-top: 3%;
+  }
+
+  .buttonRight {
+    align-items: center;
+    width: 210px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    background-color: #E7E7E7;
+    color: #292F36;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+	margin-top: 18%;
+    margin-left: 50%;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .buttonRight:hover {
+    background-color: #c49e85; /* Change the background color on hover */
+  }  
+
+  .vectorRight {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #E7E7E7; /* Color of the vector icon */
+    stroke: #c49e85; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .buttonRight:hover .vectorRight {
+    fill: #c49e85; /* Change the fill color on hover */
+    stroke: #292F36;
+  }
