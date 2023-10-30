@@ -79,109 +79,126 @@ const PreferenceEdit = ({ user }) => {
     const roomOptions = ["Jednoosobowy", "Dwuosobowy", "Trzyosobowy"]
 
     return (
-        <div className={styles.formContainer}>
-            <form onSubmit={handleUpdate}>
-                <h2>Edycja preferencji</h2>
-                <div className={styles.checkboxContainer}>
-                    <input
-                        type="checkbox"
-                        name="dsbool"
-                        onChange={handleChange}
-                        checked={data.dsbool}
-                    />
-                    <label htmlFor="dsbool">Wybierz ds</label>
-                </div>
-                {data.dsbool ? (
-                    <select
-                        name="ds"
-                        onChange={handleChange}
-                        value={data.ds}
-                        className={styles.input}
-                    >
-                        {dsOptions.map((option) => (
-                            <option key={option} value={option}>
-                                {option}
-                            </option>
-                        ))}
+        <div className={styles.pageContainer}>
+            <div className={styles.editContainer}>
+                <div className={styles.editContent}>
+                    <div className={styles.editHead}>
+                        <h2 className={styles.signName}>Edycja preferencji</h2>
+                    </div>
+                    <form onSubmit={handleUpdate}>
+                        <div className={styles.inputEdit}>
+                            <div className={styles.checkboxContainer}>
+                                <input
+                                    type="checkbox"
+                                    name="dsbool"
+                                    onChange={handleChange}
+                                    checked={data.dsbool}
+                                />
+                                <label htmlFor="dsbool">Wybierz ds</label>
+                            </div>
+                            {data.dsbool ? (
+                                <select
+                                    name="ds"
+                                    onChange={handleChange}
+                                    value={data.ds}
+                                    className={styles.input}
+                                >
+                                    {dsOptions.map((option) => (
+                                        <option key={option} value={option}>
+                                            {option}
+                                        </option>
+                                    ))}
 
-                    </select>
-                ) : (<input
-                    type="text"
-                    placeholder="Brak preferencji"
-                    name="ds"
-                    onChange={handleChange}
-                    value={data.ds}
-                    disabled
-                    className={styles.input}
-                />)}
-                <div className={styles.checkboxContainer}>
-                    <input
-                        type="checkbox"
-                        name="roombool"
-                        onChange={handleChange}
-                        checked={data.roombool}
-                    />
-                    <label htmlFor="roombool">Wybierz pokój</label>
-                </div>
-                {data.roombool ? (
-                    <select
-                        name="room"
-                        onChange={handleChange}
-                        value={data.room}
-                        className={styles.input}
-                    >
-                        {roomOptions.map((option) => (
-                            <option key={option} value={option}>
-                                {option}
-                            </option>
-                        ))}
-                    </select>
-                ) : (<input
-                    type="text"
-                    placeholder="Brak preferencji"
-                    name="room"
-                    onChange={handleChange}
-                    value={data.room}
-                    disabled
-                    className={styles.input}
-                />)}
-                <div className={styles.checkboxContainer}>
-                    <input
-                        type="checkbox"
-                        name="usersbool"
-                        onChange={handleChange}
-                        checked={data.usersbool}
-                    />
-                    <label htmlFor="usersbool">Wybierz współlokatorów</label>
-                </div>
-                {data.usersbool ? (
-                    <input
-                        type="text"
-                        placeholder=""
-                        name="users"
-                        onChange={handleChange}
-                        value={data.users}
-                        className={styles.input}
-                    />
-                ) : (<input
-                    type="text"
-                    placeholder="Brak preferencji"
-                    name="users"
-                    onChange={handleChange}
-                    value={data.users}
-                    disabled
-                    className={styles.input}
-                />)}
-                {error && <div
-                    className={styles.error_msg}>{error}</div>}
-                <br />
-                <button type="submit "
-                    className={styles.btn}>
-                    Edytuj
-                </button>
-            </form>
+                                </select>
+                            ) : (<input
+                                type="text"
+                                placeholder="Brak preferencji"
+                                name="ds"
+                                onChange={handleChange}
+                                value={data.ds}
+                                disabled
+                                className={styles.input}
+                            />)}
+                            <div className={styles.checkboxContainer}>
+                                <input
+                                    type="checkbox"
+                                    name="roombool"
+                                    onChange={handleChange}
+                                    checked={data.roombool}
+                                />
+                                <label htmlFor="roombool">Wybierz pokój</label>
+                            </div>
+                            {data.roombool ? (
+                                <select
+                                    name="room"
+                                    onChange={handleChange}
+                                    value={data.room}
+                                    className={styles.input}
+                                >
+                                    {roomOptions.map((option) => (
+                                        <option key={option} value={option}>
+                                            {option}
+                                        </option>
+                                    ))}
+                                </select>
+                            ) : (<input
+                                type="text"
+                                placeholder="Brak preferencji"
+                                name="room"
+                                onChange={handleChange}
+                                value={data.room}
+                                disabled
+                                className={styles.input}
+                            />)}
+                            <div className={styles.checkboxContainer}>
+                                <input
+                                    type="checkbox"
+                                    name="usersbool"
+                                    onChange={handleChange}
+                                    checked={data.usersbool}
+                                />
+                                <label htmlFor="usersbool">Wybierz współlokatorów</label>
+                            </div>
+                            {data.usersbool ? (
+                                <input
+                                    type="text"
+                                    placeholder=""
+                                    name="users"
+                                    onChange={handleChange}
+                                    value={data.users}
+                                    className={styles.input}
+                                />
+                            ) : (<input
+                                type="text"
+                                placeholder="Brak preferencji"
+                                name="users"
+                                onChange={handleChange}
+                                value={data.users}
+                                disabled
+                                className={styles.input}
+                            />)}
+                            {error && <div
+                                className={styles.error_msg}>{error}</div>}
+                            <br />
+                            <button type="submit" className={styles.buttonEdit}>
+                                Edytuj
+                                <svg
+                                    className={styles.vector}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 18 17">
+                                    <path
+                                        d="M1 8.43542L14.7232 8.29857M9.61818 1.91138L16.1412 8.43436L9.48677 15.0887"
+                                        strokeWidth="2"
+                                        strokeLinecap="square"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </div>    
+                    </form>
+                </div>    
+            </div>
         </div>
-
     );
 }
 export default PreferenceEdit

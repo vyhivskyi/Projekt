@@ -30,6 +30,7 @@ const [error, setError] = useState("")
 const navigate = useNavigate()
 const [selectedFaculty, setSelectedFaculty] = useState("");
 const [availableDirections, setAvailableDirections] = useState([]);
+const [opiekunSecretPassword, setOpiekunSecretPassword] = useState("");
 const handleChange = ({ currentTarget: input }) => {
     const { name, value, type, checked } = input;
     if (type === "checkbox") {
@@ -68,18 +69,32 @@ const handleChange = ({ currentTarget: input }) => {
         setAvailableDirections(facultyOptions[value] || []);
     }
 };
+
+const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
 const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+        const formData = new FormData();
+        formData.append("file", file);
         const url = "http://localhost:8080/api/users"
         const requestData = {
             ...data,
             preference: preferences,
-        }
-        const { data: res } = await axios.post(url, requestData)
-        navigate("/")
-        console.log(res.message)
-        console.log(data)
+        };
+        axios.post('http://localhost:8080/upload', formData)
+        .then((res) => {
+        // Assuming the response contains the file URL
+        requestData.profile_picture = res.data.fileUrl;
+        return axios.post('http://localhost:8080/api/users', requestData);
+    })
+    .then((res) => {
+        navigate("/");
+        console.log(res.message);
+        console.log(data);
+      })
     } catch (error) {
         if (
             error.response &&
@@ -95,6 +110,11 @@ const handleSubmit = async (e) => {
 function updateGender(value) {
     setData({ ...data, gender: value });
 }
+
+function updateRole(value) {
+    setData({ ...data, role: value });
+}
+
 const yearOfStudyOptions = Array.from({ length: 6 }, (_, index) => index);
 const facultyOptions = {
     "Wydział Budownictwa i Architektury": ["Budownictwo", "Architektura"],
@@ -106,6 +126,15 @@ const facultyOptions = {
 }
 const dsOptions = [1, 2, 3, 4]
 const roomOptions = ["Jednoosobowy", "Dwuosobowy", "Trzyosobowy"]
+const [file, setFile] = useState();
+const handleUpload = (e) => {
+    const formData = new FormData()
+    formData.append('file', file)
+    axios.post('http://localhost:8080/upload', formData)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+};
+
 return (
     <div className={styles.pageContainer}>
         <div className={styles.banner}>
@@ -364,6 +393,14 @@ return (
                             disabled
                             className={styles.input}
                         />)}
+                        <div className={styles.inputContainer}>
+                            <label className={styles.labelProfile}>Profile Picture</label>
+                            <input
+                                type="file"
+                                onChange={handleFileChange}
+                                className={styles.input}
+                            />
+                        </div>
                         {error && <div
                             className={styles.error_msg}>{error}</div>}
                         <button type="submit" className={styles.button}>

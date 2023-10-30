@@ -55,15 +55,11 @@ const Main = ({ setDane, setMessage }) => {
                 <Link to="/kontakt" className={styles.navItem}>
                     Kontakt
                 </Link>
-                <Link to="/dostepnosc" className={styles.navItem}>
-                    <button type="button" className={styles.navItem} onClick={handleLogout}>
-                        Wyloguj się
-                    </button>
+                <Link to="/dostepnosc" className={styles.navItem} onClick={handleLogout}>
+                    Wyloguj się
                 </Link>
-                <Link to="/profile">
-                    <button className={styles.white_btn} onClick={handleProfile}>
-                        Profil
-                    </button>
+                <Link to="/profile" className={styles.navItem} onClick={handleProfile}>
+                    Profil
                 </Link>
                 <Link to="/dostepnosc" className={styles.navItem}>
                     Dostępność
@@ -79,6 +75,9 @@ const Main = ({ setDane, setMessage }) => {
                 </Link>
                 <Link to="/akademiki" className={styles.navItem}>
                     Akademiki
+                </Link>
+                <Link to="/Cennik" className={styles.navItem}>
+                    Cennik
                 </Link>
                 <Link to="/dokumenty" className={styles.navItem}>
                     Dokumenty

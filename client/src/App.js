@@ -24,6 +24,9 @@ import DS4Korytarz from "./pages/DS4/DS4Korytarz";
 import Price from "./pages/Price/Price";
 import Dokumenty from "./pages/Dokumenty/Dokumenty";
 import Kontakt from "./pages/Kontakty/Kontakty";
+import Message from "./pages/Profile/Zgłoszenie";
+import CheckOut from "./pages/Profile/Wymeldowanie";
+import Room from "./pages/Profile/Pokoj";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -39,18 +42,55 @@ function App() {
           element={
             <div>
               <Navbar setDane={handleSetDane} />
-              <Profile setDane={handleSetDane} />
+              <Profile setDane={handleSetDane} user={dane} />
               <Info user={dane} />
             </div>}
         />
       }
+
+      {user &&
+        <Route
+          path="/profile/zgłoszenie"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Profile setDane={handleSetDane} user={dane} />
+              <Message user={dane} />
+            </div>}
+        />
+      }
+
+      {user &&
+        <Route
+          path="/profile/wymeldowanie"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Profile setDane={handleSetDane} user={dane} />
+              <CheckOut user={dane} />
+            </div>}
+        />
+      }
+
+      {user &&
+        <Route
+          path="/profile/pokój"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Profile setDane={handleSetDane} user={dane} />
+              <Room user={dane} />
+            </div>}
+        />
+      }
+
       {user &&
         <Route
           path="/profile/preference"
           element={
             <div>
-              <Navbar />
-              <Profile setDane={handleSetDane} />
+              <Navbar setDane={handleSetDane}/>
+              <Profile setDane={handleSetDane} user={dane} />
               <Preference user={dane} />
             </div>}
         />
@@ -70,6 +110,7 @@ function App() {
           element={
             <div>
               <Navbar setDane={handleSetDane}/>
+              <Profile setDane={handleSetDane} user={dane} />
               <PreferenceEdit user={dane} />
              </div>
           } />

@@ -168,12 +168,6 @@
     border-color: #292F36;
 }
 
-/* Label styles */
-.genderLabel {
-    font-family: 'Jost';
-    font-size: 18px;
-    color: #333;
-}
 
 .info {
 	font-family: 'DM Serif Display';
@@ -238,6 +232,7 @@
     border: 1px solid #333;
     outline: none;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 /* Style for the checkbox label */
@@ -251,6 +246,47 @@
 .checkboxContainer input:checked {
     background-color: #c49e85;
     border-color: #292f36;
+}
+
+.labelProfile {
+  font-family: 'Jost';
+  font-weight: 600;
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/*Radio for role of the user*/
+.roleLabel {
+	font-family: 'Jost';
+	font-size: 16px;
+  color: #333;
+  }
+  
+
+/* Container for radio buttons */
+.roleContainer {
+  display: flex;
+  align-items: center;
+	margin: 20px;
+}
+
+/* Custom styles for radio buttons */
+.roleOption {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    outline: none;
+    margin-right: 5px;
+}
+
+/* Change color of the custom radio when checked */
+.roleOption:checked {
+    background-color: #c49e85;
+    border-color: #292F36;
 }
 
 .button {

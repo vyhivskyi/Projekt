@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     gender: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    role: { type: String, required: true, enum: ['Administrator', 'Student', 'Employee', 'Receptionist'] },
+    role: { type: String, required: true, enum: ['Administrator', 'Student', 'Opiekun', 'Kierownik'] },
     faculty: { type: String, required: true },
     department: { type: String, required: true },
     year_of_study: { type: Number, required: true },
@@ -51,7 +51,7 @@ const validate = (data) => {
             usersbool: Joi.boolean().required().label("Users Bool"),
             users: Joi.string().required().label("Users")
         }),
-        role: Joi.string().valid('Administrator', 'Student', 'Employee', 'Receptionist').required().label("Role"), 
+        role: Joi.string().valid('Administrator', 'Student', 'Opiekun', 'Kierownik').required().label("Role"), 
         profile_picture: Joi.string().required().label("Profile Picture")
     })
     return schema.validate(data)
