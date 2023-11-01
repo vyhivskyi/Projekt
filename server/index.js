@@ -32,7 +32,7 @@ const connection = require('./db')
 connection()
 app.get("/api/profile", tokenVerification)
 app.get("/api/profile/preference", tokenVerification)
-app.get("/api/profile/preference/edit/:id", tokenVerification, updatePreferencesRoutes)
+app.get("/api/profile/preference/edit", tokenVerification, updatePreferencesRoutes)
 app.get("/api/profile/delete", tokenVerification);
 app.use("/api/users", userRoutes)
 app.use("/api/auth", authRoutes)
