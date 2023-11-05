@@ -10,7 +10,7 @@ const roomsSchema = new mongoose.Schema({
     room_type: { type: String, required: true },
     occupants: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Users', 
+        ref: 'User', 
         required: false
     }]
 })

@@ -9,6 +9,7 @@ const preferenceRoutes = require("./routes/preferences")
 const tokenVerification = require('./middleware/tokenVerification')
 const deleteRoutes = require("./routes/delete")
 const updatePreferencesRoutes = require("./routes/updatePreferences")
+const roomRoutes = require("./routes/room")
 const multer = require('multer')
 const path = require('path');
 
@@ -34,12 +35,14 @@ app.get("/api/profile", tokenVerification)
 app.get("/api/profile/preference", tokenVerification)
 app.get("/api/profile/preference/edit", tokenVerification, updatePreferencesRoutes)
 app.get("/api/profile/delete", tokenVerification);
+app.get("/api/profile/room", tokenVerification)
 app.use("/api/users", userRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/profile", profileRoutes)
 app.use("/api/profile/preference", preferenceRoutes)
 app.use("/api/profile/delete", deleteRoutes);
 app.use("/api/profile/preference/edit", updatePreferencesRoutes)
+app.use("/api/profile/room", roomRoutes)
 app.post('/upload', upload.single('file'), (req, res) => {
   const fileUrl = req.file.filename;
   res.json({ fileUrl });

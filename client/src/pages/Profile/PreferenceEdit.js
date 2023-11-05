@@ -22,24 +22,41 @@ const PreferenceEdit = ({ user }) => {
         e.preventDefault();
         const token = localStorage.getItem("token")
         if (token) {
-            try {
+            /*try {
                 const updatedUser = {
                     ...user, 
                     preference: { ...data }, 
                 };
-                /*const config = {
-                    headers: { 'Content-Type': 'application/json', 'x-access-token': token },
+                const config = {
+                    method: 'put',
+                    url: 'http://localhost:8080/api/profile/preference/edit',
+                    headers: { 'Content-Type': 'application/json', 'x-access-token': token }
                 }
-                const url = "http://localhost:8080/api/profile/preference/edit/${user._id}"
-                await axios.put(url, updatedUser, config)*/
-                const res = await axios.put('/api/profile/preference/edit/${user._id}', updatedUser)
-                window.location = '/profile/preferences'
+                const { data: res } = await axios(config)
+                //const res = await axios.put('/api/profile/preference/edit', updatedUser)
+                window.location = '/profile/preference'
             } catch (error) {
                 if (error.response && error.response.status >= 400 && error.response.status <= 500) {
                     setError("Wystąpił błąd. Spróbuj ponownie.");
+                    const updatedUser = {
+                        ...user, 
+                        preference: { ...data }, 
+                    };
                     console.log(error)
-                    console.log(data)
-                    console.log(user)
+                    console.log(updatedUser)
+                }
+            }*/
+            try {
+                const config = {
+                    method: 'put',
+                    url: 'http://localhost:8080/api/profile/preference/edit',
+                    headers: { 'Content-Type': 'application/json', 'x-access-token': token }
+                }
+                const { user: res } = await axios(config)
+            } catch (error) {
+                if (error.response && error.response.status >= 400 && error.response.status <= 500) {
+                    //localStorage.removeItem("token")
+                    window.location.reload()
                 }
             }
         }

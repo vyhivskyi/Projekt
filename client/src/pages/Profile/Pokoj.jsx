@@ -1,7 +1,8 @@
 import styles from "./styles.module.css"
 import React from "react"
 
-const Room = ({user}) => {
+const Room = ({ user, room}) => {
+    console.log(user);
     return (
         <div className={styles.pageContainer}>
             <div className={styles.roomContainer}>
@@ -25,12 +26,12 @@ const Room = ({user}) => {
                     <div className={styles.messFieldRow}>
                         <div className={styles.messField}>
                             <label className={styles.label}>Nr pokoju</label>
-                            <p className={styles.data}>{user.first_name}</p>
+                            <p className={styles.data}>{room.room_number}</p>
                         </div>
 
                         <div className={styles.messField}>
                             <label className={styles.label}>Kwota</label>
-                            <p className={styles.data}>{user.last_name}</p>
+                            <p className={styles.data}>750</p>
                         </div>
                     </div>
 

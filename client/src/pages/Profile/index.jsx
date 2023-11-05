@@ -4,7 +4,7 @@ import axios from "axios"
 import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilFavorite, UilTrashAlt, UilMoneyStack } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom"
 
-const Profile = ({ setDane, user }) => {
+const Profile = ({ setDane,setRoom, user }) => {
     const handleProfile = async () => {
         const token = localStorage.getItem("token")
         if (token) {
@@ -44,6 +44,25 @@ const Profile = ({ setDane, user }) => {
                         localStorage.removeItem("token")
                         window.location.reload()
                     }
+                }
+            }
+        }
+    }
+    const handleRoom = async () => {
+        const token = localStorage.getItem("token")
+        if (token) {
+            try {
+                const config = {
+                    method: 'get',
+                    url: 'http://localhost:8080/api/profile/room',
+                    headers: { 'Content-Type': 'application/json', 'x-access-token': token }
+                }
+                const { data: res } = await axios(config)
+                setRoom(res.data);
+            } catch (error) {
+                if (error.response && error.response.status >= 400 && error.response.status <= 500) {
+                    //localStorage.removeItem("token")
+                    window.location.reload()
                 }
             }
         }
@@ -101,7 +120,7 @@ const Profile = ({ setDane, user }) => {
                             </button>
                         </Link>
                         <Link to="/profile/pokój" className={styles.nonLinkText}>
-                            <button className={styles.navBtn} onClick={handleProfile}>
+                            <button className={styles.navBtn} onClick={handleRoom}>
                                 <div className={styles.iconBack}>
                                     <UilBed className={styles.iconWniosek}/>
                                 </div>
