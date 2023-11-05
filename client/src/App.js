@@ -34,10 +34,6 @@ function App() {
   const handleSetDane = (data) => {
     setDane(data);
   }
-  const [room, setRoom] = useState();
-  const handleSetRoom = (room) => {
-    setRoom(room);
-  }
   return (
     <Routes>
       {user &&
@@ -82,8 +78,8 @@ function App() {
           element={
             <div>
               <Navbar setDane={handleSetDane} />
-              <Profile setDane={handleSetDane} setRoom={handleSetRoom} user={dane} />
-              <Room user={dane} room={room}/>
+              <Profile setDane={handleSetDane}  user={dane} />
+              <Room user={dane} />
             </div>}
         />
       }

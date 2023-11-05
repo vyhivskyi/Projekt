@@ -1,8 +1,8 @@
 import styles from "./styles.module.css"
 import React from "react"
 
-const Room = ({ user, room}) => {
-    console.log(user);
+const Room = ({ user}) => {
+    //należy dopisać metodę, która w zależności od typu pokoju ustawia cenę
     return (
         <div className={styles.pageContainer}>
             <div className={styles.roomContainer}>
@@ -26,7 +26,7 @@ const Room = ({ user, room}) => {
                     <div className={styles.messFieldRow}>
                         <div className={styles.messField}>
                             <label className={styles.label}>Nr pokoju</label>
-                            <p className={styles.data}>{room.room_number}</p>
+                            <p className={styles.data}>{user.first_name}</p>
                         </div>
 
                         <div className={styles.messField}>

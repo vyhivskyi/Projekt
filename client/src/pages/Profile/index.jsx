@@ -4,7 +4,7 @@ import axios from "axios"
 import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilFavorite, UilTrashAlt, UilMoneyStack } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom"
 
-const Profile = ({ setDane,setRoom, user }) => {
+const Profile = ({ setDane, user }) => {
     const handleProfile = async () => {
         const token = localStorage.getItem("token")
         if (token) {
@@ -48,6 +48,7 @@ const Profile = ({ setDane,setRoom, user }) => {
             }
         }
     }
+    //działa pobieranie informacji o pokoju studenta, należy tylko przesłać dane do strony Pokój
     const handleRoom = async () => {
         const token = localStorage.getItem("token")
         if (token) {
@@ -57,8 +58,8 @@ const Profile = ({ setDane,setRoom, user }) => {
                     url: 'http://localhost:8080/api/profile/room',
                     headers: { 'Content-Type': 'application/json', 'x-access-token': token }
                 }
-                const { data: res } = await axios(config)
-                setRoom(res.data);
+                const { room: res } = await axios(config)
+                setRoom(res.room);
             } catch (error) {
                 if (error.response && error.response.status >= 400 && error.response.status <= 500) {
                     //localStorage.removeItem("token")
@@ -120,6 +121,7 @@ const Profile = ({ setDane,setRoom, user }) => {
                             </button>
                         </Link>
                         <Link to="/profile/pokój" className={styles.nonLinkText}>
+                            {/*zmieniłem handleProfile na handleRoom w metodzie onClick*/}
                             <button className={styles.navBtn} onClick={handleRoom}>
                                 <div className={styles.iconBack}>
                                     <UilBed className={styles.iconWniosek}/>
