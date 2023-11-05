@@ -11,7 +11,7 @@ const checkoutsSchema = new mongoose.Schema({
         ref: 'Rooms',
         required: true
     },
-    checkout_date: { type: Date, required: false },
+    checkout_date: { type: Date, required: true },
     remarks: { type: String, required: false }
 })
 checkoutsSchema.methods.generateAuthToken = function () {

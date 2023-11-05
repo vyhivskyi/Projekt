@@ -10,6 +10,7 @@ const tokenVerification = require('./middleware/tokenVerification')
 const deleteRoutes = require("./routes/delete")
 const updatePreferencesRoutes = require("./routes/updatePreferences")
 const roomRoutes = require("./routes/room")
+const checkoutRoutes = require("./routes/checkout")
 const multer = require('multer')
 const path = require('path');
 
@@ -37,6 +38,7 @@ app.get("/api/profile/preference/edit", tokenVerification, updatePreferencesRout
 app.get("/api/profile/delete", tokenVerification);
 app.get("/api/profile/room", tokenVerification)
 app.use("/api/users", userRoutes)
+app.use("/api/profile/checkout", checkoutRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/profile", profileRoutes)
 app.use("/api/profile/preference", preferenceRoutes)
