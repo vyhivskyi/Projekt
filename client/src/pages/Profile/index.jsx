@@ -59,7 +59,8 @@ const Profile = ({ setDane, user }) => {
                     headers: { 'Content-Type': 'application/json', 'x-access-token': token }
                 }
                 const { room: res } = await axios(config)
-                setRoom(res.room);
+                //należy to odkomentować
+                //setRoom(res.room);
             } catch (error) {
                 if (error.response && error.response.status >= 400 && error.response.status <= 500) {
                     //localStorage.removeItem("token")
