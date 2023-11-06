@@ -1,0 +1,342 @@
+
+/*Styles for component with header and navbar on the left side*/
+.headSystem {
+	width: 1195px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: 3%;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+  }
+
+  .headUser {
+	width: 150px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: auto;
+	margin-bottom: auto;
+  }
+
+  .headUserName {
+	font-family: 'Jost';
+	font-size: 22px;
+	font-weight: 200;
+	color: #292F36;
+  }
+
+  .headUserPhoto {
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	background-color: #fff;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 10px;
+  }
+
+  .userPhoto {
+	width:110px;
+	height:110px;
+	border-radius: 50%;
+  }
+
+  /*Styles for component with main navbar on the left side*/
+  .navbar {
+	position: absolute;
+	width: 345px;
+	height: 380px;
+	background-color: #F4F0EC;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 76px 32px;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 10%;
+  }
+
+  .contentNav {
+	width: 345px;
+	height: 400px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	margin-top: auto;
+	margin-bottom: auto;
+  }
+  
+  .navBtn {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	border-radius: 20px;
+	width: 290px !important;
+	height: 65px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+	margin-bottom: 20px;
+  }
+
+  .nonLinkText {
+	text-decoration: none;
+	color: inherit;
+  }
+
+  .iconBack {
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+  }
+
+  .iconWniosek {
+	width: 40px;
+	height: 40px;
+	font-weight: 100;
+	color: #c49e85;
+  }
+
+  .iconText {
+	align-items: center;
+	text-align: center;
+	width: 180px;
+	height: 50px;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+	font-family: 'Jost';
+	font-size: 20px;
+	font-weight: 200;
+  }
+
+/*Styles for the main part of the page with data*/
+.dane {
+	position: relative;
+	width: 1200px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin-left: 29%;
+	margin-right: auto;
+	margin-top: 2%;
+	background-color: #F4F0EC;
+	border-radius: 55px;
+  }
+
+  .content {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 20%;
+  }
+
+  .nameContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 70px;
+	margin-left: 20%;
+}
+
+.signName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 45px;
+	color: #292F36;
+}
+
+.fieldRow {
+	display: flex;
+    justify-content: space-between;
+	width: 445px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-right: 30px;
+}
+
+.fieldMail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-left: 20%;
+}
+
+.fieldPhoto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-right: 25%;
+	align-items: center;
+}
+
+.label {
+	font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.labelMail {
+	font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.data {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+    background-color: transparent; /* Remove background color */
+}
+
+.dataMail {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+    background-color: transparent; /* Remove background color */
+}
+
+/*Styles for list of the students page*/
+.daneLista {
+	position: relative;
+	width: 1200px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin-left: 29%;
+	margin-right: auto;
+	margin-top: 2%;
+	background-color: #F4F0EC;
+	border-radius: 55px;
+	overflow: hidden;
+  }
+
+  .nameContainerLista {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 33%;
+}
+
+.studentsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1200px;
+	margin-right: auto; /* Adjust the margin to center horizontally */
+  	margin-left: auto;
+	justify-content: center;
+	align-items: center;
+	overflow-y: auto; /* Add vertical scrollbar if content overflows */
+  	max-height: 500px;
+  }
+
+  .studentsBlock {
+	width: calc(33.33% - 20px);
+	height: 400px;
+	margin: 10px;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+  }
+  
+  .profilePicture {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+  }
+
+  .studentText {
+	font-family: 'Jost';
+	color: #292F36;
+	font-size: 20px;
+  }
+
+  .buttonContainer {
+	display: flex;
+	justify-content: center;
+	margin-top: 52%; /* Adjust the margin as needed */
+	margin-left: 50%;
+  }
+
+  .button {
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background-color: #c49e85;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #86A397; /* Change the background color on hover */
+  }  
+
+  .vector {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #c49e85; /* Color of the vector icon */
+    stroke: #292F36; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #86A397; /* Change the fill color on hover */
+    stroke: #292F36;
+  }
+
+
+
+

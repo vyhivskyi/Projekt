@@ -1,10 +1,10 @@
 import styles from "./styles.module.css"
 import React from "react"
 import axios from "axios"
-import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilFavorite, UilTrashAlt, UilMoneyStack } from '@iconscout/react-unicons'
+import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom"
 
-const Profile = ({ setDane, user }) => {
+const Opiekun = ({ setDane, user }) => {
     const handleProfile = async () => {
         const token = localStorage.getItem("token")
         if (token) {
@@ -77,21 +77,11 @@ const Profile = ({ setDane, user }) => {
                         <h3 className={styles.headUserName}>{user.first_name} {user.last_name}</h3>
                     )}
                 </div>
-                <div className={styles.headUserPhoto}>
-                    {user && (
-                        <img
-                        src={`http://localhost:8080/uploads/${user.profile_picture}`}
-                        alt="Profile Picture"
-                        className={styles.userPhoto}
-                    />
-                    )}
-                    
-                </div>
             </div>
             <div className={styles.navContainer}>
                 <nav className={styles.navbar}>
                     <div className={styles.contentNav}>
-                        <Link to="/profile" className={styles.nonLinkText}>
+                        <Link to="/portiernia" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
                                 <div className={styles.iconBack}>
                                     <UilFileDownloadAlt className={styles.iconWniosek}/>
@@ -101,97 +91,51 @@ const Profile = ({ setDane, user }) => {
                                 </div>
                             </button>
                         </Link>
-                        <Link to="/profile/status" className={styles.nonLinkText}>
+                        <Link to="/portiernia/studenci" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
                                 <div className={styles.iconBack}>
                                     <UilFileDownloadAlt className={styles.iconWniosek}/>
                                 </div>
                                 <div className={styles.iconText}>
-                                    Status wniosku
+                                    Lista studentów
                                 </div>
                             </button>
                         </Link>
-                        <Link to="/profile/zgłoszenie" className={styles.nonLinkText}>
+                        <Link to="/portiernia/zgłoszenia" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
                                 <div className={styles.iconBack}>
                                     <UilFastMail className={styles.iconWniosek}/>
                                 </div>
                                 <div className={styles.iconText}>
-                                    Zgłoszenie
+                                    Lista zgłoszeń
                                 </div>
                             </button>
                         </Link>
-                        <Link to="/profile/wymeldowanie" className={styles.nonLinkText}>
+                        <Link to="/portiernia/wymeldowania" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
                                 <div className={styles.iconBack}>
                                     <UilLocationArrow className={styles.iconWniosek}/>
                                 </div>
                                 <div className={styles.iconText}>
-                                    Wymeldowanie
+                                    Wymeldowania studentów
                                 </div>
                             </button>
                         </Link>
-                        <Link to="/profile/pokój" className={styles.nonLinkText}>
+                        <Link to="/portiernia/pokoje" className={styles.nonLinkText}>
                             {/*zmieniłem handleProfile na handleRoom w metodzie onClick*/}
                             <button className={styles.navBtn} onClick={handleRoom}>
                                 <div className={styles.iconBack}>
                                     <UilBed className={styles.iconWniosek}/>
                                 </div>
                                 <div className={styles.iconText}>
-                                    Pokój
+                                    Wolne pokoje
                                 </div>
                             </button>
                         </Link>
-                        <Link to="/profile/preference" className={styles.nonLinkText}>
-                            <button className={styles.navBtn} onClick={handleProfile}>
-                                <div className={styles.iconBack}>
-                                    <UilFavorite className={styles.iconWniosek}/>
-                                </div>
-                                <div className={styles.iconText}>
-                                    Preferencje
-                                </div>
-                            </button>
-                        </Link>
-                        <button className={styles.navBtn} onClick={handleDelete}>
-                            <div className={styles.iconBack}>
-                                <UilTrashAlt className={styles.iconWniosek}/>
-                            </div>
-                            <div className={styles.iconText}>
-                                Usuń konto
-                            </div>
-                        </button>
-                    </div>
-                </nav>
-
-                {/*Konto do opłat*/}
-                <nav className={styles.navbarKonto}>
-                    <div className={styles.contentKonto}>
-                        <div className={styles.nameKonto}>
-                            <h2 className={styles.nameField}>Konto do opłat</h2>
-                        </div>
-                        <div className={styles.btnKonto}>
-                            <div className={styles.iconBackKonto}>
-                                <UilMoneyStack className={styles.iconKonto}/>
-                            </div>
-                            <div className={styles.iconTextKonto}>
-                                456789123
-                            </div>
-                        </div>
-                        <div className={styles.nameKonto}>
-                            <h2 className={styles.nameField}>Zadłużenie</h2>
-                        </div>
-                        <div className={styles.btnDebt}>
-                            <div className={styles.iconBackKonto}>
-                                <UilMoneyStack className={styles.iconKonto}/>
-                            </div>
-                            <div className={styles.iconTextKonto}>
-                                0 zł
-                            </div>
-                        </div>
                     </div>
                 </nav>
             </div>
         </div>
     )
 }
-export default Profile
+export default Opiekun

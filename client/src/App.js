@@ -27,6 +27,10 @@ import Kontakt from "./pages/Kontakty/Kontakty";
 import Message from "./pages/Profile/Zgłoszenie";
 import CheckOut from "./pages/Profile/Wymeldowanie";
 import Room from "./pages/Profile/Pokoj";
+import Status from "./pages/Profile/Status";
+import Opiekun from "./pages/Opiekun/OpiekunProfile";
+import OpiekunInfo from "./pages/Opiekun/OpiekunInfo";
+import OpiekunStudenci from "./pages/Opiekun/OpiekunStudenci";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -44,6 +48,18 @@ function App() {
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
               <Info user={dane} />
+            </div>}
+        />
+      }
+
+      {user &&
+        <Route
+          path="/profile/status"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Profile setDane={handleSetDane}  user={dane} />
+              <Status user = {dane} />
             </div>}
         />
       }
@@ -115,6 +131,31 @@ function App() {
              </div>
           } />
       }
+
+      {user &&
+        <Route
+          path="/portiernia"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane}/>
+              <Opiekun setDane={handleSetDane} user={dane} />
+              <OpiekunInfo />
+             </div>
+          } />
+      }
+
+      {user &&
+        <Route
+          path="/portiernia/studenci"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane}/>
+              <Opiekun setDane={handleSetDane} user={dane} />
+              <OpiekunStudenci />
+             </div>
+          } />
+      }
+
 
       <Route path="/" element={<div>
         <Navbar />
