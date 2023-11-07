@@ -228,8 +228,8 @@ const Homepage = ({user}) => {
             </div>
             <p className={styles.reviewOpis}>Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.</p>
           </div>
-          
         </div>
+        
       </div>
     </div>
   </div>

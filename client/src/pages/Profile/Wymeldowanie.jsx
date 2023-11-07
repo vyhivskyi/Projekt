@@ -73,7 +73,7 @@ const CheckOut = ({ user }) => {
                             </div>
                         </div>
 
-                        <button type="submit" className={styles.button} >
+                        <button type="submit" className={styles.buttonCheckOut} >
                             Wyślij
                             <svg
                                 className={styles.vector}

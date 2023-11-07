@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 const checkoutsSchema = new mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Users',
+        ref: 'User',
         required: true
     },
     room_id: {
@@ -12,7 +12,7 @@ const checkoutsSchema = new mongoose.Schema({
         required: true
     },
     checkout_date: { type: Date, required: true },
-    remarks: { type: String, required: false }
+    remarks: { type: String, required: false },
 })
 checkoutsSchema.methods.generateAuthToken = function () {
     const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {

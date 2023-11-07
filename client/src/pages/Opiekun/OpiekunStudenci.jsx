@@ -5,9 +5,9 @@ import styles from "./styles.module.css";
 const OpiekunStudenci = () => {
   const [students, setStudents] = useState([]);
   const [expandedStudent, setExpandedStudent] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Fetch the list of students when the component mounts
     axios.get("http://localhost:8080/api/users/students")
       .then((response) => {
         setStudents(response.data);
@@ -18,9 +18,17 @@ const OpiekunStudenci = () => {
   }, []);
 
   const handleExpand = (student) => {
-    // Toggle the expanded state for the selected student
     setExpandedStudent(expandedStudent === student ? null : student);
   };
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredStudents = students.filter((student) => {
+    const fullName = `${student.first_name} ${student.last_name}`.toLowerCase();
+    return fullName.includes(searchTerm.toLowerCase());
+  });
 
   return (
     <div className={styles.pageContainer}>
@@ -29,8 +37,17 @@ const OpiekunStudenci = () => {
             <div className={styles.nameContainerLista}>
                 <h1 className={styles.signName}>Lista studentów</h1>
             </div>
+            <div className={styles.searchContainer}>
+              <input
+                type="text"
+                placeholder="Szukaj studenta..."
+                value={searchTerm}
+                onChange={handleSearch}
+                className={styles.inputSearch}
+              />
+            </div>
             <div className={styles.studentsContainer}>
-            {students.map((student, index) => (
+            {filteredStudents.map((student, index) => (
               <div
                 key={student._id}
                 className={`${styles.studentsBlock} ${expandedStudent === student ? styles.expanded : ''}`}
@@ -48,13 +65,14 @@ const OpiekunStudenci = () => {
                   <br />
                   {student.faculty}
                   <br />
+                  Pokój: 404
+                  <br />
                   {expandedStudent === student && (
                     <>
                       {student.email}
                       <br />
-                      {student.preference.ds}
+                      {student.preference.ds && <span>Akademik: {student.preference.ds}</span>}
                       <br />
-                      Pokój 404
                     </>
                   )}
                 </p>

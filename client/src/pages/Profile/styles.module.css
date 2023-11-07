@@ -29,7 +29,7 @@
   }
 
   .headUserPhoto {
-	width: 110px;
+	width: 100px;
 	height: 110px;
 	border-radius: 50%;
 	background-color: #fff;
@@ -691,6 +691,43 @@
 	margin-top: 5px;
     background-color: transparent; /* Remove background color */
 }
+
+.buttonCheckOut {
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background-color: #292F36;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+	margin-top: 7%;
+	margin-left: 47%;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .buttonCheckOut:hover {
+    background-color: #c49e85; /* Change the background color on hover */
+  }  
+
+  .vector {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #292F36; /* Color of the vector icon */
+    stroke: #c49e85; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .buttonCheckOut:hover .vector {
+    fill: #c49e85; /* Change the fill color on hover */
+    stroke: #292F36;
+  }
 
 /*Styles for Pokój page*/
 .roomContainer {

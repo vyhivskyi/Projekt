@@ -31,6 +31,9 @@ import Status from "./pages/Profile/Status";
 import Opiekun from "./pages/Opiekun/OpiekunProfile";
 import OpiekunInfo from "./pages/Opiekun/OpiekunInfo";
 import OpiekunStudenci from "./pages/Opiekun/OpiekunStudenci";
+import Kierownik from "./pages/Kierownik/KierownikProfile";
+import KierownikInfo from "./pages/Kierownik/KierownikInfo";
+import OpiekunCheckOut from "./pages/Opiekun/OpiekunCheckOuts";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -117,6 +120,8 @@ function App() {
           <div>
             <Navbar setDane={handleSetDane} />
             <Homepage />
+            <Part />
+            <Footer />
           </div>
         } />
       }
@@ -152,6 +157,30 @@ function App() {
               <Navbar setDane={handleSetDane}/>
               <Opiekun setDane={handleSetDane} user={dane} />
               <OpiekunStudenci />
+             </div>
+          } />
+      }
+
+      {user &&
+        <Route
+          path="/portiernia/wymeldowania"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane}/>
+              <Opiekun setDane={handleSetDane} user={dane} />
+              <OpiekunCheckOut />
+             </div>
+          } />
+      }
+
+      {user &&
+        <Route
+          path="/kierownik"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane}/>
+              <Kierownik setDane={handleSetDane} user={dane} />
+              <KierownikInfo />
              </div>
           } />
       }

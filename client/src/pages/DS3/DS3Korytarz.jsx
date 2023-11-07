@@ -4,6 +4,19 @@ import { Link } from "react-router-dom"
 import Circle from '../../components/Circles/Circle';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import circleImage1 from './imagesKorytarz/1.jpg'
+import circleImage2 from './imagesKorytarz/2.jpg'
+import circleImage3 from './imagesKorytarz/3.jpg'
+import circleImage4 from './imagesKorytarz/4.jpg'
+import circleImage5 from './imagesKorytarz/5.jpg'
+import circleImage6 from './imagesKorytarz/6.jpg'
+import circleImage7 from './imagesKorytarz/7.jpg'
+import circleImage8 from './imagesKorytarz/8.jpg'
+import circleImage9 from './imagesKorytarz/9.jpg'
+import circleImage10 from './imagesKorytarz/10.jpg'
+import circleImage11 from './imagesKorytarz/11.jpg'
+import circleImage12 from './imagesKorytarz/12.jpg'
+import circleImage13 from './imagesKorytarz/13.jpg'
 
 const DS3Korytarz = () => {
   const circlesData = [
@@ -30,6 +43,8 @@ const DS3Korytarz = () => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
   }, []);
+
+  const imageURLs = [circleImage1, circleImage2, circleImage3, circleImage4, circleImage5, circleImage6, circleImage7, circleImage8, circleImage9, circleImage10, circleImage11, circleImage12, circleImage13];
 
   return (
     <div className={styles.pageContainer}>
@@ -60,7 +75,7 @@ const DS3Korytarz = () => {
       <div className={styles.galeria} ref={ref}>
         {circlesData.map((circle, index) => (
           <motion.div key={index} style={{ position: 'absolute' }}>
-            <Circle size={circle.size} position={circle.position} isVisible={inView} />
+            <Circle size={circle.size} position={circle.position} isVisible={inView} imageURL={imageURLs[index]} />
           </motion.div>
         ))}
       </div>

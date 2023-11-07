@@ -2,6 +2,12 @@
 
 import React, { useState } from 'react';
 import styles from './styles.module.css';
+import CennikDocument from './documents/Cennik.pdf';
+import Regulamin from './documents/Regulamin.pdf';
+import RegulaminNowy from './documents/Regulamin_nowy.pdf';
+import lista2 from './documents/lista_ds2.pdf';
+import lista3 from './documents/lista_ds3.pdf';
+import lista4 from './documents/lista_ds4.pdf';
 
 const Dokumenty = () => {
   const [showText1, setShowText1] = useState(false);
@@ -119,6 +125,40 @@ const Dokumenty = () => {
   }
 };
 
+const downloadDocument = (documentName) => {
+    let documentUrl;
+  switch (documentName) {
+    case 'Cennik.pdf':
+        documentUrl = CennikDocument;
+        break;
+    case 'Regulamin.pdf':
+        documentUrl = Regulamin;
+        break;
+    case 'Regulamin_nowy.pdf':
+        documentUrl = RegulaminNowy;
+        break;
+    case 'lista_ds2.pdf':
+        documentUrl = lista2;
+        break;
+    case 'lista_ds3.pdf':
+        documentUrl = lista3;
+        break;
+    case 'lista_ds4.pdf':
+        documentUrl = lista4;
+        break;
+    default:
+      break;
+  }
+
+    const link = document.createElement('a');
+    link.href = documentUrl;
+    link.target = '_blank';
+    link.download = documentName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.banner}>
@@ -139,7 +179,7 @@ const Dokumenty = () => {
                             className={styles.firstName}
                             onClick={() => toggleText(1)}
                             >
-                            Kwaterowanie studentów
+                            Wysokości opłat
                             </h2>
                             <span 
                                 className={styles.toggleArrow} 
@@ -161,8 +201,8 @@ const Dokumenty = () => {
                         </div>
                         {showText1 && (
                             <div className={styles.additionalText}>
-                            <p>Kwaterowanie mieszkańców w domach studenckich </p>
-                            <button className={styles.button}>
+                            <p>Wysokości opłat za korzystanie z zakwaterowania oraz zasad przyznawania ulg</p>
+                            <button className={styles.button} onClick={() => downloadDocument('Cennik.pdf')}>
                                 Pobierz
                                 <svg
                                     className={styles.vectorButton}
@@ -184,7 +224,7 @@ const Dokumenty = () => {
                             className={styles.firstName}
                             onClick={() => toggleText(2)}
                             >
-                            Wysokości opłat
+                            Regulamin akademików
                             </h2>
                             <span 
                                 className={styles.toggleArrow} 
@@ -206,8 +246,8 @@ const Dokumenty = () => {
                         </div>
                         {showText2 && (
                             <div className={styles.additionalText}>
-                            <p>Wysokości opłat za korzystanie z zakwaterowania oraz zasad przyznawania ulg</p>
-                            <button className={styles.button}>
+                            <p>Regulamin Domu Studenckiego Politechniki Lubelskiej</p>
+                            <button className={styles.button} onClick={() => downloadDocument('Regulamin.pdf')}>
                                 Pobierz
                                 <svg
                                     className={styles.vectorButton}
@@ -229,7 +269,7 @@ const Dokumenty = () => {
                             className={styles.firstName}
                             onClick={() => toggleText(3)}
                             >
-                            Regulamin akademików
+                            Zmieniony Regulamin akademików
                             </h2>
                             <span 
                                 className={styles.toggleArrow} 
@@ -251,8 +291,8 @@ const Dokumenty = () => {
                         </div>
                         {showText3 && (
                             <div className={styles.additionalText}>
-                            <p>Regulamin Domu Studenckiego Politechniki Lubelskiej</p>
-                            <button className={styles.button}>
+                            <p>Zmieniony Regulamin Domu Studenckiego Politechniki Lubelskiej</p>
+                            <button className={styles.button} onClick={() => downloadDocument('Regulamin_nowy.pdf')}>
                                 Pobierz
                                 <svg
                                     className={styles.vectorButton}
@@ -311,7 +351,7 @@ const Dokumenty = () => {
                             {showText4 && (
                                 <div className={styles.additionalText}>
                                 <p>Lista osób przyjętych do DS2</p>
-                                <button className={styles.button}>
+                                <button className={styles.button} onClick={() => downloadDocument('lista_ds2.pdf')}>
                                     Pobierz
                                     <svg
                                         className={styles.vectorButton}
@@ -356,7 +396,7 @@ const Dokumenty = () => {
                             {showText5 && (
                                 <div className={styles.additionalText}>
                                 <p>Lista osób przyjętych do DS3</p>
-                                <button className={styles.button}>
+                                <button className={styles.button} onClick={() => downloadDocument('lista_ds3.pdf')}>
                                     Pobierz
                                     <svg
                                         className={styles.vectorButton}
@@ -401,7 +441,7 @@ const Dokumenty = () => {
                             {showText6 && (
                                 <div className={styles.additionalText}>
                                 <p>Lista osób przyjętych do DS4</p>
-                                <button className={styles.button}>
+                                <button className={styles.button} onClick={() => downloadDocument('lista_ds4.pdf')}>
                                     Pobierz
                                     <svg
                                         className={styles.vectorButton}

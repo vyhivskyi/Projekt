@@ -12,6 +12,7 @@ const updatePreferencesRoutes = require("./routes/updatePreferences")
 const roomRoutes = require("./routes/room")
 const checkoutRoutes = require("./routes/checkout")
 const paymentRoutes = require("./routes/payment")
+const checkoutRouter = require("./routes/checkout");
 const multer = require('multer')
 const path = require('path');
 
@@ -47,6 +48,7 @@ app.use("/api/profile/preference", preferenceRoutes)
 app.use("/api/profile/delete", deleteRoutes);
 app.use("/api/profile/preference/edit", updatePreferencesRoutes)
 app.use("/api/profile/room", roomRoutes)
+app.use("/api/checkout", checkoutRouter);
 app.use("/app/profile/paymant", paymentRoutes)
 app.post('/upload', upload.single('file'), (req, res) => {
   const fileUrl = req.file.filename;
