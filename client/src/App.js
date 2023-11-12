@@ -34,7 +34,9 @@ import OpiekunStudenci from "./pages/Opiekun/OpiekunStudenci";
 import OpiekunRooms from "./pages/Opiekun/OpiekunRooms";
 import Kierownik from "./pages/Kierownik/KierownikProfile";
 import KierownikInfo from "./pages/Kierownik/KierownikInfo";
+import KierownikApplications from "./pages/Kierownik/KierownikApplications";
 import OpiekunCheckOut from "./pages/Opiekun/OpiekunCheckOuts";
+import StudentDetails from "./pages/Kierownik/StudentDetails";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -195,7 +197,28 @@ function App() {
             </div>
           } />
       }
-
+      {user &&
+        <Route
+          path="/kierownik/wnioski"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Kierownik setDane={handleSetDane} user={dane} />
+              <KierownikApplications />
+            </div>
+          } />
+      }
+      {user &&
+      <Route 
+        path="/details/:studentId" 
+        element={
+          <div>
+            <Navbar setDane={handleSetDane} />
+            <Kierownik setDane={handleSetDane} user={dane} />
+            <StudentDetails />
+          </div>
+        } />
+      }
 
       <Route path="/" element={<div>
         <Navbar />
