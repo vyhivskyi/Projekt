@@ -2,6 +2,7 @@ import styles from "./styles.module.css"
 import React from "react"
 
 const Message = ({user}) => {
+    
     return (
         <div className={styles.pageContainer}>
             <div className={styles.messageContainer}>

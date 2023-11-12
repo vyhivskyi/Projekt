@@ -7,7 +7,7 @@ const OpiekunCheckOut = () => {
     const [searchTerm, setSearchTerm] = useState('');
   
     useEffect(() => {
-      axios.get("http://localhost:8080/api/checkout")
+      axios.get("http://localhost:8080/api/profile/checkout")
         .then((response) => {
           setCheckouts(response.data);
         })

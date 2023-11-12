@@ -315,7 +315,7 @@
 
   .checkoutsBlock {
 	width: calc(33.33% - 20px);
-	height: 120px;
+	height: 140px;
 	margin: 10px;
 	background-color: #fff;
 	border-radius: 30px;
@@ -332,3 +332,78 @@
 	color: #292F36;
 	font-size: 20px;
   }
+
+  /*Styles for list of the rooms page*/
+  .filtersContainer {
+	display: flex;
+	align-items: center;
+  }
+
+  .checkboxContainer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	margin-top: 10px;
+  }
+
+  .checkboxContainer input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    outline: none;
+    cursor: pointer;
+  }
+  label {
+	font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .checkboxContainer input:checked {
+	background-color: #c49e85;
+	border-color: #292F36;
+  }
+
+  .checkboxContainer,
+  .filter {
+	margin-right: 20px;
+  }
+
+  .filter {
+	margin-bottom: 20px;
+	margin-top: 10px;
+  }
+
+  .roomsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1200px;
+	margin-right: auto; /* Adjust the margin to center horizontally */
+  	margin-left: auto;
+	justify-content: center;
+	align-items: center;
+	overflow-y: auto; /* Add vertical scrollbar if content overflows */
+  	max-height: 400px;
+  }
+
+  .roomBlock {
+	width: calc(33.33% - 20px);
+	height: 150px;
+	margin: 10px;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+  }
+
+  .roomText {
+	font-family: 'Jost';
+	color: #292F36;
+	font-size: 20px;
+  }
+

@@ -47,22 +47,24 @@ const OpiekunRooms = () => {
             <h1 className={styles.signName}>Lista pokoi</h1>
           </div>
           <div className={styles.filtersContainer}>
-            <label>
-              Wolne pokoje:
-              <input
-                type="checkbox"
-                checked={filterFreeRooms}
-                onChange={() => setFilterFreeRooms(!filterFreeRooms)}
-              />
-            </label>
-            <label>
-              Numer pokoju:
-              <input
-                type="text"
-                value={filterRoomNumber}
-                onChange={(e) => setFilterRoomNumber(e.target.value)}
-              />
-            </label>
+            <div className={styles.checkboxContainer}>
+              <label>Wolne pokoje:</label>
+                <input
+                  type="checkbox"
+                  checked={filterFreeRooms}
+                  onChange={() => setFilterFreeRooms(!filterFreeRooms)}
+                />
+            </div>
+
+            <div className={styles.filter}>
+                <input
+                  type="text"
+                  placeholder="Numer pokoju..."
+                  value={filterRoomNumber}
+                  onChange={(e) => setFilterRoomNumber(e.target.value)}
+                  className={styles.inputSearch}
+                />
+            </div>
           </div>
           <div className={styles.roomsContainer}>
             {rooms.map((room, index) => {

@@ -11,10 +11,17 @@ const CheckOut = ({ user }) => {
         checkout_date: "",
         //również należy dodać pole w formularzu z uwagami
         remarks: ""
-    })
+    });
+    const [showRemarksInput, setShowRemarksInput] = useState(false);
+
     const handleChange = ({ currentTarget: input }) => {
         setData({ ...data, [input.name]: input.value })
-    }
+    };
+
+    const handleCheckboxChange = () => {
+        setShowRemarksInput(!showRemarksInput);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem("token")
@@ -72,6 +79,25 @@ const CheckOut = ({ user }) => {
                                 <i className="fas fa-calendar"></i>
                             </div>
                         </div>
+
+                        <div className={styles.checkboxBlock}>
+                            <label className={styles.labelCheckbox}>Dodaj uwagi: </label>
+                                <input
+                                type="checkbox"
+                                onChange={handleCheckboxChange}
+                                />
+                        </div>
+
+                            {showRemarksInput && (
+                            <div className={styles.inputContainer}>
+                                <label className={styles.label}>Uwagi</label>
+                                <textarea
+                                name="remarks"
+                                onChange={handleChange}
+                                className={styles.input}
+                                />
+                            </div>
+                            )}
 
                         <button type="submit" className={styles.buttonCheckOut} >
                             Wyślij

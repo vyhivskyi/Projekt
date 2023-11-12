@@ -651,7 +651,7 @@
 .checkoutContainer {
 	position: relative;
 	width: 1200px;
-	height: 450px;
+	height: 550px;
 	display: flex;
 	flex-direction: column;
 	padding: 40px;
@@ -728,6 +728,37 @@
     fill: #c49e85; /* Change the fill color on hover */
     stroke: #292F36;
   }
+
+  .checkboxBlock {
+	display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+	margin-top: 10px;
+  }
+  
+  .checkboxBlock input {
+    margin-right: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkboxBlock label {
+    font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.checkboxBlock input:checked {
+    background-color: #c49e85;
+    border-color: #292f36;
+}
 
 /*Styles for Pokój page*/
 .roomContainer {
