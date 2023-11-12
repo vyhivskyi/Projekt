@@ -15,6 +15,7 @@ const checkoutRoutes = require("./routes/checkout")
 const paymentRoutes = require("./routes/payment")
 const checkoutRouter = require("./routes/checkout");
 const statusRoutes = require("./routes/status")
+const applicationRoutes = require("./routes/applications")
 const multer = require('multer')
 const path = require('path');
 
@@ -43,11 +44,13 @@ app.get("/api/profile/delete", tokenVerification);
 app.get("/api/profile/room", tokenVerification)
 app.get("/api/profile/payment", tokenVerification)
 app.get("/api/profile/status", tokenVerification)
+app.put("/api/kierownik/applications/:studentId", applicationRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/profile/checkout", checkoutRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/profile", profileRoutes)
 app.use("/api/profile/preference", preferenceRoutes)
+app.use("/api/kierownik/applications", applicationRoutes)
 app.use("/api/profile/delete", deleteRoutes);
 app.use("/api/profile/preference/edit", updatePreferencesRoutes)
 app.use("/api/profile/room", roomRoutes)
