@@ -31,6 +31,7 @@ import Status from "./pages/Profile/Status";
 import Opiekun from "./pages/Opiekun/OpiekunProfile";
 import OpiekunInfo from "./pages/Opiekun/OpiekunInfo";
 import OpiekunStudenci from "./pages/Opiekun/OpiekunStudenci";
+import OpiekunRooms from "./pages/Opiekun/OpiekunRooms";
 import Kierownik from "./pages/Kierownik/KierownikProfile";
 import KierownikInfo from "./pages/Kierownik/KierownikInfo";
 import OpiekunCheckOut from "./pages/Opiekun/OpiekunCheckOuts";
@@ -61,8 +62,8 @@ function App() {
           element={
             <div>
               <Navbar setDane={handleSetDane} />
-              <Profile setDane={handleSetDane}  user={dane} />
-              <Status user = {dane} />
+              <Profile setDane={handleSetDane} user={dane} />
+              <Status user={dane} />
             </div>}
         />
       }
@@ -73,7 +74,7 @@ function App() {
           element={
             <div>
               <Navbar setDane={handleSetDane} />
-              <Profile setDane={handleSetDane}  user={dane} />
+              <Profile setDane={handleSetDane} user={dane} />
               <Message user={dane} />
             </div>}
         />
@@ -97,7 +98,7 @@ function App() {
           element={
             <div>
               <Navbar setDane={handleSetDane} />
-              <Profile setDane={handleSetDane}  user={dane} />
+              <Profile setDane={handleSetDane} user={dane} />
               <Room user={dane} />
             </div>}
         />
@@ -108,7 +109,7 @@ function App() {
           path="/profile/preference"
           element={
             <div>
-              <Navbar setDane={handleSetDane}/>
+              <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
               <Preference user={dane} />
             </div>}
@@ -130,10 +131,10 @@ function App() {
           path="/profile/preference/edit"
           element={
             <div>
-              <Navbar setDane={handleSetDane}/>
+              <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
               <PreferenceEdit user={dane} />
-             </div>
+            </div>
           } />
       }
 
@@ -142,10 +143,10 @@ function App() {
           path="/portiernia"
           element={
             <div>
-              <Navbar setDane={handleSetDane}/>
+              <Navbar setDane={handleSetDane} />
               <Opiekun setDane={handleSetDane} user={dane} />
               <OpiekunInfo />
-             </div>
+            </div>
           } />
       }
 
@@ -154,22 +155,32 @@ function App() {
           path="/portiernia/studenci"
           element={
             <div>
-              <Navbar setDane={handleSetDane}/>
+              <Navbar setDane={handleSetDane} />
               <Opiekun setDane={handleSetDane} user={dane} />
               <OpiekunStudenci />
-             </div>
+            </div>
           } />
       }
-
+      {user &&
+        <Route
+          path="/portiernia/pokoje"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Opiekun setDane={handleSetDane} user={dane} />
+              <OpiekunRooms />
+            </div>
+          } />
+      }
       {user &&
         <Route
           path="/portiernia/wymeldowania"
           element={
             <div>
-              <Navbar setDane={handleSetDane}/>
+              <Navbar setDane={handleSetDane} />
               <Opiekun setDane={handleSetDane} user={dane} />
               <OpiekunCheckOut />
-             </div>
+            </div>
           } />
       }
 
@@ -178,10 +189,10 @@ function App() {
           path="/kierownik"
           element={
             <div>
-              <Navbar setDane={handleSetDane}/>
+              <Navbar setDane={handleSetDane} />
               <Kierownik setDane={handleSetDane} user={dane} />
               <KierownikInfo />
-             </div>
+            </div>
           } />
       }
 
@@ -204,7 +215,7 @@ function App() {
         <Navbar />
         <Error404 />
       </div>} />
-      
+
       <Route path="/DS2/Korytarz" element={<div>
         <Navbar />
         <DS2Korytarz />

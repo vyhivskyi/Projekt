@@ -55,7 +55,7 @@ const Opiekun = ({ setDane, user }) => {
             try {
                 const config = {
                     method: 'get',
-                    url: 'http://localhost:8080/api/profile/room',
+                    url: 'http://localhost:8080/api/profile/rooms',
                     headers: { 'Content-Type': 'application/json', 'x-access-token': token }
                 }
                 const { room: res } = await axios(config)

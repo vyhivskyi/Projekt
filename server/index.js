@@ -10,9 +10,11 @@ const tokenVerification = require('./middleware/tokenVerification')
 const deleteRoutes = require("./routes/delete")
 const updatePreferencesRoutes = require("./routes/updatePreferences")
 const roomRoutes = require("./routes/room")
+const roomsRoutes = require("./routes/rooms")
 const checkoutRoutes = require("./routes/checkout")
 const paymentRoutes = require("./routes/payment")
 const checkoutRouter = require("./routes/checkout");
+const statusRoutes = require("./routes/status")
 const multer = require('multer')
 const path = require('path');
 
@@ -40,6 +42,7 @@ app.get("/api/profile/preference/edit", tokenVerification, updatePreferencesRout
 app.get("/api/profile/delete", tokenVerification);
 app.get("/api/profile/room", tokenVerification)
 app.get("/api/profile/payment", tokenVerification)
+app.get("/api/profile/status", tokenVerification)
 app.use("/api/users", userRoutes)
 app.use("/api/profile/checkout", checkoutRoutes)
 app.use("/api/auth", authRoutes)
@@ -48,8 +51,10 @@ app.use("/api/profile/preference", preferenceRoutes)
 app.use("/api/profile/delete", deleteRoutes);
 app.use("/api/profile/preference/edit", updatePreferencesRoutes)
 app.use("/api/profile/room", roomRoutes)
-app.use("/api/checkout", checkoutRouter);
-app.use("/app/profile/paymant", paymentRoutes)
+app.use("/api/portiernia/rooms", roomsRoutes)
+app.use("/api/profile/checkout", checkoutRouter);
+app.use("/app/profile/payment", paymentRoutes)
+app.use("/api/profile/status", statusRoutes)
 app.post('/upload', upload.single('file'), (req, res) => {
   const fileUrl = req.file.filename;
   res.json({ fileUrl });
