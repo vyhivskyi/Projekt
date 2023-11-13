@@ -24,30 +24,7 @@ const Profile = ({ setDane, user }) => {
             }
         }
     }
-    const handleDelete = async () => {
-        const token = localStorage.getItem("token")
-        if (token) {
-            const confirmed = window.confirm("Czy na pewno chcesz usunąć konto?");
-
-            if (confirmed) {
-                try {
-                    const config = {
-                        method: 'get',
-                        url: 'http://localhost:8080/api/profile/delete',
-                        headers: { 'Content-Type': 'application/json', 'x-access-token': token }
-                    }
-                    await axios(config);
-                    localStorage.removeItem("token")
-                    window.location.reload();
-                } catch (error) {
-                    if (error.response && error.response.status >= 400 && error.response.status <= 500) {
-                        localStorage.removeItem("token")
-                        window.location.reload()
-                    }
-                }
-            }
-        }
-    }
+    
     //działa pobieranie informacji o pokoju studenta, należy tylko przesłać dane do strony Pokój
     const handleRoom = async () => {
         const token = localStorage.getItem("token")
@@ -162,42 +139,6 @@ const Profile = ({ setDane, user }) => {
                                 </div>
                             </button>
                         </Link>
-                        <button className={styles.navBtn} onClick={handleDelete}>
-                            <div className={styles.iconBack}>
-                                <UilTrashAlt className={styles.iconWniosek}/>
-                            </div>
-                            <div className={styles.iconText}>
-                                Usuń konto
-                            </div>
-                        </button>
-                    </div>
-                </nav>
-
-                {/*Konto do opłat*/}
-                <nav className={styles.navbarKonto}>
-                    <div className={styles.contentKonto}>
-                        <div className={styles.nameKonto}>
-                            <h2 className={styles.nameField}>Konto do opłat</h2>
-                        </div>
-                        <div className={styles.btnKonto}>
-                            <div className={styles.iconBackKonto}>
-                                <UilMoneyStack className={styles.iconKonto}/>
-                            </div>
-                            <div className={styles.iconTextKonto}>
-                                456789123
-                            </div>
-                        </div>
-                        <div className={styles.nameKonto}>
-                            <h2 className={styles.nameField}>Zadłużenie</h2>
-                        </div>
-                        <div className={styles.btnDebt}>
-                            <div className={styles.iconBackKonto}>
-                                <UilMoneyStack className={styles.iconKonto}/>
-                            </div>
-                            <div className={styles.iconTextKonto}>
-                                0 zł
-                            </div>
-                        </div>
                     </div>
                 </nav>
             </div>

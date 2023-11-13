@@ -995,7 +995,9 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	margin-top: 10%;
+	margin-top: 17%;
+	margin-left: 10%;
+	margin-bottom: 5%;
   }
   
   .statusField {
@@ -1011,6 +1013,12 @@
 	font-weight: 400;
 	font-size: 25px;
 	margin-left: 10px;
+	color: #292F36;
+  }
+
+  .delete {
+	margin-top: 15%;
+	margin-right: 5%;
   }
 
   .buttonStatus {
