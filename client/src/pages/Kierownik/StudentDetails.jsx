@@ -173,15 +173,24 @@ const StudentDetails = () => {
                     </div>
                         
                     {status === "Approved" && (
-                        <div>
-                            <label className={styles.label}>Wybierz pokój:</label>
-                            <Select
-                                options={roomOptions}
-                                value={selectedRoom}
-                                onChange={(selectedOption) => setSelectedRoom(selectedOption)}
-                            />
-                        </div>
-                    )}
+                            <div className={styles.fieldSelectRoom}>
+                                <label className={styles.label}></label>
+                                <select
+                                    value={selectedRoom ? selectedRoom.value : ''}
+                                    onChange={(e) =>
+                                        setSelectedRoom({ value: e.target.value, label: `Pokój ${e.target.value}` })
+                                    }
+                                    className={styles.select}
+                                >
+                                    <option value="">Wybierz pokój</option>
+                                    {roomOptions.map((room) => (
+                                        <option key={room.value} value={room.value}>
+                                            {room.label}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        )}
                     <div className={styles.buttonSelectBlock}>
                         <button type="submit" className={styles.buttonSelect} onClick={handleStatusChange}>
                             Zaktualizuj status wniosku

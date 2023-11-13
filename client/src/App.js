@@ -39,6 +39,7 @@ import OpiekunCheckOut from "./pages/Opiekun/OpiekunCheckOuts";
 import StudentDetails from "./pages/Kierownik/StudentDetails";
 import KierownikStudenci from "./pages/Kierownik/KierownikStudenci";
 import Payment from "./pages/Profile/Opłata";
+import KierownikRooms from "./pages/Kierownik/KierownikRooms";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -243,6 +244,18 @@ function App() {
               <Navbar setDane={handleSetDane} />
               <Kierownik setDane={handleSetDane} user={dane} />
               <KierownikStudenci />
+            </div>
+          } />
+      }
+
+      {user &&
+        <Route
+          path="/kierownik/pokoje"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Kierownik setDane={handleSetDane} user={dane} />
+              <KierownikRooms />
             </div>
           } />
       }
