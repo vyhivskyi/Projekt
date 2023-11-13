@@ -19,10 +19,12 @@ router.put('/:studentId', async (req, res) => {
         if (status === 'Approved') {
             const selectedRoom = await Rooms.findOne({ room_number: room });
             console.log(selectedRoom)
-            if (selectedRoom) {
-                selectedRoom.occupants.push(studentId);
-                await selectedRoom.save();
+            if (!selectedRoom.occupants) {
+                selectedRoom.occupants = []; // Zainicjowanie occupants jako pustej tablicy, jeśli jeszcze nie istnieje.
             }
+
+            selectedRoom.occupants.push(studentId);
+            await selectedRoom.save();
         }
         res.json({ message: 'Status wniosku został zaktualizowany.' });
     } catch (error) {
