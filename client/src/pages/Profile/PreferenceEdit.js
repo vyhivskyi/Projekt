@@ -3,13 +3,7 @@ import styles from "./styles.module.css"
 import axios from "axios"
 import { useState } from "react"
 const PreferenceEdit = ({ user }) => {
-    const [data, setData] = useState({/*
-        dsbool: user.preference.dsbool,
-        ds: user.preference.ds,
-        roombool: user.preference.roombool,
-        room: user.preference.room,
-        usersbool: user.preference.usersbool,
-        users: user.preference.users,*/
+    const [data, setData] = useState({
         dsbool: false,
         ds: "Brak preferencji",
         roombool: false,
@@ -20,78 +14,59 @@ const PreferenceEdit = ({ user }) => {
     const [error, setError] = useState("")
     const handleUpdate = async (e) => {
         e.preventDefault();
-        const token = localStorage.getItem("token")
-        if (token) {
-            /*try {
-                const updatedUser = {
-                    ...user, 
-                    preference: { ...data }, 
-                };
-                const config = {
-                    method: 'put',
-                    url: 'http://localhost:8080/api/profile/preference/edit',
-                    headers: { 'Content-Type': 'application/json', 'x-access-token': token }
-                }
-                const { data: res } = await axios(config)
-                //const res = await axios.put('/api/profile/preference/edit', updatedUser)
-                window.location = '/profile/preference'
-            } catch (error) {
-                if (error.response && error.response.status >= 400 && error.response.status <= 500) {
-                    setError("Wystąpił błąd. Spróbuj ponownie.");
-                    const updatedUser = {
-                        ...user, 
-                        preference: { ...data }, 
-                    };
-                    console.log(error)
-                    console.log(updatedUser)
-                }
-            }*/
-            try {
-                const config = {
-                    method: 'put',
-                    url: 'http://localhost:8080/api/profile/preference/edit',
-                    headers: { 'Content-Type': 'application/json', 'x-access-token': token }
-                }
-                const { user: res } = await axios(config)
-            } catch (error) {
-                if (error.response && error.response.status >= 400 && error.response.status <= 500) {
-                    //localStorage.removeItem("token")
-                    window.location.reload()
-                }
-            }
+        console.log("Updating preferences...");
+        const token = localStorage.getItem("token");
+        console.log("Token:", token);
+    
+        try {
+          const config = {
+            method: 'put',
+            url: 'http://localhost:8080/api/profile/preference/edit',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-access-token': token,
+            },
+            data: { preference: data }, // Ensure that 'data' contains the correct preferences
+          };
+    
+          console.log("Config:", config);
+    
+          const response = await axios(config);
+          console.log("Response:", response.data);
+        } catch (error) {
+            console.error("API Request Error:", error);  // <-- Log the error
+            setError("Error updating preferences. Please try again.");  
         }
-    }
-    const handleChange = ({ currentTarget: input }) => {
+      };
+      const handleChange = ({ currentTarget: input }) => {
         const { name, value, type, checked } = input;
         if (type === "checkbox") {
-            setData({ ...data, [name]: checked });
-            if (name === "usersbool") {
-                setData({
-                    ...data,
-                    usersbool: checked,
-                    users: checked ? data.users : "Brak preferencji"
-                });
-            }
-            if (name === "dsbool") {
-                setData({
-                    ...data,
-                    dsbool: checked,
-                    ds: checked ? data.ds : "Brak preferencji",
-                    //ds: !checked ? data.ds : "1"
-                });
-            }
-            if (name === "roombool") {
-                setData({
-                    ...data,
-                    roombool: checked,
-                    room: checked ? data.room : "Brak preferencji",
-                    //room: !checked ? data.room : "Jednoosobowy"
-                });
-            }
+          setData({ ...data, [name]: checked });
+          if (name === "usersbool") {
+            setData({
+              ...data,
+              usersbool: checked,
+              users: checked ? data.users : "Brak preferencji",
+            });
+          }
+          if (name === "dsbool") {
+            setData({
+              ...data,
+              dsbool: checked,
+              ds: checked ? data.ds : "Brak preferencji",
+            });
+          }
+          if (name === "roombool") {
+            setData({
+              ...data,
+              roombool: checked,
+              room: checked ? data.room : "Brak preferencji",
+            });
+          }
         } else {
-            setData({ ...data, [name]: value });
+          setData({ ...data, [name]: value });
         }
-    };
+      };
     const dsOptions = [1, 2, 3, 4]
     const roomOptions = ["Jednoosobowy", "Dwuosobowy", "Trzyosobowy"]
 
@@ -217,5 +192,5 @@ const PreferenceEdit = ({ user }) => {
             </div>
         </div>
     );
-}
+};
 export default PreferenceEdit

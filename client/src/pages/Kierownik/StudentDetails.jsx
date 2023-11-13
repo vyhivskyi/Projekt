@@ -191,6 +191,8 @@ const StudentDetails = () => {
                                 </select>
                             </div>
                         )}
+
+                        
                     <div className={styles.buttonSelectBlock}>
                         <button type="submit" className={styles.buttonSelect} onClick={handleStatusChange}>
                             Zaktualizuj status wniosku

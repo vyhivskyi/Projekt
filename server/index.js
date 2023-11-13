@@ -39,7 +39,7 @@ const connection = require('./db')
 connection()
 app.get("/api/profile", tokenVerification)
 app.get("/api/profile/preference", tokenVerification)
-app.get("/api/profile/preference/edit", tokenVerification, updatePreferencesRoutes)
+app.put("/api/profile/preference/edit", tokenVerification, updatePreferencesRoutes)
 app.get("/api/profile/delete", tokenVerification);
 app.get("/api/profile/room", tokenVerification)
 app.get("/api/profile/payment", tokenVerification)
@@ -52,7 +52,6 @@ app.use("/api/profile", profileRoutes)
 app.use("/api/profile/preference", preferenceRoutes)
 app.use("/api/kierownik/applications", applicationRoutes)
 app.use("/api/profile/delete", deleteRoutes);
-app.use("/api/profile/preference/edit", updatePreferencesRoutes)
 app.use("/api/profile/room", roomRoutes)
 app.use("/api/portiernia/rooms", roomsRoutes)
 app.use("/api/profile/checkout", checkoutRouter);
