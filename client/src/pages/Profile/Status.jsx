@@ -6,15 +6,12 @@ const Status = ({ user }) => {
     const [status, setStatus] = useState("W trakcie weryfikacji...");
 
     useEffect(() => {
-        // Pobierz token JWT z odpowiedniego miejsca, gdzie jest dostępny (np. z localStorage, sessionStorage itp.).
-        const token = localStorage.getItem("token"); // Załóżmy, że token jest przechowywany w localStorage.
-
-        // Przykładowe zapytanie do API, zakładając, że API zwraca status wniosku.
+        const token = localStorage.getItem("token"); 
         axios.get("http://localhost:8080/api/profile/status", {
             headers: { 'Content-Type': 'application/json', 'x-access-token': token },
         })
             .then((response) => {
-                const statusResponse = response.data.status; // Przyjmując, że API zwraca status w formie tekstu
+                const statusResponse = response.data.status; 
                 setStatus(statusResponse);
             })
             .catch((error) => {

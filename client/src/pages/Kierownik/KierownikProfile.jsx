@@ -121,7 +121,7 @@ const Kierownik = ({ setDane, user }) => {
                                 </div>
                             </button>
                         </Link>
-                        <Link to="/portiernia/pokoje" className={styles.nonLinkText}>
+                        <Link to="/kierownik/pokoje" className={styles.nonLinkText}>
                             {/*zmieniłem handleProfile na handleRoom w metodzie onClick*/}
                             <button className={styles.navBtn} onClick={handleRoom}>
                                 <div className={styles.iconBack}>
