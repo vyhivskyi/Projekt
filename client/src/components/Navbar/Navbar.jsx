@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import logoImage from './images/Logo.png'
@@ -9,10 +9,29 @@ const Main = ({ setDane, setMessage }) => {
         localStorage.removeItem("token")
         window.location = "/"
     }
-
+    const [userRole, setUserRole] = useState(null);
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        axios
+            .get("http://localhost:8080/api/profile", {
+                headers: { 'Content-Type': 'application/json', 'x-access-token': token },
+            })
+            .then((response) => {
+                if (response.status !== 200) {
+                    throw new Error("Błąd pobierania danych użytkownika");
+                }
+                return response.data;
+            })
+            .then((data) => {
+                setUserRole(data.data.role);
+            })
+            .catch((error) => {
+                console.error("Błąd pobierania roli użytkownika: ", error);
+            });
+    }, []);
     useEffect(() => {
         handleProfile();
-      }, []);
+    }, []);
     const handleProfile = async () => {
         const token = localStorage.getItem("token")
         if (token) {
@@ -34,11 +53,23 @@ const Main = ({ setDane, setMessage }) => {
             }
         }
     }
+
+    const getProfileLink = () => {
+        if (userRole === "Student") {
+          return "/profile";
+        } else if (userRole === "Opiekun") {
+          return "/portiernia";
+        } else if (userRole === "Kierownik") {
+          return "/kierownik";
+        } else {
+          return "/";
+        }
+      };
     //const isLoggedIn = !!localStorage.getItem("token");
     //const isLoggedOut = !localStorage.getItem("token");
     return (
         <div className={styles.pageContainer}>
-            {localStorage.getItem("token") ? ( <nav className={styles.navbar}>
+            {localStorage.getItem("token") ? (<nav className={styles.navbar}>
                 <div className={styles.logoContainer}>
                     <img src={logoImage} alt="Logo" className={styles.logo} />
                     <span className={styles.logoText}>DS POLLUB</span>
@@ -58,14 +89,14 @@ const Main = ({ setDane, setMessage }) => {
                 <Link to="/dostepnosc" className={styles.navItem} onClick={handleLogout}>
                     Wyloguj się
                 </Link>
-                <Link to="/profile" className={styles.navItem} onClick={handleProfile}>
+                <Link to={getProfileLink()} className={styles.navItem}>
                     Profil
                 </Link>
                 <Link to="/dostepnosc" className={styles.navItem}>
                     Dostępność
                 </Link>
             </nav>
-            ):(<nav className={styles.navbar}>
+            ) : (<nav className={styles.navbar}>
                 <div className={styles.logoContainer}>
                     <img src={logoImage} alt="Logo" className={styles.logo} />
                     <span className={styles.logoText}>DS POLLUB</span>

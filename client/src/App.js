@@ -1,4 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer"
 import Part from "./components/PartDS/Part";
@@ -44,12 +46,32 @@ import KierownikRooms from "./pages/Kierownik/KierownikRooms";
 function App() {
   const user = localStorage.getItem("token");
   const [dane, setDane] = useState();
+  const [userRole, setUserRole] = useState(null);
   const handleSetDane = (data) => {
     setDane(data);
   }
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/profile", {
+        headers: { 'Content-Type': 'application/json', 'x-access-token': user },
+    })
+      .then((response) => {
+        if (response.status !== 200) {
+          throw new Error("Błąd pobierania danych użytkownika");
+        }
+        return response.data;
+      })
+      .then((data) => {
+        setDane(data.data); 
+        setUserRole(data.data.role); 
+      })
+      .catch((error) => {
+        console.error("Błąd pobierania roli użytkownika: ", error);
+      });
+  }, []);
   return (
     <Routes>
-      {user &&
+      {user && userRole === "Student" &&
         <Route
           path="/profile"
           element={
@@ -61,7 +83,7 @@ function App() {
         />
       }
 
-      {user &&
+      {user && userRole === "Student" &&
         <Route
           path="/profile/status"
           element={
@@ -73,7 +95,7 @@ function App() {
         />
       }
 
-      {user &&
+      {user && userRole === "Student" &&
         <Route
           path="/profile/zgłoszenie"
           element={
@@ -85,7 +107,7 @@ function App() {
         />
       }
 
-      {user &&
+      {user && userRole === "Student" &&
         <Route
           path="/profile/wymeldowanie"
           element={
@@ -97,7 +119,7 @@ function App() {
         />
       }
 
-      {user &&
+      {user && userRole === "Student" &&
         <Route
           path="/profile/pokój"
           element={
@@ -109,7 +131,7 @@ function App() {
         />
       }
 
-      {user &&
+      {user && userRole === "Student" &&
         <Route
           path="/profile/preference"
           element={
@@ -121,7 +143,7 @@ function App() {
         />
       }
 
-      {user &&
+      {user && userRole === "Student" &&
         <Route
           path="/profile/płatności"
           element={
@@ -144,7 +166,7 @@ function App() {
           </div>
         } />
       }
-      {user &&
+      {user && userRole === "Student" &&
         <Route
           path="/profile/preference/edit"
           element={
@@ -156,7 +178,7 @@ function App() {
           } />
       }
 
-      {user &&
+      {user && userRole === "Opiekun" &&
         <Route
           path="/portiernia"
           element={
@@ -168,7 +190,7 @@ function App() {
           } />
       }
 
-      {user &&
+      {user && userRole === "Opiekun" &&
         <Route
           path="/portiernia/studenci"
           element={
@@ -179,7 +201,7 @@ function App() {
             </div>
           } />
       }
-      {user &&
+      {user && userRole === "Opiekun" &&
         <Route
           path="/portiernia/pokoje"
           element={
@@ -190,7 +212,7 @@ function App() {
             </div>
           } />
       }
-      {user &&
+      {user && userRole === "Opiekun" &&
         <Route
           path="/portiernia/wymeldowania"
           element={
@@ -202,7 +224,7 @@ function App() {
           } />
       }
 
-      {user &&
+      {user && userRole === "Kierownik" &&
         <Route
           path="/kierownik"
           element={
@@ -213,7 +235,7 @@ function App() {
             </div>
           } />
       }
-      {user &&
+      {user && userRole === "Kierownik" &&
         <Route
           path="/kierownik/wnioski"
           element={
@@ -224,7 +246,7 @@ function App() {
             </div>
           } />
       }
-      {user &&
+      {user && userRole === "Kierownik" &&
       <Route 
         path="/details/:studentId" 
         element={
@@ -236,7 +258,7 @@ function App() {
         } />
       }
 
-      {user &&
+      {user && userRole === "Kierownik" &&
         <Route
           path="/kierownik/studenci"
           element={
@@ -248,7 +270,7 @@ function App() {
           } />
       }
 
-      {user &&
+      {user && userRole === "Kierownik" &&
         <Route
           path="/kierownik/pokoje"
           element={
