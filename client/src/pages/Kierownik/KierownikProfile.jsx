@@ -1,7 +1,7 @@
 import styles from "./styles.module.css"
 import React from "react"
 import axios from "axios"
-import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed } from '@iconscout/react-unicons'
+import { UilFileDownloadAlt, UilFastMail, UilListOl, UilBed, UilEnvelopeCheck } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom"
 
 const Kierownik = ({ setDane, user }) => {
@@ -94,7 +94,7 @@ const Kierownik = ({ setDane, user }) => {
                         <Link to="/kierownik/wnioski" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
                                 <div className={styles.iconBack}>
-                                    <UilFileDownloadAlt className={styles.iconWniosek}/>
+                                    <UilEnvelopeCheck className={styles.iconWniosek}/>
                                 </div>
                                 <div className={styles.iconText}>
                                     Lista wniosków
@@ -104,7 +104,7 @@ const Kierownik = ({ setDane, user }) => {
                         <Link to="/kierownik/studenci" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
                                 <div className={styles.iconBack}>
-                                    <UilFileDownloadAlt className={styles.iconWniosek}/>
+                                    <UilListOl className={styles.iconWniosek}/>
                                 </div>
                                 <div className={styles.iconText}>
                                     Lista studentów

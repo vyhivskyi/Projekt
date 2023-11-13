@@ -48,7 +48,7 @@
   .navbar {
 	position: absolute;
 	width: 345px;
-	height: 480px;
+	height: 580px;
 	background-color: #F4F0EC;
 	border-radius: 50px;
 	display: flex;
@@ -58,7 +58,7 @@
 	padding: 76px 32px;
 	margin-left: 2%;
 	margin-right: 2%;
-	margin-bottom: 10%;
+	margin-bottom: 15%;
   }
 
   .contentNav {
@@ -133,7 +133,7 @@
 	justify-content: flex-start;
 	flex-direction: column;
 	padding: 76px 32px;
-	margin-top: 35%;
+	margin-top: 40%;
 	margin-left: 2%;
 	margin-right: 2%;
   }
@@ -1000,7 +1000,7 @@
   
   .statusField {
 	display: flex;
-	width: 300px;
+	width: 400px;
 	height: 70px;
 	text-align: center;
 	align-items: center;
@@ -1075,6 +1075,8 @@
 	display: flex;
 	flex-direction: row;
 }
+
+
 
 
 

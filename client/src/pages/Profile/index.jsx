@@ -1,7 +1,7 @@
 import styles from "./styles.module.css"
 import React from "react"
 import axios from "axios"
-import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilFavorite, UilTrashAlt, UilMoneyStack } from '@iconscout/react-unicons'
+import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilFavorite, UilTrashAlt, UilMoneyStack, UilSpinnerAlt, UilInvoice } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom"
 
 const Profile = ({ setDane, user }) => {
@@ -104,7 +104,7 @@ const Profile = ({ setDane, user }) => {
                         <Link to="/profile/status" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
                                 <div className={styles.iconBack}>
-                                    <UilFileDownloadAlt className={styles.iconWniosek}/>
+                                    <UilSpinnerAlt className={styles.iconWniosek}/>
                                 </div>
                                 <div className={styles.iconText}>
                                     Status wniosku
@@ -149,6 +149,16 @@ const Profile = ({ setDane, user }) => {
                                 </div>
                                 <div className={styles.iconText}>
                                     Preferencje
+                                </div>
+                            </button>
+                        </Link>
+                        <Link to="/profile/płatności" className={styles.nonLinkText}>
+                            <button className={styles.navBtn} onClick={handleProfile}>
+                                <div className={styles.iconBack}>
+                                    <UilInvoice className={styles.iconWniosek}/>
+                                </div>
+                                <div className={styles.iconText}>
+                                    Płatności
                                 </div>
                             </button>
                         </Link>

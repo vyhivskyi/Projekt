@@ -37,6 +37,9 @@ import KierownikInfo from "./pages/Kierownik/KierownikInfo";
 import KierownikApplications from "./pages/Kierownik/KierownikApplications";
 import OpiekunCheckOut from "./pages/Opiekun/OpiekunCheckOuts";
 import StudentDetails from "./pages/Kierownik/StudentDetails";
+import KierownikStudenci from "./pages/Kierownik/KierownikStudenci";
+import Payment from "./pages/Profile/Opłata";
+import KierownikRooms from "./pages/Kierownik/KierownikRooms";
 
 function App() {
   const user = localStorage.getItem("token");
@@ -117,6 +120,19 @@ function App() {
             </div>}
         />
       }
+
+      {user &&
+        <Route
+          path="/profile/płatności"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Profile setDane={handleSetDane} user={dane} />
+              <Payment user={dane} />
+            </div>}
+        />
+      }
+
       {user && <Route
         path="/"
         element={
@@ -218,6 +234,30 @@ function App() {
             <StudentDetails />
           </div>
         } />
+      }
+
+      {user &&
+        <Route
+          path="/kierownik/studenci"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Kierownik setDane={handleSetDane} user={dane} />
+              <KierownikStudenci />
+            </div>
+          } />
+      }
+
+      {user &&
+        <Route
+          path="/kierownik/pokoje"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Kierownik setDane={handleSetDane} user={dane} />
+              <KierownikRooms />
+            </div>
+          } />
       }
 
       <Route path="/" element={<div>

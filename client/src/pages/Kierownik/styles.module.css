@@ -1,5 +1,5 @@
 
-/*Styles for component with header and navbar on the left side*/
+/*Styles for component with header (Kierownik)*/
 .headSystem {
 	width: 1195px;
 	height: 100px;
@@ -26,22 +26,6 @@
 	font-size: 22px;
 	font-weight: 200;
 	color: #292F36;
-  }
-
-  .headUserPhoto {
-	width: 110px;
-	height: 110px;
-	border-radius: 50%;
-	background-color: #fff;
-	margin-top: auto;
-	margin-bottom: auto;
-	margin-left: 10px;
-  }
-
-  .userPhoto {
-	width:110px;
-	height:110px;
-	border-radius: 50%;
   }
 
   /*Styles for component with main navbar on the left side*/
@@ -71,6 +55,11 @@
 	margin-top: auto;
 	margin-bottom: auto;
   }
+
+  .nonLinkText {
+	text-decoration: none;
+	color: inherit;
+  }
   
   .navBtn {
 	display: flex;
@@ -83,11 +72,6 @@
 	font-size: 14px;
 	cursor: pointer;
 	margin-bottom: 20px;
-  }
-
-  .nonLinkText {
-	text-decoration: none;
-	color: inherit;
   }
 
   .iconBack {
@@ -181,23 +165,6 @@
     align-items: flex-start;
     margin-bottom: 20px;
 	margin-left: 20%;
-}
-
-.fieldPhoto {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-	margin-right: 20%;
-	align-items: center;
-}
-
-.fieldSelect {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-	margin-left: 25%;
 }
 
 .label {
@@ -370,48 +337,7 @@
 	font-size: 20px;
   }
 
-  .buttonContainer {
-	display: flex;
-	justify-content: center;
-	margin-top: 52%; /* Adjust the margin as needed */
-	margin-left: 50%;
-  }
-
-  .button {
-    align-items: center;
-    width: 210px;
-    height: 60px;
-    transform: translate(-50%, -50%);
-    background-color: #c49e85;
-    color: #fff;
-    border: none;
-    border-radius: 18px;
-    font-size: 18px;
-    font-weight: 600;
-    font-family: 'Jost', serif;
-    cursor: pointer;
-    z-index: 1; /* Ensure button appears over the image */
-    transition: background-color 0.3s;
-  }
-
-  .button:hover {
-    background-color: #86A397; /* Change the background color on hover */
-  }  
-
-  .vector {
-    width: 17px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
-    margin-left: 15px; /* Adjust the margin as needed */
-    fill: #c49e85; /* Color of the vector icon */
-    stroke: #292F36; /* Color of the vector stroke */
-    transition: fill 0.3s, stroke 0.3s;
-  }
-
-  .button:hover .vector {
-    fill: #86A397; /* Change the fill color on hover */
-    stroke: #292F36;
-  }
-
+  /*Styles for the page with the student details (Applications)*/
   .daneStudent {
 	position: relative;
 	width: 1200px;
@@ -448,6 +374,42 @@
     flex-direction: column;
     align-items: flex-start;
 	margin-right: 30px;
+}
+
+.fieldPhoto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-right: 20%;
+	align-items: center;
+}
+
+.labelPhoto {
+	font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.profilePicture {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.fieldSelect {
+	width: 100px;
+	margin-left: 23%;
+}
+
+.fieldSelectRoom {
+	margin-left: 22%;
+}
+
+.select {
+	width: 300px;
 }
 
 .buttonSelectBlock {
@@ -490,4 +452,81 @@
     fill: #c49e85; /* Change the fill color on hover */
     stroke: #292F36;
   }
+
+  /*Styles for the list of the rooms page*/
+  .filtersContainer {
+	display: flex;
+	align-items: center;
+  }
+
+  .checkboxContainer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	margin-top: 10px;
+  }
+
+  .checkboxContainer input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    outline: none;
+    cursor: pointer;
+  }
+  label {
+	font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .checkboxContainer input:checked {
+	background-color: #c49e85;
+	border-color: #292F36;
+  }
+
+  .checkboxContainer,
+  .filter {
+	margin-right: 20px;
+  }
+
+  .filter {
+	margin-bottom: 20px;
+	margin-top: 10px;
+  }
+
+  .roomsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1200px;
+	margin-right: auto; /* Adjust the margin to center horizontally */
+  	margin-left: auto;
+	justify-content: center;
+	align-items: center;
+	overflow-y: auto; /* Add vertical scrollbar if content overflows */
+  	max-height: 400px;
+  }
+
+  .roomBlock {
+	width: calc(33.33% - 20px);
+	height: 150px;
+	margin: 10px;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+  }
+
+  .roomText {
+	font-family: 'Jost';
+	color: #292F36;
+	font-size: 20px;
+  }
+
+
+
 
