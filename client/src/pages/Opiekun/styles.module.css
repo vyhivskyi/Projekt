@@ -248,11 +248,11 @@
 	display: flex;
 	flex-wrap: wrap;
 	width: 1200px;
-	margin-right: auto; /* Adjust the margin to center horizontally */
+	margin-right: auto;
   	margin-left: auto;
 	justify-content: center;
 	align-items: center;
-	overflow-y: auto; /* Add vertical scrollbar if content overflows */
+	overflow-y: auto; 
   	max-height: 400px;
   }
 
@@ -289,6 +289,7 @@
 	margin-bottom: 20px;
 	margin-top: 20px;
   }
+
 
   /*Styles for list of the check outs page*/
 .nameContainerCheck {

@@ -71,18 +71,25 @@ const KierownikApplications = () => {
                         <h1 className={styles.signName}>Lista Wniosków</h1>
                     </div>
                     <div className={styles.filterContainer}>
-                        <select onChange={(e) => setFilterStatus(e.target.value)}>
-                            <option value="All">Wszystkie</option>
-                            <option value="Submitted">W trakcie rozpatrywania</option>
-                            <option value="Approved">Zaakceptowany</option>
-                            <option value="Rejected">Odrzucony</option>
-                        </select>
-                        <input
-                            type="text"
-                            placeholder="Szukaj po imieniu i nazwisku"
-                            value={searchName}
-                            onChange={(e) => setSearchName(e.target.value)}
-                        />
+                        <div className={styles.inputContainer}>
+                            <div className={styles.statusSelect}>
+                                <select onChange={(e) => setFilterStatus(e.target.value)} className={styles.select}>
+                                    <option value="All">Wszystkie</option>
+                                    <option value="Submitted">W trakcie rozpatrywania</option>
+                                    <option value="Approved">Zaakceptowany</option>
+                                    <option value="Rejected">Odrzucony</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className={styles.searchContainer}>
+                            <input
+                                type="text"
+                                placeholder="Szukaj studenta..."
+                                value={searchName}
+                                onChange={(e) => setSearchName(e.target.value)}
+                                className={styles.inputSearch}
+                            />
+                        </div>
                     </div>
                     <div className={styles.applicationsContainer}>
                         {filteredApplications.map((application, index) => (

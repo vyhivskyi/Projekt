@@ -71,44 +71,137 @@ const StudentDetails = () => {
         label: `Pokój ${room.room_number}`,
     }));
 
+    const formattedDate = new Date(studentData.date_of_birthday).toLocaleDateString();
+
     return (
         <div className={styles.pageContainer}>
-            <div className={styles.daneLista}>
-                <div className={styles.contentLista}>
+            <div className={styles.daneStudent}>
+                <div className={styles.contentStudent}>
                     <div className={styles.nameContainerLista}>
                         <h1 className={styles.signName}>Profil studenta</h1>
                     </div>
-                    <div className={styles.studentDataContainer}>
-                        <p className={styles.studentDataText}>
-                            Imię: {studentData.first_name}
-                            <br />
-                            Nazwisko: {studentData.last_name}
-                            <br />
-                            Status wniosku:
-                            <select onChange={(e) => setStatus(e.target.value)}>
-                                <option value="">Wybierz status</option>
-                                <option value="Submitted">W trakcie rozpatrywania</option>
-                                <option value="Approved">Zaakceptowany</option>
-                                <option value="Rejected">Odrzucony</option>
-                            </select>
-                            <br />
-                            {status === "Approved" && (
-                                <div>
-                                    Wybierz pokój:
-                                    <Select
-                                        options={roomOptions}
-                                        value={selectedRoom}
-                                        onChange={(selectedOption) => setSelectedRoom(selectedOption)}
-                                    />
-                                </div>
-                            )}
-                            <br />
-                            <button onClick={handleStatusChange}>Zaktualizuj status wniosku</button>
-                        </p>
+                    <div className={styles.contentFields}>
+                    <div className={styles.fieldRow}>
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Imię</label>
+                            <p className={styles.data}>{studentData.first_name}</p>
+                        </div>
+
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Nazwisko</label>
+                            <p className={styles.data}>{studentData.last_name}</p>
+                        </div>
                     </div>
-                </div>
+                    <div className={styles.fieldRow}>
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Data urodzenia</label>
+                            <p className={styles.data}>{formattedDate}</p>
+                        </div>
+
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Płeć</label>
+                            <p className={styles.data}>{studentData.gender}</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.fieldMail}>
+                        <label className={styles.labelMail}>Email</label>
+                        <p className={styles.dataMail}>{studentData.email}</p>
+                    </div>
+
+                    <div className={styles.fieldRow}>
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Wydział</label>
+                            <p className={styles.data}>{studentData.faculty}</p>
+                        </div>
+
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Kierunek</label>
+                            <p className={styles.data}>{studentData.department}</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.fieldRow}>
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Rok studiów</label>
+                            <p className={styles.data}>{studentData.year_of_study}</p>
+                        </div>
+
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Index</label>
+                            <p className={styles.data}>{studentData.student_id}</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.fieldRow}>
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Preferowany DS</label>
+                            <p className={styles.data}>{studentData.preference ? studentData.preference.ds : ''}</p>
+                        </div>
+
+                        <div className={styles.fieldStudent}>
+                            <label className={styles.label}>Preferowany pokój</label>
+                            <p className={styles.data}>{studentData.preference ? studentData.preference.room : ''}</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.fieldMail}>
+                        <label className={styles.labelMail}>Preferowany skład</label>
+                        <p className={styles.dataMail}>{studentData.preference && studentData.preference.users ? studentData.preference.users : ''}</p>
+                    </div>
+
+                    <div className={styles.fieldPhoto}>
+                        <label className={styles.labelPhoto}>Profilowe zdjęcie</label>
+                        <img
+                            src={`http://localhost:8080/uploads/${studentData.profile_picture}`}
+                            alt="Profile Picture"
+                            className={styles.profilePicture}
+                        />
+                    </div>
+                    
+                    <div className={styles.fieldSelect}>
+                        <div className={styles.inputContainer}>
+                            <div className={styles.statusSelect}>
+                                <select onChange={(e) => setStatus(e.target.value)} className={styles.select}>
+                                    <option value="">Wybierz status</option>
+                                    <option value="Submitted">W trakcie rozpatrywania</option>
+                                    <option value="Approved">Zaakceptowany</option>
+                                    <option value="Rejected">Odrzucony</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    {status === "Approved" && (
+                        <div>
+                            <label className={styles.label}>Wybierz pokój:</label>
+                            <Select
+                                options={roomOptions}
+                                value={selectedRoom}
+                                onChange={(selectedOption) => setSelectedRoom(selectedOption)}
+                            />
+                        </div>
+                    )}
+                    <div className={styles.buttonSelectBlock}>
+                        <button type="submit" className={styles.buttonSelect} onClick={handleStatusChange}>
+                            Zaktualizuj status wniosku
+                            <svg
+                                className={styles.vectorSelect}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 18 17">
+                                <path
+                                    d="M1 8.43542L14.7232 8.29857M9.61818 1.91138L16.1412 8.43436L9.48677 15.0887"
+                                    strokeWidth="2"
+                                    strokeLinecap="square"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>    
             </div>
         </div>
+    </div>
     );
 };
 
