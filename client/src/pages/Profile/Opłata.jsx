@@ -4,10 +4,25 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 const Payment = ({ user }) => {
     const navigate = useNavigate()
+    const generateRandomKonto = () => {
+        const fixedDigits = "12";
+        const restOfTheDigits = Array.from({ length: 24 }, () => Math.floor(Math.random() * 10));
+    
+        const kontoWithSpaces = [fixedDigits, ...restOfTheDigits]
+            .map((digit, index) => ((index + 1) % 4 === 0 ? ` ${digit}` : digit))
+            .join('');
+    
+        return kontoWithSpaces;
+    };
+      
+      // Usage
+      const randomKontoWithSpaces = generateRandomKonto();
+          
     const [data, setData] = useState({
         user_id: user._id,
         //tutaj należy dodać room._id
         room_id: "65479522eef513e0656e261f",
+        konto: generateRandomKonto(),
     });
     const [showRemarksInput, setShowRemarksInput] = useState(false);
 
@@ -60,6 +75,11 @@ const Payment = ({ user }) => {
                             <label className={styles.label}>Nazwisko</label>
                             <p className={styles.data}>{user.last_name}</p>
                         </div>
+                    </div>
+
+                    <div className={styles.fieldKonto}>
+                        <label className={styles.labelMail}>Konto</label>
+                        <p className={styles.dataMail}>{data.konto}</p>
                     </div>
 
                     <div className={styles.messFieldRow}>
