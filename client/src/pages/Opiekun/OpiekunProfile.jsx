@@ -128,7 +128,7 @@ const Opiekun = ({ setDane, user }) => {
                                     <UilBed className={styles.iconWniosek}/>
                                 </div>
                                 <div className={styles.iconText}>
-                                    Wolne pokoje
+                                    Pokoje
                                 </div>
                             </button>
                         </Link>

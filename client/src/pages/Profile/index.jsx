@@ -119,16 +119,6 @@ const Profile = ({ setDane, user }) => {
                                 </div>
                             </button>
                         </Link>
-                        <Link to="/profile/preference" className={styles.nonLinkText}>
-                            <button className={styles.navBtn} onClick={handleProfile}>
-                                <div className={styles.iconBack}>
-                                    <UilFavorite className={styles.iconWniosek}/>
-                                </div>
-                                <div className={styles.iconText}>
-                                    Preferencje
-                                </div>
-                            </button>
-                        </Link>
                         <Link to="/profile/płatności" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
                                 <div className={styles.iconBack}>

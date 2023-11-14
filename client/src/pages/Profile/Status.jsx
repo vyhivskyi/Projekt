@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"
 import styles from "./styles.module.css";
 import { UilTrashAlt } from '@iconscout/react-unicons'
 
@@ -53,11 +54,13 @@ const Status = ({ user }) => {
                 } catch (error) {
                     if (error.response && error.response.status >= 400 && error.response.status <= 500) {
                         localStorage.removeItem("token")
-                        window.location.reload()
                     }
                 }
             }
         }
+    }
+    const handleEdit = async () => {
+        window.location = '/profile/preference/edit'
     }
 
     return (
@@ -75,6 +78,42 @@ const Status = ({ user }) => {
                             </div>
                         </div>
                     </div>
+                    
+                    <div className={styles.prefFieldRow}>
+                        <div className={styles.prefField}>
+                            <label className={styles.label}>Preferowany DS</label>
+                            <p className={styles.data}>{user.preference.ds}</p>
+                        </div>
+
+                        <div className={styles.prefField}>
+                            <label className={styles.label}>Preferowany pokój</label>
+                            <p className={styles.data}>{user.preference.room}</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.prefField}>
+                        <label className={styles.label}>Preferowany skład</label>
+                        <p className={styles.data}>{user.preference.users}</p>
+                    </div>
+
+                    <Link to="/profile/preference/edit" className={styles.nonLinked}>
+                        <div className={styles.buttonBlock}>
+                            <button type="submit" className={styles.button} onClick={handleEdit}>
+                                Edytuj
+                                <svg
+                                    className={styles.vector}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 18 17">
+                                    <path
+                                        d="M1 8.43542L14.7232 8.29857M9.61818 1.91138L16.1412 8.43436L9.48677 15.0887"
+                                        strokeWidth="2"
+                                        strokeLinecap="square"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </Link>
                     <div className={styles.delete}>
                         <button className={styles.navBtn} onClick={handleDelete}>
                             <div className={styles.iconBack}>

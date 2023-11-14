@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
-const OpiekunInfo = () => {
+const OpiekunInfo = ({ user}) => {
 
     return (
         <div className={styles.pageContainer}>
@@ -11,19 +11,16 @@ const OpiekunInfo = () => {
                     <div className={styles.fieldRow}>
                         <div className={styles.field}>
                             <label className={styles.label}>Imię</label>
-                            <p className={styles.data}>Imie opiekuna</p>
+                            <p className={styles.data}>{user.first_name} {user.last_name}</p>
                         </div>
 
-                        <div className={styles.field}>
-                            <label className={styles.label}>Nazwisko</label>
-                            <p className={styles.data}>Nazwisko opiekuna</p>
+                        <div className={styles.fieldMail}>
+                            <label className={styles.labelMail}>Email</label>
+                            <p className={styles.dataMail}>{user.email}</p>
                         </div>
                     </div>
 
-                    <div className={styles.fieldMail}>
-                        <label className={styles.labelMail}>Email</label>
-                        <p className={styles.dataMail}>Email opiekuna</p>
-                    </div>
+                    
                 </div>
             </div>
         </div>

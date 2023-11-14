@@ -12,7 +12,6 @@ import Form from "./pages/Form";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile"
 import Info from "./pages/Profile/Info";
-import Preference from "./pages/Profile/Preference";
 import PreferenceEdit from "./pages/Profile/PreferenceEdit";
 import DS2Korytarz from "./pages/DS2/DS2Korytarz";
 import DS2Kuchnia from "./pages/DS2/DS2Kuchnia";
@@ -131,17 +130,6 @@ function App() {
         />
       }
 
-      {user && userRole === "Student" &&
-        <Route
-          path="/profile/preference"
-          element={
-            <div>
-              <Navbar setDane={handleSetDane} />
-              <Profile setDane={handleSetDane} user={dane} />
-              <Preference user={dane} />
-            </div>}
-        />
-      }
 
       {user && userRole === "Student" &&
         <Route
@@ -185,7 +173,7 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Opiekun setDane={handleSetDane} user={dane} />
-              <OpiekunInfo />
+              <OpiekunInfo user={dane} />
             </div>
           } />
       }
@@ -231,7 +219,7 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Kierownik setDane={handleSetDane} user={dane} />
-              <KierownikInfo />
+              <KierownikInfo user={dane}/>
             </div>
           } />
       }
