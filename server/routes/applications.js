@@ -20,7 +20,7 @@ router.put('/:studentId', async (req, res) => {
             const selectedRoom = await Rooms.findOne({ room_number: room });
             console.log(selectedRoom)
             if (!selectedRoom.occupants) {
-                selectedRoom.occupants = []; // Zainicjowanie occupants jako pustej tablicy, jeśli jeszcze nie istnieje.
+                selectedRoom.occupants = [];
             }
 
             selectedRoom.occupants.push(studentId);

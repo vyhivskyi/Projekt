@@ -1,8 +1,39 @@
 import styles from "./styles.module.css"
 import React from "react"
-
-const Room = ({ user}) => {
-    //należy dopisać metodę, która w zależności od typu pokoju ustawia cenę
+import { useState, useEffect } from "react";
+import axios from "axios";
+const Room = ({ user }) => {
+    const token = localStorage.getItem("token");
+    const [room, setRoom] = useState();
+    const [type, setType] = useState();
+    useEffect(() => {
+        axios
+            .get("http://localhost:8080/api/profile/room", {
+                headers: { 'Content-Type': 'application/json', 'x-access-token': token },
+            })
+            .then((response) => {
+                if (response.status !== 200) {
+                    throw new Error("Błąd pobierania danych użytkownika");
+                }
+                return response.data;
+            })
+            .then((data) => {
+                setRoom(data.data.room_number);
+                setType(data.data.room_type);
+            })
+            .catch((error) => {
+                console.error("Błąd pobierania roli użytkownika: ", error);
+            });
+    }, []);
+    const getPrice = () => {
+        if (type === "Jednoosobowy") {
+          return 1190;
+        } else if (type === "Dwuosobowy") {
+          return 750;
+        } else if (type === "Trzyosobowy") {
+          return 450;
+        } 
+      };
     return (
         <div className={styles.pageContainer}>
             <div className={styles.roomContainer}>
@@ -26,12 +57,12 @@ const Room = ({ user}) => {
                     <div className={styles.messFieldRow}>
                         <div className={styles.messField}>
                             <label className={styles.label}>Nr pokoju</label>
-                            <p className={styles.data}>{user.first_name}</p>
+                            <p className={styles.data}>{room}</p>
                         </div>
 
                         <div className={styles.messField}>
                             <label className={styles.label}>Kwota</label>
-                            <p className={styles.data}>750</p>
+                            <p className={styles.data}>{getPrice()}</p>
                         </div>
                     </div>
 
@@ -39,7 +70,7 @@ const Room = ({ user}) => {
                         <div className={styles.historyHead}>
                             <p className={styles.headText}>Historia kwaterowania</p>
                         </div>
-                        
+
                         <div className={styles.historyText}>
                             <div className={styles.historyRow}>
                                 <p className={styles.historyYear}>2021/2022</p>
