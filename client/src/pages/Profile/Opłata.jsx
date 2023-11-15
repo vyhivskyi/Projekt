@@ -124,7 +124,7 @@ const Payment = ({ user }) => {
                         </div>
                     </div>
 
-                    <button type="submit" className={styles.buttonCheckOut} >
+                    <button type="submit" className={styles.buttonPayment} >
                         Wyślij
                         <svg
                             className={styles.vector}

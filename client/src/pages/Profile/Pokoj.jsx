@@ -65,24 +65,6 @@ const Room = ({ user }) => {
                             <p className={styles.data}>{getPrice()}</p>
                         </div>
                     </div>
-
-                    <div className={styles.historyContent}>
-                        <div className={styles.historyHead}>
-                            <p className={styles.headText}>Historia kwaterowania</p>
-                        </div>
-
-                        <div className={styles.historyText}>
-                            <div className={styles.historyRow}>
-                                <p className={styles.historyYear}>2021/2022</p>
-                                <p className={styles.historyRoom}>123</p>
-                            </div>
-
-                            <div className={styles.historyRow}>
-                                <p className={styles.historyYear}>2022/2023</p>
-                                <p className={styles.historyRoom}>123</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
