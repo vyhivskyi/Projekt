@@ -8,7 +8,7 @@ const KierownikApplications = () => {
     const [students, setStudents] = useState([]);
     const [filterStatus, setFilterStatus] = useState("All");
     const [searchName, setSearchName] = useState("");
-
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -53,7 +53,7 @@ const KierownikApplications = () => {
     const filteredApplications = applications.filter((application) => {
         if (filterStatus === "All" || application.status === filterStatus) {
             if (searchName === "") {
-                return true; // Brak filtra nazwy, wyświetl wszystkie
+                return true; 
             } else {
                 const fullName = getUserFullName(application.user_id).toLowerCase();
                 const searchLower = searchName.toLowerCase();

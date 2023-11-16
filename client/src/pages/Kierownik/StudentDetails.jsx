@@ -9,10 +9,13 @@ const StudentDetails = () => {
     const { studentId } = useParams();
     const [studentData, setStudentData] = useState({});
     const [status, setStatus] = useState("");
+    const [selectedDormitory, setSelectedDormitory] = useState(null);
     const [availableRooms, setAvailableRooms] = useState([]);
-    const [selectedRoom, setSelectedRoom] = useState(null); // Stan dla wybranego pokoju
-    const [searchRoomNumber, setSearchRoomNumber] = useState(""); // Stan dla wprowadzania numeru pokoju
-
+    const [selectedRoom, setSelectedRoom] = useState(null); 
+    const [searchRoomNumber, setSearchRoomNumber] = useState(""); 
+    const ds2_id = "654793e9eef513e0656e261d"
+    const ds3_id = "65527d982478fddcecd69206"
+    const ds4_id = "65527e032478fddcecd69207"
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -22,14 +25,16 @@ const StudentDetails = () => {
 
                 const roomsResponse = await axios.get("http://localhost:8080/api/portiernia/rooms");
                 const roomsData = roomsResponse.data;
-
+                console.log(selectedDormitory)
                 const availableRooms = roomsData.filter((room) => {
                     return (
-                        (room.room_type === "Jednoosobowy" && (room.occupants ? room.occupants.length === 0 : true)) ||
+                        room.accommodation_id === selectedDormitory &&
+                        ((room.room_type === "Jednoosobowy" && (room.occupants ? room.occupants.length === 0 : true)) ||
                         (room.room_type === "Dwuosobowy" && (room.occupants ? room.occupants.length < 2 : true)) ||
-                        (room.room_type === "Trzyosobowy" && (room.occupants ? room.occupants.length < 3 : true))
+                        (room.room_type === "Trzyosobowy" && (room.occupants ? room.occupants.length < 3 : true)))
                     );
-                });
+                })
+                .sort((a, b) => a.room_number - b.room_number);
                 setAvailableRooms(availableRooms);
             } catch (error) {
                 console.error("Error fetching student data:", error);
@@ -37,7 +42,7 @@ const StudentDetails = () => {
         };
 
         fetchData();
-    }, [studentId]);
+    }, [studentId, selectedDormitory]);
 
     const navigate = useNavigate();
 
@@ -56,18 +61,18 @@ const StudentDetails = () => {
     };
 
     const handleRoomSearch = () => {
-        // Wyszukaj pokój na podstawie wprowadzonego numeru pokoju
         const foundRoom = availableRooms.find((room) => room.room_number === searchRoomNumber);
         if (foundRoom) {
-            setSelectedRoom({ value: foundRoom.room_number, label: `Pokój ${foundRoom.room_number}` });
+            setSelectedRoom({ value: foundRoom._id, label: `Pokój ${foundRoom.room_number}` });
         } else {
-            // Pokój nie został znaleziony, można wyświetlić odpowiedni komunikat
             alert("Pokój o podanym numerze nie został znaleziony.");
         }
     };
-
+    const handleDormitoryChange = (e) => {
+        setSelectedDormitory(e.target.value);
+    };
     const roomOptions = availableRooms.map((room) => ({
-        value: room.room_number,
+        value: room._id,
         label: `Pokój ${room.room_number}`,
     }));
 
@@ -175,20 +180,36 @@ const StudentDetails = () => {
                     {status === "Approved" && (
                             <div className={styles.fieldSelectRoom}>
                                 <label className={styles.label}></label>
+
+                                <div>
+                                <label>Wybierz akademik: </label>
                                 <select
-                                    value={selectedRoom ? selectedRoom.value : ''}
-                                    onChange={(e) =>
-                                        setSelectedRoom({ value: e.target.value, label: `Pokój ${e.target.value}` })
-                                    }
-                                    className={styles.select}
+                                    value={selectedDormitory}
+                                    onChange={handleDormitoryChange}
                                 >
-                                    <option value="">Wybierz pokój</option>
-                                    {roomOptions.map((room) => (
-                                        <option key={room.value} value={room.value}>
-                                            {room.label}
-                                        </option>
-                                    ))}
+                                    <option value="">Wybierz akademik</option>
+                                    <option value={ds2_id}>DS 2</option>
+                                    <option value={ds3_id}>DS 3</option>
+                                    <option value={ds4_id}>DS 4</option>
                                 </select>
+                            </div>
+
+                            {selectedDormitory && (
+                                <div>
+                                    <label>Wybierz pokój: </label>
+                                    <select
+                                        value={selectedRoom ? selectedRoom.value : ""}
+                                        onChange={(e) => setSelectedRoom({ value: e.target.value, label: `Pokój ${e.target.value}` })}
+                                    >
+                                        <option value="">Wybierz pokój</option>
+                                        {availableRooms.map((room) => (
+                                            <option key={room._id} value={room._id}>
+                                                Pokój {room.room_number}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            )}
                             </div>
                         )}
 

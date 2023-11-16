@@ -5,7 +5,6 @@ const Rooms = require("../models/rooms");
 router.get("/", async (req, res) => {
     try {
         const rooms = await Rooms.find();
-        console.log(rooms)
         res.json(rooms);
     } catch (error) {
         console.log(req.user);

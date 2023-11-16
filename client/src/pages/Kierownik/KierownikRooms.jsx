@@ -6,7 +6,10 @@ const KierownikRooms = () => {
   const [rooms, setRooms] = useState([]);
   const [filterFreeRooms, setFilterFreeRooms] = useState(false);
   const [filterRoomNumber, setFilterRoomNumber] = useState("");
-
+  const [selectedDormitory, setSelectedDormitory] = useState("");
+  const ds2_id = "654793e9eef513e0656e261d"
+  const ds3_id = "65527d982478fddcecd69206"
+  const ds4_id = "65527e032478fddcecd69207"
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,15 +32,20 @@ const KierownikRooms = () => {
           }
           return room;
         });
+        const filteredRooms = selectedDormitory
+          ? updatedRooms.filter((room) => room.accommodation_id === selectedDormitory)
+          : updatedRooms;
 
-        setRooms(updatedRooms);
+        filteredRooms.sort((a, b) => a.room_number - b.room_number);
+
+        setRooms(filteredRooms);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, [filterFreeRooms, filterRoomNumber]);
+  }, [filterFreeRooms, filterRoomNumber, selectedDormitory]);
 
   return (
     <div className={styles.pageContainer}>
@@ -49,21 +57,33 @@ const KierownikRooms = () => {
           <div className={styles.filtersContainer}>
             <div className={styles.checkboxContainer}>
               <label>Wolne pokoje:</label>
-                <input
-                  type="checkbox"
-                  checked={filterFreeRooms}
-                  onChange={() => setFilterFreeRooms(!filterFreeRooms)}
-                />
+              <input
+                type="checkbox"
+                checked={filterFreeRooms}
+                onChange={() => setFilterFreeRooms(!filterFreeRooms)}
+              />
             </div>
-
             <div className={styles.filter}>
-                <input
-                  type="text"
-                  placeholder="Numer pokoju..."
-                  value={filterRoomNumber}
-                  onChange={(e) => setFilterRoomNumber(e.target.value)}
-                  className={styles.inputSearch}
-                />
+              <label>Wybierz akademik:</label>
+              <select
+                value={selectedDormitory}
+                onChange={(e) => setSelectedDormitory(e.target.value)}
+                className={styles.select}
+              >
+                <option value="0">Wybierz DS</option>
+                <option value={ds2_id}>DS 2</option>
+                <option value={ds3_id}>DS 3</option>
+                <option value={ds4_id}>DS 4</option>
+              </select>
+            </div>
+            <div className={styles.filter}>
+              <input
+                type="text"
+                placeholder="Numer pokoju..."
+                value={filterRoomNumber}
+                onChange={(e) => setFilterRoomNumber(e.target.value)}
+                className={styles.inputSearch}
+              />
             </div>
           </div>
           <div className={styles.roomsContainer}>
