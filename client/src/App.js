@@ -29,6 +29,7 @@ import Message from "./pages/Profile/Zgłoszenie";
 import CheckOut from "./pages/Profile/Wymeldowanie";
 import Room from "./pages/Profile/Pokoj";
 import Status from "./pages/Profile/Status";
+import Odpowiedzi from "./pages/Profile/Odpowiedzi"
 import Opiekun from "./pages/Opiekun/OpiekunProfile";
 import OpiekunInfo from "./pages/Opiekun/OpiekunInfo";
 import OpiekunStudenci from "./pages/Opiekun/OpiekunStudenci";
@@ -41,7 +42,7 @@ import StudentDetails from "./pages/Kierownik/StudentDetails";
 import KierownikStudenci from "./pages/Kierownik/KierownikStudenci";
 import Payment from "./pages/Profile/Opłata";
 import KierownikRooms from "./pages/Kierownik/KierownikRooms";
-
+import Odpowiedź from "./pages/Profile/Odpowiedź"
 function App() {
   const user = localStorage.getItem("token");
   const [dane, setDane] = useState();
@@ -53,7 +54,7 @@ function App() {
     axios
       .get("http://localhost:8080/api/profile", {
         headers: { 'Content-Type': 'application/json', 'x-access-token': user },
-    })
+      })
       .then((response) => {
         if (response.status !== 200) {
           throw new Error("Błąd pobierania danych użytkownika");
@@ -61,8 +62,8 @@ function App() {
         return response.data;
       })
       .then((data) => {
-        setDane(data.data); 
-        setUserRole(data.data.role); 
+        setDane(data.data);
+        setUserRole(data.data.role);
       })
       .catch((error) => {
         console.error("Błąd pobierania roli użytkownika: ", error);
@@ -105,7 +106,28 @@ function App() {
             </div>}
         />
       }
-
+      {user && userRole === "Student" &&
+        <Route
+          path="/profile/zgłoszenie/odpowiedzi"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Profile setDane={handleSetDane} user={dane} />
+              <Odpowiedzi />
+            </div>}
+        />
+      }
+      {user && userRole === "Student" &&
+        <Route
+          path="/profile/zgłoszenie/odpowiedzi/:issueId"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Profile setDane={handleSetDane} user={dane} />
+              <Odpowiedź />
+            </div>
+          } />
+      }
       {user && userRole === "Student" &&
         <Route
           path="/profile/wymeldowanie"
@@ -219,7 +241,7 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Kierownik setDane={handleSetDane} user={dane} />
-              <KierownikInfo user={dane}/>
+              <KierownikInfo user={dane} />
             </div>
           } />
       }
@@ -235,15 +257,15 @@ function App() {
           } />
       }
       {user && userRole === "Kierownik" &&
-      <Route 
-        path="/details/:studentId" 
-        element={
-          <div>
-            <Navbar setDane={handleSetDane} />
-            <Kierownik setDane={handleSetDane} user={dane} />
-            <StudentDetails />
-          </div>
-        } />
+        <Route
+          path="/details/:studentId"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Kierownik setDane={handleSetDane} user={dane} />
+              <StudentDetails />
+            </div>
+          } />
       }
 
       {user && userRole === "Kierownik" &&
