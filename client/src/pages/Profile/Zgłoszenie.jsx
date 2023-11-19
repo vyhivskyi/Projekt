@@ -41,13 +41,6 @@ const Message = ({ user }) => {
         <div className={styles.pageContainer}>
             <div className={styles.messageContainer}>
                 <div className={styles.messageContent}>
-                <Link to={`/profile/zgłoszenie/odpowiedzi`}>
-                            <p>Odpowiedzi</p>
-                        </Link>
-                    <div className={styles.messageHead}>
-                        <h2 className={styles.signName}>Zgłoszenie do opiekuna</h2>
-                    </div>
-
                     <div className={styles.messFieldRow}>
                         <div className={styles.messField}>
                             <label className={styles.label}>Imię</label>
@@ -71,7 +64,7 @@ const Message = ({ user }) => {
                             />
                         </div>
 
-                        <div className={styles.inputContainer}>
+                        <div className={styles.inputContainerText}>
                             <label className={styles.label}>Dzień dobry...</label>
                             <textarea
                                 type="text"
@@ -82,7 +75,7 @@ const Message = ({ user }) => {
                             />
                         </div>
 
-                        <button type="submit" className={styles.button}>
+                        <button type="submit" className={styles.buttonMess}>
                             Wyślij
                             <svg
                                 className={styles.vector}

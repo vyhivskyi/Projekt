@@ -1,7 +1,7 @@
 import styles from "./styles.module.css"
 import React from "react"
 import axios from "axios"
-import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilFavorite, UilTrashAlt, UilMoneyStack, UilSpinnerAlt, UilInvoice } from '@iconscout/react-unicons'
+import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilFastMailAlt, UilSpinnerAlt, UilInvoice } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom"
 
 const Profile = ({ setDane, user }) => {
@@ -95,6 +95,16 @@ const Profile = ({ setDane, user }) => {
                                 </div>
                                 <div className={styles.iconText}>
                                     Zgłoszenie
+                                </div>
+                            </button>
+                        </Link>
+                        <Link to="/profile/zgłoszenie/odpowiedzi" className={styles.nonLinkText}>
+                            <button className={styles.navBtn} onClick={handleProfile}>
+                                <div className={styles.iconBack}>
+                                    <UilFastMailAlt className={styles.iconWniosek}/>
+                                </div>
+                                <div className={styles.iconText}>
+                                    Informacja zwrotna
                                 </div>
                             </button>
                         </Link>

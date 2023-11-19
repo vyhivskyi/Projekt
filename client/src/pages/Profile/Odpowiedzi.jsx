@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "../Kierownik/styles.module.css";
+import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 const Odpowiedzi = () => {
     const [issues, setIssues] = useState([]);
@@ -21,11 +21,19 @@ const Odpowiedzi = () => {
         <div className={styles.pageContainer}>
             <div className={styles.daneLista}>
                 <div className={styles.contentLista}>
-                    {issues.map((issue, index) => (
-                        <Link key={issue._id} to={`/profile/zgłoszenie/odpowiedzi/${issue._id}`}>
-                            <p>{issue.issue_thema}</p>
-                        </Link>
-                    ))}</div>
+                    <div className={styles.nameContainerCheck}>
+                        <h1 className={styles.signName}>Informacja zwrotna</h1>
+                    </div>
+                    <div className={styles.answerContainer}>
+                        {issues.map((issue, index) => (
+                            <div className={styles.answerBlock}>
+                                <Link key={issue._id} to={`/profile/zgłoszenie/odpowiedzi/${issue._id}`} className={styles.linkStyle}>
+                                    <p>{issue.issue_thema}</p>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
                 <div className={styles.studentsContainer}>
                     <div className={styles.applicationsContainer}>
 

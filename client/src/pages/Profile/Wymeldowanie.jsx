@@ -65,7 +65,7 @@ const CheckOut = ({ user }) => {
                         </div>
                     </div>
                     <form onSubmit={handleSubmit}>
-                        <div className={styles.inputContainer}>
+                        <div className={styles.inputContainerCheckOut}>
                             <label className={styles.label}>Data wymeldowania</label>
                             <div className={styles.dateInputContainer}>
                                 <input
@@ -89,7 +89,7 @@ const CheckOut = ({ user }) => {
                         </div>
 
                             {showRemarksInput && (
-                            <div className={styles.inputContainer}>
+                            <div className={styles.inputContainerCheckOut}>
                                 <label className={styles.label}>Uwagi</label>
                                 <textarea
                                 name="remarks"
