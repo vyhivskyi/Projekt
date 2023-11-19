@@ -80,6 +80,19 @@
     background-color: transparent; /* Remove background color */
 }
 
+.inputImg {
+  outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+    background-color: transparent;
+    display: none;
+}
+
 .label {
 	font-family: 'Jost';
     font-weight: 600;

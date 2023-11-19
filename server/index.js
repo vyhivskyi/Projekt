@@ -18,6 +18,7 @@ const statusRoutes = require("./routes/status")
 const applicationRoutes = require("./routes/applications")
 const answersRoutes = require("./routes/answers")
 const issueRoutes = require("./routes/issue")
+const reviewsRoutes = require("./routes/reviews")
 const multer = require('multer')
 const path = require('path');
 
@@ -64,6 +65,7 @@ app.use("/api/portiernia/rooms", roomsRoutes)
 app.use("/api/profile/checkout", checkoutRouter);
 app.use("/app/profile/payment", paymentRoutes)
 app.use("/api/profile/status", statusRoutes)
+app.use("/api/reviews", reviewsRoutes);
 app.post('/upload', upload.single('file'), (req, res) => {
   const fileUrl = req.file.filename;
   res.json({ fileUrl });

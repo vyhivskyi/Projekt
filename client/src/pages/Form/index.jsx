@@ -394,11 +394,12 @@ return (
                             className={styles.input}
                         />)}
                         <div className={styles.inputContainer}>
-                            <label className={styles.labelProfile}>Profile Picture</label>
+                            <label htmlFor="fileinput" className={styles.labelProfile}>Wybierz plik</label>
                             <input
+                                id="fileinput"
                                 type="file"
                                 onChange={handleFileChange}
-                                className={styles.input}
+                                className={styles.inputImg}
                             />
                         </div>
                         {error && <div
