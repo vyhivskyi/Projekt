@@ -94,6 +94,9 @@ const Main = ({ setDane, setMessage }) => {
                         <Link to="/akademiki" className={styles.navItem}>
                             Akademiki
                         </Link>
+                        <Link to="/Cennik" className={styles.navItem}>
+                            Cennik
+                        </Link>
                         <Link to="/dokumenty" className={styles.navItem}>
                             Dokumenty
                         </Link>

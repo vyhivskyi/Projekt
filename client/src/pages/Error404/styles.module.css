@@ -1,7 +1,8 @@
 .container {
   display: flex;
   flex-direction: row;
-  width: 1560px;
+  width: 95%;
+  max-width: 1560px;
   height: 750px;
   margin-right: auto;
   margin-left: auto;
@@ -13,7 +14,8 @@
     display: flex;
     flex-direction: column;
     height: 700px;
-    width: 455px;
+    width: 100%;
+    max-width: 455px;
     align-items: flex-start;
     margin-left: 10%;
   }
@@ -74,7 +76,8 @@
 
   .image {
     height: 680px;
-    width: 650px;
+    width: 100%;
+    max-width: 650px;
     margin-left: 10%;
     margin-top: 40px;
     border-radius: 0px 0px 0px 353px;;
@@ -85,4 +88,30 @@
     color: #86A397; /* Change this to the color you want on hover */
   }
   
+  @media (max-width: 769px) { 
+    .container {
+      height: auto;
+    }
+    .number {
+      font-size: 120px; 
+    }
+  
+    .name {
+      font-size: 45px;
+      text-align: center;
+    }
+  
+    .button {
+      width: 244px; 
+      margin-top: 0; 
+    }
+
+    .image {
+      display: none;
+    }
+    
+    .content {
+      align-items: center;
+    }
+  }
   

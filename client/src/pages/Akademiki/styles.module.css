@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: 1895px;
-    height: 355px;
+    width: 100%;
+    height: 255px;
     background-color: #292F36;
 }
 
@@ -11,7 +11,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 80%;
+    max-width: 500px;
     height: 145px;
     background-color: #fff;
     border-radius: 37px 37px 0px 0px;
@@ -26,7 +27,8 @@
 .akademikiContainer {
     display: flex;
     flex-direction: column;
-    width: 1450px;
+    width: 100%;
+    max-width: 1450px;
     height: 3300px;
     background-color: #F4F0EC;
     margin-top: 10%;
@@ -36,10 +38,11 @@
 }
 
 .heading {
-    width: 570px;
-    height: 80px;
-    text-align: center;
-    margin: 50px;
+  width: 100%;
+  max-width: 570px;
+  height: 80px;
+  text-align: center;
+  margin: 50px;
 }
 
 .headingText {
@@ -50,7 +53,8 @@
 
 .akademik {
     display: flex;
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     height: 700px;
     justify-content: center;
     align-items: center;
@@ -68,7 +72,8 @@
 
   .content{
     height: 375px;
-    width: 455px;
+    width: 100%;
+    max-width: 455px;
     align-items: center;
     margin-right: 10px;
   }
@@ -129,4 +134,55 @@
   .button:hover .vector {
     fill: #86A397; /* Change the fill color on hover */
     stroke: #292F36;
+  }
+
+  @media (max-width: 768px) {
+    .bannerName {
+      height: 145px; /* Adjust the height as needed for larger screens */
+    }
+  
+    .Name {
+      font-size: 40px; /* Adjust the font size as needed for larger screens */
+    }
+  
+    .akademikiContainer {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .heading {
+      margin: 50px 0;
+    }
+  
+    .headingText {
+      font-size: 50px; /* Adjust the font size as needed for larger screens */
+    }
+  
+    .akademik {
+      flex-direction: row;
+      margin: 0;
+    }
+  
+    .image {
+      height: 500px;
+      border-radius: 326px 0 123px 0;
+    }
+  
+    .number {
+      font-size: 120px; /* Adjust the font size as needed for larger screens */
+    }
+  
+    .name {
+      font-size: 35px; /* Adjust the font size as needed for larger screens */
+    }
+  
+    .button {
+      width: 244px;
+    }
+  
+    .vector {
+      width: 17px; /* Adjust the width as needed for larger screens */
+      height: 15px; /* Adjust the height as needed for larger screens */
+      margin-left: 15px; /* Adjust the margin as needed for larger screens */
+    }
   }
