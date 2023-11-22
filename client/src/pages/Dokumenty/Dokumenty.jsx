@@ -169,7 +169,6 @@ const downloadDocument = (documentName) => {
 
       {/* Dokumenty Container */}
         <div className={styles.dokumenty}>
-            <h1 className={styles.dokumentyName}>Dokumenty</h1>
             <div className={styles.contentImage}>
                 <div className={styles.content}>
                     <div className={styles.links}>

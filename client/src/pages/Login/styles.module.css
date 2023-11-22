@@ -1,20 +1,21 @@
 .banner {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 1895px;
-    height: 355px;
-    background-color: #292F36;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 255px;
+  background-color: #292F36;
 }
 
 .bannerName {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 145px;
-    background-color: #fff;
-    border-radius: 37px 37px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  height: 145px;
+  background-color: #fff;
+  border-radius: 37px 37px 0px 0px;
 }
 
 .Name {
@@ -23,7 +24,8 @@
     font-weight: 400;
 }
 .login_container {
-	width: 1200px;
+  width: 100%;
+	max-width: 1200px;
 	height: 565px;
 	display: flex;
 	flex-direction: column;
@@ -186,4 +188,18 @@
   .buttonRight:hover .vectorRight {
     fill: #c49e85; /* Change the fill color on hover */
     stroke: #292F36;
+  }
+
+  @media (max-width: 768px) {
+    .bannerName {
+      height: 100px;
+    }
+  
+    .Name {
+      font-size: 40px;
+    }
+
+    .loginName {
+      font-size: 37px;
+    }
   }

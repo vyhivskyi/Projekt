@@ -1,5 +1,3 @@
-// Update your Dokumenty component
-
 import React from 'react';
 import styles from './styles.module.css';
 

@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: 1895px;
-    height: 355px;
+    width: 100%;
+    height: 255px;
     background-color: #292F36;
 }
 
@@ -11,7 +11,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 80%;
+    max-width: 500px;
     height: 145px;
     background-color: #fff;
     border-radius: 37px 37px 0px 0px;
@@ -37,7 +38,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 365px;
+    width: 90%;
+    max-width: 365px;
     height: 685px;
     background-color: #F4F0EC;
     margin: auto;
@@ -172,6 +174,69 @@
     margin: auto; 
     margin-top: 25px; 
     line-height: 2.5;
+  }
+
+  @media (max-width: 768px) {
+    .bannerName {
+      height: 100px; /* Adjust the height as needed for larger screens */
+    }
+  
+    .Name {
+      font-size: 40px; /* Adjust the font size as needed for larger screens */
+    }
+
+    .price {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+      }
+    
+      .priceDS {
+        height: 585px;
+        margin-top: 20px;
+      }
+
+      .nameDS {
+        font-size: 30px;
+      }
+
+      .nameOption {
+        font-size: 22px;
+      }
+
+      .currency {
+        font-size: 20px;
+      }
+
+      .amount {
+        font-size: 45px;
+      }
+
+      .optionFirst {
+        margin: 0;
+        padding-bottom: 0;
+      }
+
+      .optionFirst::after {
+        margin-bottom: 40px;
+      }
+
+      .optionSecond {
+        margin-top: -30px;
+      }
+
+      .optionSecond::after {
+        margin-bottom: 40px;
+      }
+    
+      .button {
+        margin-left: 250px;
+        margin-top: 20px;
+      }
+
+      .textDescription {
+        margin-top: 0px;
+      }
   }
 
 

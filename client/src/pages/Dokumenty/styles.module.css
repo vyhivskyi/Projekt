@@ -1,20 +1,21 @@
 .banner {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 1895px;
-    height: 355px;
-    background-color: #292F36;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 255px;
+  background-color: #292F36;
 }
 
 .bannerName {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 145px;
-    background-color: #fff;
-    border-radius: 37px 37px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  height: 145px;
+  background-color: #fff;
+  border-radius: 37px 37px 0px 0px;
 }
 
 .Name {
@@ -28,7 +29,8 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   height: 770px;
   margin-left: auto;
   margin-right: auto;
@@ -52,7 +54,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 510px;
+  width: 100%;
+  max-width: 510px;
   height: 550px;
   padding: 10px;
   margin-top: 20px;
@@ -211,4 +214,64 @@
   justify-content: space-between;
   align-items: center;
   width: 500px;
+}
+
+@media (max-width: 768px) {
+  .bannerName {
+    height: 100px; /* Adjust the height as needed for larger screens */
+  }
+
+  .Name {
+    font-size: 40px; /* Adjust the font size as needed for larger screens */
+  }
+
+  .dokumenty {
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+  }
+
+  .contentImage {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    width: 80%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .imageContainer {
+    display: none;
+  }
+
+  .listy {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .contentImageListy {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainerListy {
+    display: none;
+  }
+
+  .contentListy {
+    width: 80%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }

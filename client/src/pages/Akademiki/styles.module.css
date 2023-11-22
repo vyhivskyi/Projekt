@@ -138,7 +138,7 @@
 
   @media (max-width: 768px) {
     .bannerName {
-      height: 145px; /* Adjust the height as needed for larger screens */
+      height: 100px; /* Adjust the height as needed for larger screens */
     }
   
     .Name {
