@@ -15,6 +15,7 @@ const Homepage = ({user}) => {
 
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({ name: "", department: "", text: "" });
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,7 +33,20 @@ const Homepage = ({user}) => {
     };
   
     fetchData(); // Fetch reviews when the component mounts
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  
 
   const handleReviewSubmit = async () => {
     try {
@@ -47,16 +61,21 @@ const Homepage = ({user}) => {
       console.error('Error submitting or fetching reviews:', error.message);
     }
   };
+  
   const ReviewsSlider = ({ reviews }) => {
     const [startIndex, setStartIndex] = useState(0);
+
+    const getVisibleReviewsCount = () => {
+      return window.innerWidth <= 768 ? 1 : 3;
+    };
   
-    const visibleReviews = reviews.slice(startIndex, startIndex + 3);
+    const visibleReviews = reviews.slice(startIndex, startIndex + getVisibleReviewsCount());
     const handlePrevious = () => {
-      setStartIndex((prevIndex) => Math.max(0, prevIndex - 1));
+      setStartIndex((prevIndex) => Math.max(0, prevIndex - getVisibleReviewsCount()));
     };
 
     const handleNext = () => {
-      setStartIndex((prevIndex) => Math.min(reviews.length - 3, prevIndex + 1));
+      setStartIndex((prevIndex) => Math.min(reviews.length - getVisibleReviewsCount(), prevIndex + getVisibleReviewsCount()));
     };
 
     return (

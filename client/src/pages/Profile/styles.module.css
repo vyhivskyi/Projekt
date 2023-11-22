@@ -1168,6 +1168,34 @@
 	margin-left: 17%;
   }
 
+  .buttonPayment {
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background-color: #292F36;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+	margin-top: 2%;
+	margin-left: 20%;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .buttonPayment:hover {
+    background-color: #c49e85; /* Change the background color on hover */
+  }
+
+  .buttonPayment:hover .vector {
+    fill: #c49e85; /* Change the fill color on hover */
+    stroke: #292F36;
+  }
+
 
 
 

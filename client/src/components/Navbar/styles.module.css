@@ -48,5 +48,62 @@ body {
     background-color: #C49E85;
   }
 
+  .menuIcon {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+  .menuIcon {
+    display: flex;
+    cursor: pointer;
+    font-size: 20px;
+    order: 3;
+  }
+
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative; /* Ensure a stacking context for z-index */
+  }
+
+  .navItems {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    order: 2; 
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ffffff;
+    padding: 10px;
+    z-index: 2; /* Set a higher z-index */
+    align-items: center;
+    width: 25%;
+  }
+
+  .showDropdown {
+    display: flex;
+  }
+
+  .navItem {
+    color: #292F36;
+    text-decoration: none;
+    padding: 5px; /* Increase padding for better spacing */
+    border-radius: 18px;
+    width: 100%; /* Make items full width */
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-right: 17px;
+  }
+
+  .navItem:hover {
+    background-color: #C49E85;
+  }
+}
+
+
+
 
   

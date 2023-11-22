@@ -54,6 +54,14 @@ const Main = ({ setDane, setMessage }) => {
         }
     }
 
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const handleToggleDropdown = () => {
+        const navItems = document.querySelector(`.${styles.navItems}`);
+        navItems.classList.toggle(styles.showDropdown);
+      };
+      
+
     const getProfileLink = () => {
         if (userRole === "Student") {
           return "/profile";
@@ -69,66 +77,67 @@ const Main = ({ setDane, setMessage }) => {
     //const isLoggedOut = !localStorage.getItem("token");
     return (
         <div className={styles.pageContainer}>
-            {localStorage.getItem("token") ? (<nav className={styles.navbar}>
+            <nav className={styles.navbar}>
                 <div className={styles.logoContainer}>
                     <img src={logoImage} alt="Logo" className={styles.logo} />
                     <span className={styles.logoText}>DS POLLUB</span>
                 </div>
-                <Link to="/" className={styles.navItem}>
-                    Strona główna
-                </Link>
-                <Link to="/akademiki" className={styles.navItem}>
-                    Akademiki
-                </Link>
-                <Link to="/dokumenty" className={styles.navItem}>
-                    Dokumenty
-                </Link>
-                <Link to="/kontakt" className={styles.navItem}>
-                    Kontakt
-                </Link>
-                <Link to="/dostepnosc" className={styles.navItem} onClick={handleLogout}>
-                    Wyloguj się
-                </Link>
-                <Link to={getProfileLink()} className={styles.navItem}>
-                    Profil
-                </Link>
-                <Link to="/dostepnosc" className={styles.navItem}>
-                    Dostępność
-                </Link>
+                <div className={styles.menuIcon} onClick={handleToggleDropdown}>
+                    ☰
+                </div>
+                <div className={`${styles.navItems} ${showDropdown ? styles.showDropdown : ''}`}>
+                    {localStorage.getItem("token") ? (
+                        <>
+                        <Link to="/" className={styles.navItem}>
+                            Strona główna
+                        </Link>
+                        <Link to="/akademiki" className={styles.navItem}>
+                            Akademiki
+                        </Link>
+                        <Link to="/dokumenty" className={styles.navItem}>
+                            Dokumenty
+                        </Link>
+                        <Link to="/kontakt" className={styles.navItem}>
+                            Kontakt
+                        </Link>
+                        <Link to="/dostepnosc" className={styles.navItem} onClick={handleLogout}>
+                            Wyloguj się
+                        </Link>
+                        <Link to={getProfileLink()} className={styles.navItem}>
+                            Profil
+                        </Link>
+                        <Link to="/dostepnosc" className={styles.navItem}>
+                            Dostępność
+                        </Link>
+                    </>
+                    ) : (
+                        <>
+                            <Link to="/" className={styles.navItem}>
+                                Strona główna
+                            </Link>
+                            <Link to="/akademiki" className={styles.navItem}>
+                                Akademiki
+                            </Link>
+                            <Link to="/Cennik" className={styles.navItem}>
+                                Cennik
+                            </Link>
+                            <Link to="/dokumenty" className={styles.navItem}>
+                                Dokumenty
+                            </Link>
+                            <Link to="/kontakt" className={styles.navItem}>
+                                Kontakt
+                            </Link>
+                            <Link to="/login" className={styles.navItem}>
+                                Logowanie
+                            </Link>
+                            <Link to="/dostepnosc" className={styles.navItem}>
+                                Dostępność
+                            </Link>
+                        </>
+                    )}
+                </div>
             </nav>
-            ) : (<nav className={styles.navbar}>
-                <div className={styles.logoContainer}>
-                    <img src={logoImage} alt="Logo" className={styles.logo} />
-                    <span className={styles.logoText}>DS POLLUB</span>
-                </div>
-                <Link to="/" className={styles.navItem}>
-                    Strona główna
-                </Link>
-                <Link to="/akademiki" className={styles.navItem}>
-                    Akademiki
-                </Link>
-                <Link to="/Cennik" className={styles.navItem}>
-                    Cennik
-                </Link>
-                <Link to="/dokumenty" className={styles.navItem}>
-                    Dokumenty
-                </Link>
-                <Link to="/kontakt" className={styles.navItem}>
-                    Kontakt
-                </Link>
-                <Link to="/login" className={styles.navItem}>
-                    Logowanie
-                </Link>
-                <Link to="/dostepnosc" className={styles.navItem}>
-                    Dostępność
-                </Link>
-            </nav>)}
-            {/*{isLoggedOut && 
-            <Link to="/form" className={styles.navItem}>
-                Dostępność
-            </Link>
-            }*/}
         </div >
-    )
+    );
 }
 export default Main

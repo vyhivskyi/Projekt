@@ -3,8 +3,10 @@
 	flex-direction: column;
 	align-items: center;
 	position: relative;
-	width: 1000px;
-	height: 600px;
+	width: 100%;
+  	max-width: 1000px;
+	height: 100%;
+  	max-height: 600px;
 	background-color: #f4f0ec;
 	text-align: center;
 	margin: 20px auto;
@@ -83,17 +85,19 @@
   }
   
   .opcjeContainer {
-	  display: flex;
-	  justify-content: space-around;
-	  margin-top: 130px;
-	  align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 130px;
+	align-items: center;
 	}
 	
 	.smallContainer {
-	  align-items: center;
-	  width: 340px;
-	  height: 230px; 
-	  border-radius: 10px;
+  	margin: 10px;
+	align-items: center;
+	width: 340px;
+	height: 230px; 
+	border-radius: 10px;
 	}
   
 	.smallContainerText {
@@ -161,7 +165,8 @@
   
 	.ContainerMiasto {
 	  align-items: center;
-	  width: 1200px;
+	  width: 100%;
+	  max-width: 1200px;
 	  height: 700px; 
 	  border-radius: 10px;
 	  background-color: #fff;
@@ -173,9 +178,9 @@
   
 	.ContainerMiastoTextOverlay {
 	  position: relative;
-	  width: 470px;
+	  width: 100%;
+	  max-width: 470px;
 	  height: 470px;
-	  margin-left: 10%;
 	  text-align: left;
 	  color: #292F36;
 	  font-size: 40px;
@@ -230,7 +235,8 @@
 	.ContainerMiastoImage {
 	  position: absolute;
 	  height: 700px;
-	  width: 650px;
+	  width: 100%;
+	  max-width: 650px;
 	  margin-left: 30%;
 	  border-radius: 0px 326px 0px 123px;
 	  background-image: url('./images/Banner.jpg');
@@ -239,14 +245,15 @@
 	.containerReviews {
 	  display: flex;
 	  justify-content: space-around;
-	  margin-top: 10%;
+	  margin-top: 100px;
 	  align-items: center;
 	}
   
 	.reviews {
 	  align-items: center;
 	  text-align: center;
-	  width: 1200px;
+	  width: 100%;
+	  max-width: 1200px;
 	  height: 650px; 
 	  border-radius: 70px;
 	  background-color: #86A397;
@@ -259,8 +266,9 @@
 	}
   
 	.peopleReviews {
-	  width: 1150px;
-	  height: 340px;
+	  width: 100%;
+	  max-width: 1150px;
+	  height: auto;
 	  margin-top: 3%;
 	  margin-left: 3%;
 	  display: flex;
@@ -268,7 +276,8 @@
 	}
   
 	.review {
-	  width: 340px;
+	  width: 100%;
+	  max-width: 340px;
 	  height: 340px;
 	  background-color:#ffffff;
 	  border-radius: 30px;
@@ -299,11 +308,6 @@
 	  font-size: 15px;
 	  font-family: 'Jost', serif;
 	}
-  
-	.personImage {
-	  border-radius: 50%;
-	  margin: 5px;
-	}
 	
 	.personOpis {
 	  margin: 5px;
@@ -313,7 +317,7 @@
 	  font-family: 'Jost', serif;
 	  text-align: left;
 	  font-size: 20px;
-	  margin-left: 10px;
+	  margin-left: 7%;
 	}
 
 	.buttonOpinie {
@@ -321,9 +325,9 @@
 		align-items: center;
 		width: 244px;
 		height: 75px;
-		margin-top: 3%;
 		margin-left: auto;
 		margin-right: auto;
+		margin-top: 8%;
 		transform: translate(-50%, -50%);
 		padding: 10px 20px;
 		background-color: #292F36;
@@ -354,6 +358,7 @@
 		align-items: center;
 		align-items: center;
 		text-align: center;
+		max-width: 100%;
 		width: 1200px;
 		height: 240px; 
 		border-radius: 70px;
@@ -389,7 +394,8 @@
 	.input {
 		outline: none;
 		border: none;
-		width: 270px;
+		width: 100%;
+		max-width: 270px;
 		border-bottom: 1px solid #292F36;
 		padding: 5px;
 		font-size: 18px;
@@ -482,3 +488,140 @@
 		display: flex;
 		align-items: center;
 	  }
+
+	  @media (max-width: 768px) {
+		.textOverlay {
+			position: absolute;
+			top: 35%;
+			left: 50%;
+			width: 400px;
+			text-align: center;
+			color: #292f36; /* Text color */
+			font-size: 17px;
+			font-family: 'DM Serif Display', serif;
+			z-index: 1; /* Ensure text appears over the image */
+		}
+
+		.buttonOverlay {
+			position: absolute;
+			align-items: center;
+			width: 244px;
+			height: 75px;
+			top: 75%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 10px 20px;
+			background-color: #292F36;
+			color: #fff;
+			border: none;
+			border-radius: 18px;
+			font-size: 18px;
+			font-weight: 600;
+			font-family: 'Jost', serif;
+			cursor: pointer;
+			z-index: 1; /* Ensure button appears over the image */
+			transition: background-color 0.3s;
+		}
+
+		.opcjeContainer {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			margin-top: 40px;
+			align-items: center;
+		}
+
+		.smallContainer {
+			flex-basis: calc(100% - 20px);
+			border: 2px solid #292F36; /* Make containers full width on smaller screens */
+		}
+
+		.smallContainerButton{
+			position: absolute;
+			align-items: center;
+			width: 150px;
+			height: 50px;
+			margin-top: 20px;
+			margin-left: 49%;
+			transform: translate(-50%, -50%);
+			padding: 10px 15px;
+			color: #292F36;
+			background-color: #ffffff;
+			border: none;
+			border-radius: 18px;
+			font-size: 18px;
+			font-weight: 600;
+			font-family: 'Jost', serif;
+			cursor: pointer;
+			z-index: 1; /* Ensure button appears over the image */
+			transition: background-color 0.3s;
+		}
+
+		.ContainerContact {
+			display: flex;
+			margin-left: 70px;
+			margin-top: 10px;
+		}
+
+		.ContainerMiasto {
+			height: 280px;
+		}
+
+		.ContainerMiastoImage {
+			display: none;
+		}
+
+		.ContainerMiastoTextOverlay {
+			height: 470px;
+			margin-top: 10px;
+			text-align: center;
+			color: #292F36;
+			font-size: 23px;
+			font-family: 'DM Serif Display', serif;
+		}
+
+		.button {
+			margin-top: 50px;
+			margin-left: 100px;
+		}
+
+		.containerReviews {
+			display: flex;
+			flex-direction: column;
+		}
+		
+		  .reviews {
+			height: 460px; 
+		}
+
+		.reviewsHeader{
+			font-size: 30px;
+		}
+
+		.peopleReviews {
+			margin-top: 10px;
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		.review {
+			height: 250px;
+			margin-bottom: 50px;
+		}
+
+		.reviewOpis {
+			text-align: center;
+			margin: 5px;
+		}
+
+		.buttonOpinie {
+			margin-top: 0px;
+		}
+
+		.formRow {
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+
+
+		
+	}
