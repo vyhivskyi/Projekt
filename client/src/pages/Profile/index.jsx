@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
-import React from "react"
+import React, { useState } from "react"
 import axios from "axios"
 import { UilFileDownloadAlt, UilFastMail, UilLocationArrow, UilBed, UilFastMailAlt, UilSpinnerAlt, UilInvoice } from '@iconscout/react-unicons'
 import { Link } from "react-router-dom"
@@ -46,6 +46,12 @@ const Profile = ({ setDane, user }) => {
             }
         }
     }
+
+    const [isNavActive, setNavActive] = useState(false);
+
+    const handleToggleNav = () => {
+        setNavActive(!isNavActive);
+    };
     return (
         <div className={styles.main_container}>
             <div className={styles.headSystem}>
@@ -66,7 +72,10 @@ const Profile = ({ setDane, user }) => {
                 </div>
             </div>
             <div className={styles.navContainer}>
-                <nav className={styles.navbar}>
+                <div className={styles.hamburgerIcon} onClick={handleToggleNav}>
+                    ☰
+                </div>
+                <div className={`${styles.navbar} ${isNavActive ? styles.active : ''}`}>
                     <div className={styles.contentNav}>
                         <Link to="/profile" className={styles.nonLinkText}>
                             <button className={styles.navBtn} onClick={handleProfile}>
@@ -140,7 +149,7 @@ const Profile = ({ setDane, user }) => {
                             </button>
                         </Link>
                     </div>
-                </nav>
+                </div>
             </div>
         </div>
     )

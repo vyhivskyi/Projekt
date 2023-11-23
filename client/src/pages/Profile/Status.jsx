@@ -65,10 +65,10 @@ const Status = ({ user }) => {
 
     return (
         <div className={styles.pageContainer}>
-            <div className={styles.roomContainer}>
-                <div className={styles.roomContent}>
-                    <div className={styles.roomHead}>
-                        <h2 className={styles.signName}>Dziękujemy za wypełnienie wniosku</h2>
+            <div className={styles.statusBlock}>
+                <div className={styles.statusContent}>
+                    <div className={styles.statusHead}>
+                        <h2 className={styles.statusName}>Dziękujemy za wypełnienie wniosku</h2>
                     </div>
 
                     <div className={styles.statusContainer}>
@@ -91,7 +91,7 @@ const Status = ({ user }) => {
                         </div>
                     </div>
 
-                    <div className={styles.prefField}>
+                    <div className={styles.prefFieldPeople}>
                         <label className={styles.label}>Preferowany skład</label>
                         <p className={styles.data}>{user.preference.users}</p>
                     </div>

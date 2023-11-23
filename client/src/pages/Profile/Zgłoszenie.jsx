@@ -41,6 +41,9 @@ const Message = ({ user }) => {
         <div className={styles.pageContainer}>
             <div className={styles.messageContainer}>
                 <div className={styles.messageContent}>
+                    <div className={styles.messageHead}>
+                        <h2 className={styles.signName}>Zgłoszenie do opiekuna</h2>
+                    </div>
                     <div className={styles.messFieldRow}>
                         <div className={styles.messField}>
                             <label className={styles.label}>Imię</label>

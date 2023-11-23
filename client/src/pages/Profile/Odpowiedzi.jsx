@@ -21,7 +21,7 @@ const Odpowiedzi = () => {
         <div className={styles.pageContainer}>
             <div className={styles.daneLista}>
                 <div className={styles.contentLista}>
-                    <div className={styles.nameContainerCheck}>
+                    <div className={styles.statusHead}>
                         <h1 className={styles.signName}>Informacja zwrotna</h1>
                     </div>
                     <div className={styles.answerContainer}>
