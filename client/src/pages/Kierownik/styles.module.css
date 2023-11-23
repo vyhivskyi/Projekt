@@ -1,7 +1,7 @@
-
 /*Styles for component with header (Kierownik)*/
 .headSystem {
-	width: 1195px;
+	width: 100%;
+	max-width: 1195px;
 	height: 100px;
 	margin-left: auto;
 	margin-right: 3%;
@@ -105,10 +105,51 @@
 	font-weight: 200;
   }
 
+  .hamburgerIcon {
+	display: none;
+	cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+	.navbar {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: fixed;
+		border-radius: 50px;
+		z-index: 1;
+		transition: 0.5s;
+	  }
+
+	.hamburgerIcon {
+		display: block;
+		margin-top: 20px;
+		margin-left: 20px;
+    	cursor: pointer;
+    	font-size: 20px;
+		color: #C49E85;
+		border: 2px solid #292F36;
+		padding: 8px;
+  		border-radius: 8px;
+		width: 40px;
+		text-align: center;
+	  }
+
+	  .navbar.active {
+		transform: translateX(0);
+	  }
+
+	  .navbar {
+		transform: translateX(-120%);
+	  }
+  }
+
 /*Styles for the main part of the page with data*/
 .dane {
 	position: relative;
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
 	height: 400px;
 	display: flex;
 	flex-direction: column;
@@ -131,7 +172,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 300px;
+	width: 100%;
+	max-width: 300px;
 	height: 40px;
 	margin-top: 10px;
 	margin-bottom: 70px;
@@ -207,7 +249,72 @@
     background-color: transparent; /* Remove background color */
 }
 
+@media (max-width: 769px) {
+	.dane {
+		margin-left: 0;
+		margin-right: 0;
+		height: 350px;
+		width: 87%;
+	}
+
+	.content {
+		margin-left: 0;
+	}
+
+	.nameContainer {
+		margin-top: 0;
+	}
+
+	.fieldRow {
+      align-items: center;
+      flex-direction: column; /* Adjust as needed */
+      width: 100%;
+    }
+
+	.field {
+		margin-bottom: 0;
+	}
+
+	.fieldMail {
+		margin-left: 68px;
+	}
+
+	.fieldPhoto {
+		margin-right: 0;
+	}
+	
+  }
+
 /*Styles for list of the applications page*/
+.daneLista {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 650px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin-left: 29%;
+	margin-right: auto;
+	margin-top: 2%;
+	background-color: #F4F0EC;
+	border-radius: 55px;
+	overflow: hidden;
+  }
+  
+  .nameContainerLista {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 400px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 33%;
+}
+
 .inputContainer {
 	display: flex;
     flex-direction: column;
@@ -219,7 +326,8 @@
 .select {
 	outline: none;
 	border: none;
-	width: 300px;
+	width: 100%;
+	max-width: 300px;
 	padding: 15px;
 	border-radius: 10px;
 	border-bottom: 2px solid #000;
@@ -248,7 +356,8 @@
   .applicationsContainer {
 	display: flex;
 	flex-wrap: wrap;
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
 	margin-right: auto;
   	margin-left: auto;
 	justify-content: center;
@@ -274,38 +383,43 @@
 	font-size: 20px;
   }
 
-/*Styles for list of the students page*/
-.daneLista {
-	position: relative;
-	width: 1200px;
-	height: 600px;
-	display: flex;
-	flex-direction: column;
-	padding: 40px;
-	margin-left: 29%;
-	margin-right: auto;
-	margin-top: 2%;
-	background-color: #F4F0EC;
-	border-radius: 55px;
-	overflow: hidden;
-  }
+  @media (max-width: 769px) {
+	.daneLista {
+		margin-left: 10px;
+		height: 600px;
+		width: 85%;
+	}
 
-  .nameContainerLista {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 400px;
-	height: 40px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	margin-left: 33%;
+	.applicationBlock {
+		width: calc(43.33% - 10px);
+		height: 320px;
+		margin: 10px;
+	}
+
+	.nameContainerLista {
+		margin-left: 80px;
+	}
+
+	.filterContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: 20px;
+	}
+
+	.searchContainer {
+		margin-right: 30px;
+	}
+	
 }
+
+/*Styles for list of the students page*/
 
 .studentsContainer {
 	display: flex;
 	flex-wrap: wrap;
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
 	margin-right: auto; /* Adjust the margin to center horizontally */
   	margin-left: auto;
 	justify-content: center;
@@ -324,6 +438,19 @@
 	box-sizing: border-box;
 	text-align: center;
   }
+
+  .nameContainerStudent {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 400px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 33%;
+}
   
   .profilePicture {
 	width: 120px;
@@ -337,10 +464,35 @@
 	font-size: 20px;
   }
 
+  @media (max-width: 769px) {
+	.studentsBlock {
+		width: calc(43.33% - 10px);
+		height: 450px;
+		margin: 10px;
+	}
+
+	.nameContainerStudent {
+		margin-left: 80px;
+	}
+
+	.filterContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: 20px;
+	}
+
+	.searchContainer {
+		margin-right: 30px;
+	}
+	
+}
+
   /*Styles for the page with the student details (Applications)*/
   .daneStudent {
 	position: relative;
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
 	height: 1200px;
 	display: flex;
 	flex-direction: column;
@@ -357,7 +509,8 @@
   .contentStudent {
 	display: flex;
 	flex-direction: column;
-	width: 1100px;
+	width: 100%;
+	max-width: 1100px;
 	height: 1050px;
 	margin: 0 auto;
   }
@@ -453,6 +606,27 @@
     stroke: #292F36;
   }
 
+  @media (max-width: 769px) {
+	.daneStudent {
+		margin-left: 10px;
+		height: 1500px;
+		width: 85%;
+	}
+
+	.fieldStudent {
+		margin-right: 80px;
+	}
+
+	.fieldMail {
+		margin-left: -17px;
+	}
+
+	.fieldSelect {
+		margin-left: 17px;
+	}
+	
+}
+
   /*Styles for the list of the rooms page*/
   .filtersContainer {
 	display: flex;
@@ -501,7 +675,8 @@
   .roomsContainer {
 	display: flex;
 	flex-wrap: wrap;
-	width: 1200px;
+	width: 100%;
+	max-width: 1200px;
 	margin-right: auto; /* Adjust the margin to center horizontally */
   	margin-left: auto;
 	justify-content: center;
@@ -526,6 +701,34 @@
 	color: #292F36;
 	font-size: 20px;
   }
+
+  @media (max-width: 769px) {
+	.roomBlock {
+		width: calc(43.33% - 10px);
+		height: 220px;
+		margin: 10px;
+	}
+
+	.nameContainerStudent {
+		margin-left: 80px;
+	}
+
+	.filtersContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-left: 20px;
+	}
+
+	.searchContainer {
+		margin-right: 30px;
+	}
+
+	.checkboxContainer {
+		margin-left: 50px;
+	}
+	
+}
 
 
 

@@ -34,7 +34,7 @@ const KierownikStudenci = () => {
     <div className={styles.pageContainer}>
       <div className={styles.daneLista}>
         <div className={styles.contentLista}>
-            <div className={styles.nameContainerLista}>
+            <div className={styles.nameContainerStudent}>
                 <h1 className={styles.signName}>Lista studentów</h1>
             </div>
             <div className={styles.searchContainer}>
