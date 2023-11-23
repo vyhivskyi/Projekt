@@ -43,6 +43,8 @@ import KierownikStudenci from "./pages/Kierownik/KierownikStudenci";
 import Payment from "./pages/Profile/Opłata";
 import KierownikRooms from "./pages/Kierownik/KierownikRooms";
 import Odpowiedź from "./pages/Profile/Odpowiedź"
+import OpiekunZgloszenia from "./pages/Opiekun/OpiekunZgloszenia"
+import ZgloszeniaDetails from "./pages/Opiekun/ZgloszeniaDetails"
 function App() {
   const user = localStorage.getItem("token");
   const [dane, setDane] = useState();
@@ -230,6 +232,28 @@ function App() {
               <Navbar setDane={handleSetDane} />
               <Opiekun setDane={handleSetDane} user={dane} />
               <OpiekunCheckOut />
+            </div>
+          } />
+      }
+      {user && userRole === "Opiekun" &&
+        <Route
+          path="/portiernia/zgłoszenia"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Opiekun setDane={handleSetDane} user={dane} />
+              <OpiekunZgloszenia />
+            </div>
+          } />
+      }
+      {user && userRole === "Opiekun" &&
+        <Route
+          path="/portiernia/zgłoszenia/:issueId"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Opiekun setDane={handleSetDane} user={dane} />
+              <ZgloszeniaDetails />
             </div>
           } />
       }
