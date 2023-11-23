@@ -125,14 +125,6 @@
 	display: none;
 	cursor: pointer;
   }
-  
-  .iconBar {
-	width: 30px;
-	height: 3px;
-	background-color: #292F36;
-	margin: 6px 0;
-	transition: 0.4s;
-  }
 
   @media (max-width: 768px) {
 	.navbar {
@@ -288,26 +280,6 @@
 	margin-top: 5px;
     background-color: transparent; /* Remove background color */
 }
-
-.infoText {
-	font-family: 'DM Serif Display';
-	font-size: 30px;
-	font-weight: 400;
-	color: #292F36;
-	margin-left: 60%;
-}
-
-  .error_msg {
-	width: 370px;
-	padding: 15px;
-	margin: 5px 0;
-	font-size: 14px;
-	background-color: #f34646;
-	color: white;
-	border-radius: 5px;
-	text-align: center;
-  }
-
   @media (max-width: 769px) {
 	.dane {
 		margin-left: 0;
@@ -444,6 +416,43 @@
 	margin-top: 5%;
 	margin-left: 17%;
 }
+
+.button {
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background-color: #292F36;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+	margin-top: 7%;
+	margin-left: 17%;
+    z-index: 1; /* Ensure button appears over the image */
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #c49e85; /* Change the background color on hover */
+  }  
+
+  .vector {
+    width: 17px; /* Adjust the width as needed */
+    height: 15px; /* Adjust the height as needed */
+    margin-left: 15px; /* Adjust the margin as needed */
+    fill: #292F36; /* Color of the vector icon */
+    stroke: #c49e85; /* Color of the vector stroke */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .button:hover .vector {
+    fill: #c49e85; /* Change the fill color on hover */
+    stroke: #292F36;
+  }
 
 @media (max-width: 769px) {
 	.statusBlock {
@@ -701,7 +710,7 @@
     background-color: transparent; /* Remove background color */
 }
 
-.button {
+.buttonMess {
     align-items: center;
     width: 210px;
     height: 60px;
@@ -715,25 +724,16 @@
     font-family: 'Jost', serif;
     cursor: pointer;
 	margin-top: 7%;
-	margin-left: 17%;
+	margin-left: 50%;
     z-index: 1; /* Ensure button appears over the image */
     transition: background-color 0.3s;
   }
 
-  .button:hover {
+  .buttonMess:hover {
     background-color: #c49e85; /* Change the background color on hover */
   }  
 
-  .vector {
-    width: 17px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
-    margin-left: 15px; /* Adjust the margin as needed */
-    fill: #292F36; /* Color of the vector icon */
-    stroke: #c49e85; /* Color of the vector stroke */
-    transition: fill 0.3s, stroke 0.3s;
-  }
-
-  .button:hover .vector {
+  .buttonMess:hover .vector {
     fill: #c49e85; /* Change the fill color on hover */
     stroke: #292F36;
   }
@@ -783,62 +783,12 @@
 	overflow: hidden;
   }
 
-  .nameContainerCheck {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	max-width: 400px;
-	height: 40px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-	margin-left: 33%;
-}
-
 .signName {
 	font-family: 'DM Serif Display';
 	font-weight: 400;
 	font-size: 45px;
 	color: #292F36;
 }
-
-  .buttonMess {
-    align-items: center;
-    width: 210px;
-    height: 60px;
-    transform: translate(-50%, -50%);
-    background-color: #292F36;
-    color: #fff;
-    border: none;
-    border-radius: 18px;
-    font-size: 18px;
-    font-weight: 600;
-    font-family: 'Jost', serif;
-    cursor: pointer;
-	margin-top: 7%;
-	margin-left: 50%;
-    z-index: 1; /* Ensure button appears over the image */
-    transition: background-color 0.3s;
-  }
-
-  .buttonMess:hover {
-    background-color: #c49e85; /* Change the background color on hover */
-  }  
-
-  .vector {
-    width: 17px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
-    margin-left: 15px; /* Adjust the margin as needed */
-    fill: #292F36; /* Color of the vector icon */
-    stroke: #c49e85; /* Color of the vector stroke */
-    transition: fill 0.3s, stroke 0.3s;
-  }
-
-  .buttonMess:hover .vector {
-    fill: #c49e85; /* Change the fill color on hover */
-    stroke: #292F36;
-  }
 
   .answerContainer {
 	display: flex;
@@ -1046,47 +996,6 @@
 	margin-bottom: 5px;
 }
 
-.historyContent {
-	width: 415px;
-	height: 130px;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.historyHead {
-	width: 400px;
-}
-
-.headText {
-	font-family: 'DM Serif Display';
-	font-size: 20px;
-	font-weight: 400;
-	color: #292F36;
-}
-
-.historyText {
-	width: 95%;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	align-items: center;
-}
-
-.historyRow {
-	display: flex;
-	flex-direction: row;
-}
-
-.historyYear,
-.historyRoom {
-  margin: 0;
-  padding: 5px;
-  font-family: 'Jost';
-  font-size: 15px;
-  color: #292F36;
-}
-
 @media (max-width: 769px) {
 	.roomContainer {
 		margin-left: 0;
@@ -1094,74 +1003,31 @@
 		width: 87%;
 	}
 }
-
-/*Styles for Preferencje page*/
-.prefContainer {
+  /*Styles for Opłata page*/
+  .paymentContainer {
 	position: relative;
-	width: 1200px;
-	height: 650px;
+	width: 100%;
+	max-width: 1200px;
+	height: 550px;
 	display: flex;
 	flex-direction: column;
 	padding: 40px;
 	margin-left: 29%;
 	margin-right: auto;
+	margin-top: 3%;
 	background-color: #F4F0EC;
 	border-radius: 55px;
-}
+  }
 
-.prefContent {
-	width: 1000px;
-	height: 650px;
-	margin-right: auto;
-	margin-left: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.prefHead {
-	width: 600px;
-	height: 60px;
-	align-items: center;
-	text-align: center;
-	margin-bottom: 5px;
+  @media (max-width: 769px) {
+	.paymentContainer {
+		margin-left: 0;
+		height: 700px;
+		width: 87%;
+	}
 }
 
 
-
-
-
-  /*Styles for Status page*/
-  
-
-
-  .buttonPayment {
-    align-items: center;
-    width: 210px;
-    height: 60px;
-    transform: translate(-50%, -50%);
-    background-color: #292F36;
-    color: #fff;
-    border: none;
-    border-radius: 18px;
-    font-size: 18px;
-    font-weight: 600;
-    font-family: 'Jost', serif;
-    cursor: pointer;
-	margin-top: 2%;
-	margin-left: 20%;
-    z-index: 1; /* Ensure button appears over the image */
-    transition: background-color 0.3s;
-  }
-
-  .buttonPayment:hover {
-    background-color: #c49e85; /* Change the background color on hover */
-  }
-
-  .buttonPayment:hover .vector {
-    fill: #c49e85; /* Change the fill color on hover */
-    stroke: #292F36;
-  }
 
 
 
