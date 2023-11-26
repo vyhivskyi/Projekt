@@ -2,7 +2,7 @@ import styles from "./styles.module.css"
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
-import logoImage from './images/Logo.png'
+import logoImage from './images/logo_size.png'
 
 const Main = ({ setDane, setMessage }) => {
     const handleLogout = () => {
@@ -75,20 +75,34 @@ const Main = ({ setDane, setMessage }) => {
       };
     //const isLoggedIn = !!localStorage.getItem("token");
     //const isLoggedOut = !localStorage.getItem("token");
+    const [theme, setTheme] = useState('light');
+    const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        // Save the theme preference to localStorage if you want to persist it
+        localStorage.setItem('theme', newTheme);
+      };
+      useEffect(() => {
+        // Load theme preference from localStorage on component mount
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          setTheme(savedTheme);
+        }
+      }, []);
     return (
-        <div className={styles.pageContainer}>
-            <nav className={styles.navbar}>
+        <div className={`${styles.pageContainer} ${styles[theme]}`}>
+            <nav className={`${styles.navbar} ${styles[theme]}`}>
                 <div className={styles.logoContainer}>
                     <img src={logoImage} alt="Logo" className={styles.logo} />
-                    <span className={styles.logoText}>DS POLLUB</span>
                 </div>
                 <div className={styles.menuIcon} onClick={handleToggleDropdown}>
                     ☰
                 </div>
-                <div className={`${styles.navItems} ${showDropdown ? styles.showDropdown : ''}`}>
+                
+                <div className={`${styles.navItems} ${showDropdown ? styles.showDropdown : ''} ${styles[theme]}`}>
                     {localStorage.getItem("token") ? (
                         <>
-                        <Link to="/" className={styles.navItem}>
+                        <Link to="/" className={`${styles.navItem} ${styles[theme]}`}>
                             Strona główna
                         </Link>
                         <Link to="/akademiki" className={styles.navItem}>
@@ -109,9 +123,11 @@ const Main = ({ setDane, setMessage }) => {
                         <Link to={getProfileLink()} className={styles.navItem}>
                             Profil
                         </Link>
-                        <Link to="/dostepnosc" className={styles.navItem}>
-                            Dostępność
-                        </Link>
+                        <button className={styles.themeToggle} onClick={toggleTheme}>
+                            <span role="img" aria-label="Toggle Theme">
+                                {theme === 'light' ? '🌞' : '🌙'}
+                            </span>
+                        </button>
                     </>
                     ) : (
                         <>
@@ -133,9 +149,11 @@ const Main = ({ setDane, setMessage }) => {
                             <Link to="/login" className={styles.navItem}>
                                 Logowanie
                             </Link>
-                            <Link to="/dostepnosc" className={styles.navItem}>
-                                Dostępność
-                            </Link>
+                            <button className={styles.themeToggle} onClick={toggleTheme}>
+                                <span role="img" aria-label="Toggle Theme">
+                                    {theme === 'light' ? '🌞' : '🌙'}
+                                </span>
+                            </button>
                         </>
                     )}
                 </div>

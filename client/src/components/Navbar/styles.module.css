@@ -4,6 +4,59 @@
 body {
     margin: 0; /* Remove default body margin */
   }
+  .light {
+    background-color: #ffffff;
+    color: #292F36;
+  }
+  
+  .dark {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  .light .navItem {
+    color: #292F36;
+  }
+  
+  .dark .navItem {
+    color: #ffffff;
+  }
+  
+  .dark .navItem:hover {
+    background-color: #C49E85;
+    color: #ffffff; /* Adjust text color on hover as needed */
+  }
+
+  .light .navbar {
+    background-color: #ffffff;
+    color: #292F36;
+  }
+
+  .dark .navbar {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  .light .logo {
+    filter: invert(0%); /* Invert 0% for light theme, making the logo appear in its original color */
+  }
+  
+  .dark .logo {
+    filter: invert(100%); /* Invert 100% for dark theme, making the logo appear in white */
+  }
+
+  .themeToggle {
+    /* Your existing styles */
+    font-size: 20px; /* Adjust the font size as needed */
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .themeToggle:hover {
+    color: #C49E85; /* Adjust the color on hover as needed */
+  }
 
 .navbar {
     display: flex;
@@ -23,15 +76,8 @@ body {
   }
   
   .logo {
-    width: 50px; /* Adjust width as needed */
+    width: 150px; /* Adjust width as needed */
     height: auto;
-  }
-
-  .logoText {
-    margin-left: 10px; /* Adjust the margin as needed */
-    font-size: 18px; /* Adjust the font size as needed */
-    color: #292F36; /* Adjust the color as needed */
-    font-family: 'DM Serif Display', serif;
   }
   
   .navItem {
@@ -50,6 +96,11 @@ body {
 
   .menuIcon {
     display: none;
+}
+
+.logoImage {
+  width: 100px;
+  height: auto;
 }
 
 
