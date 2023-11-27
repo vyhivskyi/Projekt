@@ -22,7 +22,7 @@ const OpiekunZgloszenia = () => {
             <div className={styles.daneLista}>
                 <div className={styles.contentLista}>
                     <div className={styles.nameContainerCheck}>
-                        <h1 className={styles.signName}>Informacja zwrotna</h1>
+                        <h1 className={styles.signName}>Lista zgłoszeń</h1>
                     </div>
                     <div className={styles.answerContainer}>
                         {issues.map((issue, index) => (

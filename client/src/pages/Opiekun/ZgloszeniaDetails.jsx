@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "../Kierownik/styles.module.css";
+import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 const ZgloszeniaDetails = () => {
@@ -60,11 +60,18 @@ const ZgloszeniaDetails = () => {
         <div className={styles.pageContainer}>
             <div className={styles.daneLista}>
                 <div className={styles.contentLista}>
-                </div>
-                <div className={styles.studentsContainer}>
-                    <div className={styles.applicationsContainer}>
-                        <a>Temat: {issue.issue_thema}</a><br />
-                        <a>Treść: {issue.issue_description}</a>
+                    <div className={styles.nameContainerCheck}>
+                        <h1 className={styles.signName}>Informacja zwrotna</h1>
+                    </div>
+                    <div className={styles.fieldsTheme}>
+                        <div className={styles.messField}>
+                            <label className={styles.label}>Temat</label>
+                            <p className={styles.data}>{issue.issue_thema}</p>
+                        </div>
+                        <div className={styles.messField}>
+                            <label className={styles.label}>Treść</label>
+                            <p className={styles.data}>{issue.issue_description}</p>
+                        </div>
                         <form onSubmit={handleSubmit}>
                             <div className={styles.inputContainerText}>
                                 <label className={styles.label}>Odpowiedź</label>
@@ -94,7 +101,7 @@ const ZgloszeniaDetails = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  
     )
 };
 export default ZgloszeniaDetails

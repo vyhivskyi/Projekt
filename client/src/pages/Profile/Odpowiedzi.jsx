@@ -20,9 +20,9 @@ const Odpowiedzi = () => {
     return (
         <div className={styles.pageContainer}>
             <div className={styles.daneLista}>
-                <div className={styles.contentLista}>
+                <div className={styles.statusContent}>
                     <div className={styles.statusHead}>
-                        <h1 className={styles.signName}>Informacja zwrotna</h1>
+                        <h1 className={styles.statusName}>Informacja zwrotna</h1>
                     </div>
                     <div className={styles.answerContainer}>
                         {issues.map((issue, index) => (
