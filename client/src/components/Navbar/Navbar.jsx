@@ -75,23 +75,9 @@ const Main = ({ setDane, setMessage }) => {
       };
     //const isLoggedIn = !!localStorage.getItem("token");
     //const isLoggedOut = !localStorage.getItem("token");
-    const [theme, setTheme] = useState('light');
-    const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        // Save the theme preference to localStorage if you want to persist it
-        localStorage.setItem('theme', newTheme);
-      };
-      useEffect(() => {
-        // Load theme preference from localStorage on component mount
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-          setTheme(savedTheme);
-        }
-      }, []);
     return (
-        <div className={`${styles.pageContainer} ${styles[theme]}`}>
-            <nav className={`${styles.navbar} ${styles[theme]}`}>
+        <div className={styles.pageContainer}>
+            <nav className={styles.navbar}>
                 <div className={styles.logoContainer}>
                     <img src={logoImage} alt="Logo" className={styles.logo} />
                 </div>
@@ -99,10 +85,10 @@ const Main = ({ setDane, setMessage }) => {
                     ☰
                 </div>
                 
-                <div className={`${styles.navItems} ${showDropdown ? styles.showDropdown : ''} ${styles[theme]}`}>
+                <div className={`${styles.navItems} ${showDropdown ? styles.showDropdown : ''}`}>
                     {localStorage.getItem("token") ? (
                         <>
-                        <Link to="/" className={`${styles.navItem} ${styles[theme]}`}>
+                        <Link to="/" className={styles.navItem}>
                             Strona główna
                         </Link>
                         <Link to="/akademiki" className={styles.navItem}>
@@ -123,11 +109,6 @@ const Main = ({ setDane, setMessage }) => {
                         <Link to={getProfileLink()} className={styles.navItem}>
                             Profil
                         </Link>
-                        <button className={styles.themeToggle} onClick={toggleTheme}>
-                            <span role="img" aria-label="Toggle Theme">
-                                {theme === 'light' ? '🌞' : '🌙'}
-                            </span>
-                        </button>
                     </>
                     ) : (
                         <>
@@ -149,11 +130,6 @@ const Main = ({ setDane, setMessage }) => {
                             <Link to="/login" className={styles.navItem}>
                                 Logowanie
                             </Link>
-                            <button className={styles.themeToggle} onClick={toggleTheme}>
-                                <span role="img" aria-label="Toggle Theme">
-                                    {theme === 'light' ? '🌞' : '🌙'}
-                                </span>
-                            </button>
                         </>
                     )}
                 </div>

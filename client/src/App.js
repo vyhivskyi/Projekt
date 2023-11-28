@@ -45,6 +45,51 @@ import KierownikRooms from "./pages/Kierownik/KierownikRooms";
 import Odpowiedź from "./pages/Profile/Odpowiedź"
 import OpiekunZgloszenia from "./pages/Opiekun/OpiekunZgloszenia"
 import ZgloszeniaDetails from "./pages/Opiekun/ZgloszeniaDetails"
+import ChatBot from 'react-simple-chatbot';
+import { ThemeProvider } from 'styled-components';
+
+const steps = [
+  {
+      id: '0',
+      message: 'Hej!',
+      trigger: '1',
+  }, {
+      id: '1',
+      message: 'Podaj swoje imię',
+      trigger: '2'
+  }, {
+      id: '2',
+      user: true, 
+      trigger: '3',
+  }, {
+      id: '3',
+      message: " Hej {previousValue}, masz pytania ? Jestem tutaj dla pomocy :)",
+      trigger: 4
+  }, {
+      id: '4',
+      options: [
+          { value: 1, label: 'View Courses' },
+          { value: 2, label: 'Read Articles' },
+      ],
+      end: true
+  }
+];
+
+const theme = {
+  background: '#f4f0ec',
+  headerBgColor: '#86A397',
+  headerFontSize: '20px',
+  botBubbleColor: '#86A397',
+  headerFontColor: '#292f36',
+  botFontColor: '#292f36',
+  userBubbleColor: '#292F36',
+  userFontColor: 'white',
+};
+const config = {
+  floating: true,
+};
+
+
 function App() {
   const user = localStorage.getItem("token");
   const [dane, setDane] = useState();
@@ -71,6 +116,13 @@ function App() {
         console.error("Błąd pobierania roli użytkownika: ", error);
       });
   }, []);
+
+  const [isChatBotOpen, setChatBotOpen] = useState(false);
+
+  const handleToggleChatBot = () => {
+    setChatBotOpen(!isChatBotOpen);
+  };
+  
   return (
     <Routes>
       {user && userRole === "Student" &&
@@ -80,6 +132,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <Info user={dane} />
             </div>}
         />
@@ -92,6 +151,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <Status user={dane} />
             </div>}
         />
@@ -104,6 +170,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <Message user={dane} />
             </div>}
         />
@@ -115,6 +188,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <Odpowiedzi />
             </div>}
         />
@@ -126,6 +206,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <Odpowiedź />
             </div>
           } />
@@ -137,6 +224,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <CheckOut user={dane} />
             </div>}
         />
@@ -149,6 +243,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <Room user={dane} />
             </div>}
         />
@@ -162,6 +263,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <Payment user={dane} />
             </div>}
         />
@@ -173,6 +281,13 @@ function App() {
           <div>
             <Navbar setDane={handleSetDane} />
             <Homepage />
+            <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
             <Part />
             <Footer />
           </div>
@@ -185,6 +300,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Profile setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <PreferenceEdit user={dane} />
             </div>
           } />
@@ -197,6 +319,13 @@ function App() {
             <div>
               <Navbar setDane={handleSetDane} />
               <Opiekun setDane={handleSetDane} user={dane} />
+              <ThemeProvider theme={theme}>
+              <ChatBot
+                headerTitle="GeekBot"
+                steps={steps}
+                {...config}
+              />
+              </ThemeProvider>
               <OpiekunInfo user={dane} />
             </div>
           } />
@@ -319,12 +448,26 @@ function App() {
       <Route path="/" element={<div>
         <Navbar />
         <Homepage />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
 
       <Route path="/akademiki" element={<div>
         <Navbar />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Akademiki />
         <Part />
         <Footer />
@@ -333,11 +476,25 @@ function App() {
       <Route path="/404" element={<div>
         <Navbar />
         <Error404 />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
       </div>} />
 
       <Route path="/DS2/Korytarz" element={<div>
         <Navbar />
         <DS2Korytarz />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -345,6 +502,13 @@ function App() {
       <Route path="/DS2/Kuchnia" element={<div>
         <Navbar />
         <DS2Kuchnia />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -352,6 +516,13 @@ function App() {
       <Route path="/DS2/Pokój" element={<div>
         <Navbar />
         <DS2Pokoj />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -359,6 +530,13 @@ function App() {
       <Route path="/DS3/Korytarz" element={<div>
         <Navbar />
         <DS3Korytarz />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -366,6 +544,13 @@ function App() {
       <Route path="/DS3/Kuchnia" element={<div>
         <Navbar />
         <DS3Kuchnia />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -373,6 +558,13 @@ function App() {
       <Route path="/DS3/Pokój" element={<div>
         <Navbar />
         <DS3Pokoj />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -380,6 +572,13 @@ function App() {
       <Route path="/DS4/Korytarz" element={<div>
         <Navbar />
         <DS4Korytarz />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -387,6 +586,13 @@ function App() {
       <Route path="/DS4/Kuchnia" element={<div>
         <Navbar />
         <DS4Kuchnia />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -394,6 +600,13 @@ function App() {
       <Route path="/DS4/Pokój" element={<div>
         <Navbar />
         <DS4Pokoj />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Part />
         <Footer />
       </div>} />
@@ -401,35 +614,69 @@ function App() {
       <Route path="/Cennik" element={<div>
         <Navbar />
         <Price />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Footer />
       </div>} />
 
       <Route path="/Dokumenty" element={<div>
         <Navbar />
         <Dokumenty />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Footer />
       </div>} />
 
       <Route path="/Kontakt" element={<div>
         <Navbar />
         <Kontakt />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Footer />
       </div>} />
 
       <Route path="/login" element={<div>
         <Navbar />
         <Login />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Footer />
       </div>} />
 
       <Route path="/form" element={<div>
         <Navbar />
         <Form />
+        <ThemeProvider theme={theme}>
+          <ChatBot
+            headerTitle="GeekBot"
+            steps={steps}
+            {...config}
+          />
+        </ThemeProvider>
         <Footer />
       </div>} />
 
       <Route path="/form" element={<Form />} />
-
       <Route path="/profile" element={<Navigate replace to="/" />} />
       <Route path="/profile/preferences" element={<Navigate replace to="/" />} />
       <Route path="/profile/preferences/edit" element={<Navigate replace to="/" />} />
