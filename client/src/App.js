@@ -50,30 +50,62 @@ import { ThemeProvider } from 'styled-components';
 
 const steps = [
   {
-      id: '0',
-      message: 'Hej!',
-      trigger: '1',
-  }, {
-      id: '1',
-      message: 'Podaj swoje imię',
-      trigger: '2'
-  }, {
-      id: '2',
-      user: true, 
-      trigger: '3',
-  }, {
-      id: '3',
-      message: " Hej {previousValue}, masz pytania ? Jestem tutaj dla pomocy :)",
-      trigger: 4
-  }, {
-      id: '4',
-      options: [
-          { value: 1, label: 'View Courses' },
-          { value: 2, label: 'Read Articles' },
-      ],
-      end: true
-  }
+    id: '0',
+    message: 'Hej!',
+    trigger: '1',
+  },
+  {
+    id: '1',
+    message: 'Podaj swoje imię',
+    trigger: '2',
+  },
+  {
+    id: '2',
+    user: true,
+    trigger: '3',
+  },
+  {
+    id: '3',
+    message: "Hej {previousValue}, masz pytania? Jestem tutaj dla pomocy :)",
+    trigger: '4',
+  },
+  {
+    id: '4',
+    options: [
+      { value: 1, label: 'Kwaterowanie', trigger: '5' },
+      { value: 2, label: 'Karta mieszkańca', trigger: '6' },
+      { value: 3, label: 'Eduroam', trigger: '7' },
+      { value: 4, label: 'Sprzątanie pokoju', trigger: '8' },
+      { value: 5, label: 'Pranie rzeczy', trigger: '9' },
+    ],
+  },
+  {
+    id: '5',
+    message: 'Proces kwaterowania studenta w akademikach Politechniki Lubelskiej: 1) Zobacz stronę ze zdjęciami akademików oraz pokoje. 2) Zobacz stronę z cenami dla wszystkich dostępnych opcji w akademikach. 3) Wypełnij wniosek o zakwaterowaniu oraz dostań dane dla logowania do systemu. 4) Czekaj na rozpatrywania swojego wniosku przez kierownika działu ds. kwaterunku. 5) Gratulacje! ',
+    trigger: '4',
+  },
+  {
+    id: '6',
+    message: 'Karta mieszkańca to dokument, który służy do podtwierdzenia statusu mieszkańca akademiku. Dla otrzymania dokumentu potrzebujesz tylko własne zdjęcie oraz trzeba przyjść do opiekuna na portiernie.',
+    trigger: '4',
+  },
+  {
+    id: '7',
+    message: 'Dla podłączenia do sieci Eduroam potrzebujesz dane dostępu, które można znaleźć we własnym profilu EHMS (zazwyczaj to jest adres mailowy studenta) oraz hasło znajduje się w powiadomieniu.',
+    trigger: '4',
+  },
+  {
+    id: '8',
+    message: 'Sprzątanie pokoju: żeby skorzystać z dostępnych opcji do sprzątania pokoju (odkurzacz oraz mop do podłogi) trzeba mieć kartę mieszkańca oraz klucz, który znajdziesz po przejściu do opiekuna na portiernie.',
+    trigger: '4',
+  },
+  {
+    id: '9',
+    message: 'W każdym akademiku znajduje się pokój do prania rzeczy. Dla dostępu do tego pokoju trzeba pójść do opiekuna i podać swoje imię dla otrzymania kluczu do tego pokoju.', 
+    trigger: '4',
+  },
 ];
+
 
 const theme = {
   background: '#f4f0ec',
