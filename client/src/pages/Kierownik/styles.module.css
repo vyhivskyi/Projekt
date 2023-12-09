@@ -485,8 +485,18 @@
 	.searchContainer {
 		margin-right: 30px;
 	}
-	
 }
+
+.paymentsBlock {
+	width: calc(33.33% - 20px);
+	height: 200px;
+	margin: 10px;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+  }
 
   /*Styles for the page with the student details (Applications)*/
   .daneStudent {

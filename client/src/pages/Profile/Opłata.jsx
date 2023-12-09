@@ -50,7 +50,6 @@ const Payment = ({ user }) => {
       };
     const [data, setData] = useState({
         user_id: user._id,
-        //tutaj należy dodać room._id
         room_id: "65479522eef513e0656e261f",
         konto: generateRandomKonto(),
     });
@@ -64,29 +63,34 @@ const Payment = ({ user }) => {
         setShowRemarksInput(!showRemarksInput);
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const token = localStorage.getItem("token")
-        if (token) {
-            try {
-                const url = "http://localhost:8080/api/profile/checkout"
-                const { data: res } = await axios.post(url, data)
-                    .then((res) => {
-                        navigate("/profile");
-                        console.log(res.message);
-                        console.log(data);
-                    })
-            } catch (error) {
-                if (
-                    error.response &&
-                    error.response.status >= 400 &&
-                    error.response.status <= 500
-                ) {
-                    console.log(data)
-                }
+    const sendPaymentData = async () => {
+        try {
+            const requestData = {
+                user_id: user._id,
+                room_id: "65479522eef513e0656e261f",
+                amount: getPrice(),
+                konto: generateRandomKonto(),
+                payment_date: new Date() // Generate random konto here
+            };
+    
+            const response = await axios.post("http://localhost:8080/api/profile/payment", requestData, {
+                headers: { 'Content-Type': 'application/json', 'x-access-token': token },
+            });
+    
+            console.log("Server Response:", response);
+    
+            if (response.status === 200 || response.status === 201) {
+                console.log("Payment data sent successfully");
+            } else {
+                console.error("Failed to send payment data");
             }
+        } catch (error) {
+            console.error("Error sending payment data: ", error);
         }
-    }
+    };
+    
+    
+
     return (
         <div className={styles.pageContainer}>
             <div className={styles.paymentContainer}>
@@ -123,6 +127,7 @@ const Payment = ({ user }) => {
                             <p className={styles.data}>{getPrice()}</p>
                         </div>
                     </div>
+                    <button onClick={sendPaymentData}>Submit Payment</button>
                 </div>
             </div>
         </div>

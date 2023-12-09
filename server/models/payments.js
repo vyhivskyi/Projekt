@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 const paymentsSchema = new mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Users',
+        ref: 'User',
         required: true
     },
     room_id: {
@@ -12,7 +12,8 @@ const paymentsSchema = new mongoose.Schema({
         required: true
     },
     amount: {type: Number, required: true},
-    payment_date: {type: Date, required: true}
+    konto: {type: String, required: true},
+    payment_date: {type: Date, required: false}
 })
 paymentsSchema.methods.generateAuthToken = function () {
     const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {

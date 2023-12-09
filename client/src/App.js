@@ -47,6 +47,7 @@ import OpiekunZgloszenia from "./pages/Opiekun/OpiekunZgloszenia"
 import ZgloszeniaDetails from "./pages/Opiekun/ZgloszeniaDetails"
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
+import KierownikPayments from "./pages/Kierownik/KierownikPayments";
 
 const steps = [
   {
@@ -473,6 +474,18 @@ function App() {
               <Navbar setDane={handleSetDane} />
               <Kierownik setDane={handleSetDane} user={dane} />
               <KierownikRooms />
+            </div>
+          } />
+      }
+
+      {user && userRole === "Kierownik" &&
+        <Route
+          path="/kierownik/płatności"
+          element={
+            <div>
+              <Navbar setDane={handleSetDane} />
+              <Kierownik setDane={handleSetDane} user={dane} />
+              <KierownikPayments />
             </div>
           } />
       }

@@ -45,7 +45,6 @@ app.get("/api/profile/preference", tokenVerification)
 app.put("/api/profile/preference/edit", tokenVerification, updatePreferencesRoutes)
 app.get("/api/profile/delete", tokenVerification);
 app.get("/api/profile/room", tokenVerification)
-app.get("/api/profile/payment", tokenVerification)
 app.get("/api/profile/status", tokenVerification)
 app.get("/api/profile/issue/answers", tokenVerification)
 app.get("/api/profile/issue/answers/:issueId", tokenVerification)
@@ -64,7 +63,8 @@ app.use("/api/profile/delete", deleteRoutes);
 app.use("/api/profile/room", roomRoutes)
 app.use("/api/portiernia/rooms", roomsRoutes)
 app.use("/api/profile/checkout", checkoutRouter);
-app.use("/app/profile/payment", paymentRoutes)
+app.use("/api/profile/payment", paymentRoutes)
+app.use("/api/profile/payments", paymentRoutes)
 app.use("/api/profile/status", statusRoutes)
 app.use("/api/reviews", reviewsRoutes);
 app.post('/upload', upload.single('file'), (req, res) => {

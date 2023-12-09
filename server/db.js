@@ -9,6 +9,7 @@ module.exports = () => {
 		//mongoose.connect("mongodb://database:27017/StudentDB", { useNewUrlParser: true });
         //mongodb+srv://rushoskey:Qwerty123.@vyhivskyi.tnhsue8.mongodb.net/?retryWrites=true&w=majority
         //mongodb+srv://dashavovk2412:dagihi10@cluster0.25w8iyp.mongodb.net/?retryWrites=true&w=majority
+    
         
 		console.log("Connected to database successfully")
     } catch (error) {
