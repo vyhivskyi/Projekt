@@ -48,15 +48,15 @@
     font-weight: 600;
     font-family: 'Jost', serif;
     cursor: pointer;
-    z-index: 1; /* Ensure button appears over the image */
+    z-index: 1;
   }
 
   .vectorIcon {
-    width: 17px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
-    margin-left: 15px; /* Adjust the margin as needed */
-    fill: #C49E85; /* Color of the vector icon */
-    stroke: #292F36; /* Color of the vector stroke */
+    width: 17px;
+    height: 15px;
+    margin-left: 15px;
+    fill: #C49E85;
+    stroke: #292F36;
     transition: fill 0.3s, stroke 0.3s;
   }
 
@@ -73,6 +73,6 @@
     }
 
     .containerContent {
-      margin: 15px; /* Adjust as needed for smaller screens */
+      margin: 15px;
     }
   }

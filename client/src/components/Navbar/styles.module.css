@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;700&display=swap');
 
 body {
-    margin: 0; /* Remove default body margin */
+    margin: 0;
   }
   .light {
     background-color: #ffffff;
@@ -24,7 +24,7 @@ body {
   
   .dark .navItem:hover {
     background-color: #C49E85;
-    color: #ffffff; /* Adjust text color on hover as needed */
+    color: #ffffff;
   }
 
   .light .navbar {
@@ -38,16 +38,15 @@ body {
   }
 
   .light .logo {
-    filter: invert(0%); /* Invert 0% for light theme, making the logo appear in its original color */
+    filter: invert(0%);
   }
   
   .dark .logo {
-    filter: invert(100%); /* Invert 100% for dark theme, making the logo appear in white */
+    filter: invert(100%);
   }
 
   .themeToggle {
-    /* Your existing styles */
-    font-size: 20px; /* Adjust the font size as needed */
+    font-size: 20px; 
     border: none;
     background: transparent;
     cursor: pointer;
@@ -55,7 +54,7 @@ body {
   }
   
   .themeToggle:hover {
-    color: #C49E85; /* Adjust the color on hover as needed */
+    color: #C49E85;
   }
 
 .navbar {
@@ -65,7 +64,7 @@ body {
     align-items: center;
     padding: 10px;
     font-family: 'Jost', sans-serif;
-    margin: 0 30px; /* Add margin to create space */
+    margin: 0 30px; 
   }
 
   .logoContainer {
@@ -76,7 +75,7 @@ body {
   }
   
   .logo {
-    width: 150px; /* Adjust width as needed */
+    width: 150px;
     height: auto;
   }
   
@@ -116,7 +115,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    position: relative; /* Ensure a stacking context for z-index */
+    position: relative;
   }
 
   .navItems {
@@ -129,7 +128,7 @@ body {
     right: 0;
     background-color: #ffffff;
     padding: 10px;
-    z-index: 2; /* Set a higher z-index */
+    z-index: 2;
     align-items: center;
     width: 25%;
   }
@@ -141,9 +140,9 @@ body {
   .navItem {
     color: #292F36;
     text-decoration: none;
-    padding: 5px; /* Increase padding for better spacing */
+    padding: 5px;
     border-radius: 18px;
-    width: 100%; /* Make items full width */
+    width: 100%;
     text-align: center;
     transition: background-color 0.3s;
     margin-right: 17px;

@@ -32,7 +32,7 @@ const Homepage = ({user}) => {
       }
     };
   
-    fetchData(); // Fetch reviews when the component mounts
+    fetchData();
 
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -40,7 +40,6 @@ const Homepage = ({user}) => {
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -137,7 +136,6 @@ const Homepage = ({user}) => {
           <h1>Ułatwij proces kwaterowania z nami </h1>
           <p className={styles.overlayAdditional}>Rejestracja trwa do 20.09.2023</p>
         </div>
-        {/* Link and button for the form */}
         <Link to="/form">
           <button className={styles.buttonOverlay}>
             Podaj wniosek
@@ -155,7 +153,6 @@ const Homepage = ({user}) => {
           </button>
         </Link>
       </div>
-      {/* Opcje container */}
       <div className={styles.opcjeContainer}>
         <div className={styles.smallContainer}>
           <p className={styles.smallContainerText}>Akademiki i pokoje</p>
@@ -242,7 +239,6 @@ const Homepage = ({user}) => {
         </div>
       </div>
 
-      {/* Container Contact us*/}
       <div className={styles.ContainerContact}>
         <div className={styles.ContainerMiasto}>
           <div className={styles.ContainerMiastoOverlay}>
@@ -271,9 +267,6 @@ const Homepage = ({user}) => {
       <div className={styles.ContainerMiastoImage}></div>
     </div>
 
-    {/* Opinie o akademikach */}
-
-    {/* Opinie o akademikach */}
     <div className={styles.containerReviews}>
       <div className={styles.reviews}>
         <h1 className={styles.reviewsHeader}>Co studenci mówią o nas?</h1>
@@ -296,7 +289,6 @@ const Homepage = ({user}) => {
 
           
         </div>
-        {/* Form for submitting reviews */}
         {isFormVisible && (
           <div className={styles.reviewForm}>
             <div className={styles.headerContainer}>

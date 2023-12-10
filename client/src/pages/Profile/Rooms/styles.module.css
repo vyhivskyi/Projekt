@@ -1,0 +1,93 @@
+.roomContainer {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin-left: 29%;
+	margin-right: auto;
+	margin-top: 3%;
+	background-color: #F4F0EC;
+	border-radius: 55px;
+}
+
+.roomContent {
+	width: 100%;
+	max-width: 1000px;
+	height: 650px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.roomHead {
+	width: 100%;
+	max-width: 800px;
+	height: 60px;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.signName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 45px;
+	color: #292F36;
+}
+
+.messFieldRow {
+	display: flex;
+    justify-content: space-between;
+	width: 445px;
+	margin-top: 7%;
+	margin-right: 34%;
+}
+
+.messField {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-right: 30px;
+}
+
+.label {
+	font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.data {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+    background-color: transparent;
+}
+
+@media (max-width: 769px) {
+	.roomContainer {
+		margin-left: 0;
+		height: 650px;
+		width: 87%;
+	}
+
+    .messFieldRow {
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		margin-top: 50px;
+		margin-left: 220px;
+	}
+}

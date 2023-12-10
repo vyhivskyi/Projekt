@@ -1,5 +1,3 @@
-// Update your Dokumenty component
-
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 import CennikDocument from './documents/Cennik.pdf';
@@ -84,7 +82,6 @@ const Dokumenty = () => {
         break;
     }
 
-  // Only toggle text if it's a text click, not an arrow click
   if (!isArrowClick) {
     setShowText1(false);
     setShowText2(false);
@@ -167,7 +164,6 @@ const downloadDocument = (documentName) => {
         </div>
       </div>
 
-      {/* Dokumenty Container */}
         <div className={styles.dokumenty}>
             <div className={styles.contentImage}>
                 <div className={styles.content}>
@@ -314,7 +310,6 @@ const downloadDocument = (documentName) => {
             </div>
         </div>
 
-        {/* Listy Container */}
         <div className={styles.listy}>
             <h1 className={styles.dokumentyName}>Listy</h1>
             <div className={styles.contentImageListy}>

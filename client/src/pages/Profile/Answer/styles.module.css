@@ -1,0 +1,87 @@
+.daneLista {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin-left: 29%;
+	margin-right: auto;
+	margin-top: 2%;
+	background-color: #F4F0EC;
+	border-radius: 55px;
+	overflow: hidden;
+}
+
+.messageContent {
+	width: 100%;
+	max-width: 1000px;
+	height: 650px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.messageHead {
+	width: 600px;
+	height: 60px;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.signName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 45px;
+	color: #292F36;
+}
+
+.fieldsTheme {
+	margin-top: 5%;
+	margin-right: 16%;
+}
+
+.fieldTheme {
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-left: 20%;
+}
+
+.labelMail {
+	font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.dataMail {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+    background-color: transparent;
+}
+
+@media (max-width: 769px) {
+	.daneLista {
+		margin-left: 0;
+		height: 450px;
+		width: 87%;
+	}
+
+    .fieldsTheme {
+		margin-top: 50px;
+		margin-right: 150px;
+	}
+}

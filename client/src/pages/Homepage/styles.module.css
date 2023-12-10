@@ -11,13 +11,13 @@
 	text-align: center;
 	margin: 20px auto;
 	overflow: hidden;
-	border-radius: 50px; /* Optional: Add some border radius for styling */
+	border-radius: 50px;
   }
   
   .bannerImage {
 	width: 100%;
 	height: 100%;
-	object-fit: cover; /* Ensures the image covers the entire container */
+	object-fit: cover;
   }
   
   .overlay {
@@ -26,7 +26,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(244, 240, 236, 0.7); /* F4F0EC with 70% brightness */
+	background-color: rgba(244, 240, 236, 0.7);
   }
   
   .textOverlay {
@@ -35,10 +35,10 @@
 	left: 35%;
 	transform: translate(-50%, -50%);
 	text-align: left;
-	color: #292f36; /* Text color */
+	color: #292f36;
 	font-size: 20px;
 	font-family: 'DM Serif Display', serif;
-	z-index: 1; /* Ensure text appears over the image */
+	z-index: 1;
   }
   
   .overlayAdditional{
@@ -62,25 +62,25 @@
 	font-weight: 600;
 	font-family: 'Jost', serif;
 	cursor: pointer;
-	z-index: 1; /* Ensure button appears over the image */
+	z-index: 1; 
 	transition: background-color 0.3s;
   }
   
   .buttonOverlay:hover {
-	background-color: #C49E85; /* Change the background color on hover */
+	background-color: #C49E85;
   }  
   
   .vectorBanner {
-	width: 17px; /* Adjust the width as needed */
-	height: 15px; /* Adjust the height as needed */
-	margin-left: 15px; /* Adjust the margin as needed */
-	fill: #292F36; /* Color of the vector icon */
-	stroke: #c49e85; /* Color of the vector stroke */
+	width: 17px;
+	height: 15px; 
+	margin-left: 15px; 
+	fill: #292F36; 
+	stroke: #c49e85; 
 	transition: fill 0.3s, stroke 0.3s;
   }
   
   .buttonOverlay:hover .vectorBanner {
-	fill: #C49E85; /* Change the fill color on hover */
+	fill: #C49E85; 
 	stroke: #292F36;
   }
   
@@ -103,18 +103,18 @@
 	.smallContainerText {
 	  width: auto;
 	  text-align: center;
-	  color: #292F36; /* Adjust the text color as needed */
-	  font-size: 25px; /* Adjust the font size as needed */
+	  color: #292F36; 
+	  font-size: 25px; 
 	  font-weight: 400;
-	  font-family: 'DM Serif Display', serif; /* Use the Jost font-family */
+	  font-family: 'DM Serif Display', serif;
 	}
   
 	.smallContainerOpis {
 	  text-align: center;
-	  color: #292F36; /* Adjust the text color as needed */
-	  font-size: 22px; /* Adjust the font size as needed */
+	  color: #292F36;
+	  font-size: 22px; 
 	  font-weight: 400;
-	  font-family: 'Jost', serif; /* Use the Jost font-family */
+	  font-family: 'Jost', serif;
 	}
   
 	.smallContainerButton{
@@ -134,7 +134,7 @@
 	  font-weight: 600;
 	  font-family: 'Jost', serif;
 	  cursor: pointer;
-	  z-index: 1; /* Ensure button appears over the image */
+	  z-index: 1; 
 	  transition: background-color 0.3s;
 	}
   
@@ -143,11 +143,11 @@
 	  color: #ffffff;
 	}
 	.vectorIcon {
-	  width: 17px; /* Adjust the width as needed */
-	  height: 15px; /* Adjust the height as needed */
-	  margin-left: 15px; /* Adjust the margin as needed */
-	  fill: #ffffff; /* Color of the vector icon */
-	  stroke: #c49e85; /* Color of the vector stroke */
+	  width: 17px; 
+	  height: 15px; 
+	  margin-left: 15px;
+	  fill: #ffffff; 
+	  stroke: #c49e85; 
 	  transition: fill 0.3s, stroke 0.3s;
 	}
   
@@ -210,25 +210,25 @@
 	  font-weight: 600;
 	  font-family: 'Jost', serif;
 	  cursor: pointer;
-	  z-index: 1; /* Ensure button appears over the image */
+	  z-index: 1;
 	  transition: background-color 0.3s;
 	}
   
 	.button:hover {
-	  background-color: #C49E85; /* Change the background color on hover */
+	  background-color: #C49E85;
 	}  
   
 	.vector {
-	  width: 17px; /* Adjust the width as needed */
-	  height: 15px; /* Adjust the height as needed */
-	  margin-left: 15px; /* Adjust the margin as needed */
-	  fill: #292F36; /* Color of the vector icon */
-	  stroke: #c49e85; /* Color of the vector stroke */
+	  width: 17px;
+	  height: 15px;
+	  margin-left: 15px;
+	  fill: #292F36;
+	  stroke: #c49e85;
 	  transition: fill 0.3s, stroke 0.3s;
 	}
   
 	.button:hover .vector {
-	  fill: #C49E85; /* Change the fill color on hover */
+	  fill: #C49E85;
 	  stroke: #292F36;
 	}
   
@@ -338,16 +338,16 @@
 		font-weight: 600;
 		font-family: 'Jost', serif;
 		cursor: pointer;
-		z-index: 1; /* Ensure button appears over the image */
+		z-index: 1;
 		transition: background-color 0.3s;
 	  }
 	
 	  .buttonOpinie:hover {
-		background-color: #C49E85; /* Change the background color on hover */
+		background-color: #C49E85; 
 	  }
 	
 	  .buttonOpinie:hover .vector {
-		fill: #C49E85; /* Change the fill color on hover */
+		fill: #C49E85;
 		stroke: #292F36;
 	  }
 
@@ -373,7 +373,7 @@
 		font-family: 'DM Serif Display', serif;
 	  	font-size: 30px;
 	  	color: #292F36;
-		text-align: center; /* Center-align the text */
+		text-align: center;
 		margin-top: 20px;
 	  }
 
@@ -401,7 +401,7 @@
 		font-size: 18px;
 		font-family: 'Jost';
 		margin-top: 5px;
-		background-color: transparent; /* Remove background color */
+		background-color: transparent;
 	}
 
 	.formRow {
@@ -428,16 +428,16 @@
 		font-weight: 600;
 		font-family: 'Jost', serif;
 		cursor: pointer;
-		z-index: 1; /* Ensure button appears over the image */
+		z-index: 1; 
 		transition: background-color 0.3s;
 	  }
 	
 	  .buttonForm:hover {
-		background-color: #C49E85; /* Change the background color on hover */
+		background-color: #C49E85; 
 	  }
 	
 	  .buttonForm:hover .vector {
-		fill: #C49E85; /* Change the fill color on hover */
+		fill: #C49E85;
 		stroke: #292F36;
 	  }
 
@@ -452,9 +452,9 @@
 		color: #292f36;
 		border: none;
 		border-radius: 50%;
-		font-size: 24px; /* Adjust font size as needed */
+		font-size: 24px;
 		cursor: pointer;
-		z-index: 2; /* Ensure buttons appear over the reviews */
+		z-index: 2;
 		transition: background-color 0.3s, color 0.3s;
 	  }
 	  
@@ -473,9 +473,9 @@
 		color: #292f36;
 		border: none;
 		border-radius: 50%;
-		font-size: 24px; /* Adjust font size as needed */
+		font-size: 24px;
 		cursor: pointer;
-		z-index: 2; /* Ensure buttons appear over the reviews */
+		z-index: 2; 
 		transition: background-color 0.3s, color 0.3s;
 	  }
 	  
@@ -496,10 +496,10 @@
 			left: 50%;
 			width: 400px;
 			text-align: center;
-			color: #292f36; /* Text color */
+			color: #292f36;
 			font-size: 17px;
 			font-family: 'DM Serif Display', serif;
-			z-index: 1; /* Ensure text appears over the image */
+			z-index: 1;
 		}
 
 		.buttonOverlay {
@@ -519,7 +519,7 @@
 			font-weight: 600;
 			font-family: 'Jost', serif;
 			cursor: pointer;
-			z-index: 1; /* Ensure button appears over the image */
+			z-index: 1;
 			transition: background-color 0.3s;
 		}
 
@@ -533,7 +533,7 @@
 
 		.smallContainer {
 			flex-basis: calc(100% - 20px);
-			border: 2px solid #292F36; /* Make containers full width on smaller screens */
+			border: 2px solid #292F36; 
 		}
 
 		.smallContainerButton{
@@ -553,7 +553,7 @@
 			font-weight: 600;
 			font-family: 'Jost', serif;
 			cursor: pointer;
-			z-index: 1; /* Ensure button appears over the image */
+			z-index: 1;
 			transition: background-color 0.3s;
 		}
 
@@ -621,7 +621,4 @@
 			margin-left: 20px;
 			margin-bottom: 20px;
 		}
-
-
-		
 	}

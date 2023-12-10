@@ -43,7 +43,7 @@ const KierownikPayments = () => {
     <div className={styles.pageContainer}>
       <div className={styles.daneLista}>
         <div className={styles.contentLista}>
-          <div className={styles.nameContainerStudent}>
+          <div className={styles.nameContainerPayment}>
             <h1 className={styles.signName}>Lista płatności</h1>
           </div>
           <div className={styles.searchContainer}>

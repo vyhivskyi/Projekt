@@ -15,7 +15,6 @@ const Payment = ({ user }) => {
         return kontoWithSpaces;
     };
 
-    // Usage
     const randomKontoWithSpaces = generateRandomKonto();
     const token = localStorage.getItem("token");
     const [room, setRoom] = useState();
@@ -70,7 +69,7 @@ const Payment = ({ user }) => {
                 room_id: "65479522eef513e0656e261f",
                 amount: getPrice(),
                 konto: generateRandomKonto(),
-                payment_date: new Date() // Generate random konto here
+                payment_date: new Date()
             };
     
             const response = await axios.post("http://localhost:8080/api/profile/payment", requestData, {
@@ -127,7 +126,20 @@ const Payment = ({ user }) => {
                             <p className={styles.data}>{getPrice()}</p>
                         </div>
                     </div>
-                    <button onClick={sendPaymentData}>Submit Payment</button>
+                    <button type="submit" className={styles.buttonPay} onClick={sendPaymentData}>
+                        Wyślij
+                        <svg
+                            className={styles.vector}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 18 17">
+                            <path
+                                d="M1 8.43542L14.7232 8.29857M9.61818 1.91138L16.1412 8.43436L9.48677 15.0887"
+                                strokeWidth="2"
+                                strokeLinecap="square"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>

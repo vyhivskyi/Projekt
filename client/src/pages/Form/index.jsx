@@ -86,7 +86,6 @@ const handleSubmit = async (e) => {
         };
         axios.post('http://localhost:8080/upload', formData)
         .then((res) => {
-        // Assuming the response contains the file URL
         requestData.profile_picture = res.data.fileUrl;
         return axios.post('http://localhost:8080/api/users', requestData);
     })
@@ -316,7 +315,6 @@ return (
                             <select
                                 name="ds"
                                 onChange={handleChange}
-                                //value={preferences.ds}
                                 className={styles.input}
                             >
                                 {dsOptions.map((option) => (
@@ -331,7 +329,6 @@ return (
                             placeholder="Brak preferencji"
                             name="ds"
                             onChange={handleChange}
-                            //value={preferences.ds}
                             disabled
                             className={styles.input}
                         />)}
@@ -348,7 +345,6 @@ return (
                             <select
                                 name="room"
                                 onChange={handleChange}
-                                //value={preferences.room}
                                 className={styles.input}
                             >
                                 {roomOptions.map((option) => (
@@ -362,7 +358,6 @@ return (
                             placeholder="Brak preferencji"
                             name="room"
                             onChange={handleChange}
-                            //value={preferences.room}
                             disabled
                             className={styles.input}
                         />)}
@@ -381,7 +376,6 @@ return (
                                 placeholder=""
                                 name="users"
                                 onChange={handleChange}
-                                //value={preferences.users}
                                 className={styles.input}
                             />
                         ) : (<input

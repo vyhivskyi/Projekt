@@ -6,10 +6,8 @@ const CheckOut = ({ user }) => {
     const navigate = useNavigate()
     const [data, setData] = useState({
         user_id: user._id,
-        //tutaj należy dodać room._id
         room_id: "65479522eef513e0656e261f",
         checkout_date: "",
-        //również należy dodać pole w formularzu z uwagami
         remarks: ""
     });
     const [showRemarksInput, setShowRemarksInput] = useState(false);

@@ -12,7 +12,6 @@ const Part = () => {
   }
     return (
         <div className={styles.pageContainer}>
-            {/*Link do wniosku*/}
             <div className={styles.containerWniosek}>
                 <div className={styles.containerPart}>
                     <div className={styles.containerContent}>

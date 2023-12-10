@@ -24,8 +24,6 @@ const Profile = ({ setDane, user }) => {
             }
         }
     }
-    
-    //działa pobieranie informacji o pokoju studenta, należy tylko przesłać dane do strony Pokój
     const handleRoom = async () => {
         const token = localStorage.getItem("token")
         if (token) {
@@ -36,11 +34,8 @@ const Profile = ({ setDane, user }) => {
                     headers: { 'Content-Type': 'application/json', 'x-access-token': token }
                 }
                 const { room: res } = await axios(config)
-                //należy to odkomentować
-                //setRoom(res.room);
             } catch (error) {
                 if (error.response && error.response.status >= 400 && error.response.status <= 500) {
-                    //localStorage.removeItem("token")
                     window.location.reload()
                 }
             }
@@ -128,7 +123,6 @@ const Profile = ({ setDane, user }) => {
                             </button>
                         </Link>
                         <Link to="/profile/pokój" className={styles.nonLinkText}>
-                            {/*zmieniłem handleProfile na handleRoom w metodzie onClick*/}
                             <button className={styles.navBtn} onClick={handleRoom}>
                                 <div className={styles.iconBack}>
                                     <UilBed className={styles.iconWniosek}/>

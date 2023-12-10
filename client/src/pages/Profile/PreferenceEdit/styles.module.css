@@ -1,0 +1,133 @@
+.editContainer {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin-left: 29%;
+	margin-right: auto;
+	margin-top: 3%;
+	background-color: #F4F0EC;
+	border-radius: 55px;
+}
+
+.editContent {
+	width: 100%;
+	max-width: 1000px;
+	height: 650px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.editHead {
+	width: 600px;
+	height: 60px;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.signName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 45px;
+	color: #292F36;
+}
+
+.inputEdit {
+	margin-top: 25%;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.checkboxContainer input {
+    margin-right: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.checkboxContainer label {
+    font-family: 'Jost';
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.checkboxContainer input:checked {
+    background-color: #c49e85;
+    border-color: #292f36;
+}
+
+.buttonEdit {
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    background-color: #292F36;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Jost', serif;
+    cursor: pointer;
+	margin-top: 20%;
+	margin-left: 47%;
+    z-index: 1;
+    transition: background-color 0.3s;
+  }
+
+  .buttonEdit:hover {
+    background-color: #c49e85; 
+  }  
+
+  .vector {
+    width: 17px;
+    height: 15px;
+    margin-left: 15px; 
+    fill: #292F36; 
+    stroke: #c49e85; 
+    transition: fill 0.3s, stroke 0.3s;
+  }
+
+  .buttonEdit:hover .vector {
+    fill: #c49e85;
+    stroke: #292F36;
+  }
+
+  .input {
+    outline: none;
+    border: none;
+    width: 370px;
+    border-bottom: 1px solid #292F36;
+    padding: 5px;
+    font-size: 18px;
+	font-family: 'Jost';
+	margin-top: 5px;
+    background-color: transparent;
+}
+
+@media (max-width: 769px) {
+	.editContainer {
+		margin-left: 0;
+		height: 550px;
+		width: 87%;
+	}
+}

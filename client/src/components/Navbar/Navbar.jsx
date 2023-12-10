@@ -73,8 +73,6 @@ const Main = ({ setDane, setMessage }) => {
           return "/";
         }
       };
-    //const isLoggedIn = !!localStorage.getItem("token");
-    //const isLoggedOut = !localStorage.getItem("token");
     return (
         <div className={styles.pageContainer}>
             <nav className={styles.navbar}>

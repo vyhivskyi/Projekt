@@ -1,0 +1,92 @@
+.daneLista {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin-left: 29%;
+	margin-right: auto;
+	margin-top: 2%;
+	background-color: #F4F0EC;
+	border-radius: 55px;
+	overflow: hidden;
+}
+
+.nameContainerCheck {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 33%;
+}
+
+.signName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 45px;
+	color: #292F36;
+}
+
+.answerContainer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 1200px;
+	justify-content: center;
+	align-items: center;
+	overflow-y: auto;
+  	max-height: 500px;
+}
+
+.answerBlock {
+	width: calc(33.33% - 20px);
+	height: 140px;
+	margin: 10px;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
+.linkStyle {
+	text-decoration: none;
+	color: #292F36;
+	font-size: 25px;
+	font-family: 'Jost';
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin-top: 9%;
+}
+  
+.linkStyle:hover {
+	color: #C49E85;
+}
+
+@media (max-width: 769px) {
+	.daneLista {
+		margin-left: 0;
+		height: 650px;
+		width: 87%;
+	}
+
+    .nameContainerCheck {
+		margin-left: 60px;
+	}
+
+    .checkoutsBlock {
+		width: calc(43.33% - 10px);
+		height: 200px;
+		margin: 10px;
+	}
+}

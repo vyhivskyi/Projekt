@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './styles.module.css';
 import logoImage from './images/Logo.png'
-import instagramIcon from './images/instagram.png'; // Replace with your Instagram icon image
-import facebookIcon from './images/facebook.png'; // Replace with your TikTok icon image
+import instagramIcon from './images/instagram.png';
+import facebookIcon from './images/facebook.png';
 
 const Footer = () => {
     const location = useLocation();

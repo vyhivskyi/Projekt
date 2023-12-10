@@ -158,15 +158,12 @@
     color: #333;
   }
   
-
-/* Container for radio buttons */
 .genderContainer {
     display: flex;
     align-items: center;
 	margin: 20px;
 }
 
-/* Custom styles for radio buttons */
 .genderOption {
     appearance: none;
     width: 20px;
@@ -177,7 +174,6 @@
     margin-right: 5px;
 }
 
-/* Change color of the custom radio when checked */
 .genderOption:checked {
     background-color: #c49e85;
     border-color: #292F36;
@@ -239,7 +235,6 @@
 
 .checkboxContainer input {
     margin-right: 10px;
-    -webkit-appearance: none; /* Remove default appearance */
     appearance: none;
     width: 20px;
     height: 20px;
@@ -250,7 +245,6 @@
     margin-bottom: 10px;
 }
 
-/* Style for the checkbox label */
 .checkboxContainer label {
     font-family: 'Jost';
     font-weight: 600;
@@ -272,7 +266,6 @@
   text-align: center;
 }
 
-/*Radio for role of the user*/
 .roleLabel {
 	font-family: 'Jost';
 	font-size: 16px;
@@ -280,14 +273,12 @@
   }
   
 
-/* Container for radio buttons */
 .roleContainer {
   display: flex;
   align-items: center;
 	margin: 20px;
 }
 
-/* Custom styles for radio buttons */
 .roleOption {
     appearance: none;
     width: 20px;
@@ -298,7 +289,6 @@
     margin-right: 5px;
 }
 
-/* Change color of the custom radio when checked */
 .roleOption:checked {
     background-color: #c49e85;
     border-color: #292F36;
@@ -319,25 +309,25 @@
     cursor: pointer;
 	margin-top: 7%;
 	margin-left: 17%;
-    z-index: 1; /* Ensure button appears over the image */
+    z-index: 1;
     transition: background-color 0.3s;
   }
 
   .button:hover {
-    background-color: #86A397; /* Change the background color on hover */
+    background-color: #86A397;
   }  
 
   .vector {
-    width: 17px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
-    margin-left: 15px; /* Adjust the margin as needed */
-    fill: #c49e85; /* Color of the vector icon */
-    stroke: #292F36; /* Color of the vector stroke */
+    width: 17px; 
+    height: 15px; 
+    margin-left: 15px; 
+    fill: #c49e85; 
+    stroke: #292F36; 
     transition: fill 0.3s, stroke 0.3s;
   }
 
   .button:hover .vector {
-    fill: #86A397; /* Change the fill color on hover */
+    fill: #86A397; 
     stroke: #292F36;
   }
 
@@ -361,18 +351,18 @@
     }
   
     .nameContainer {
-      margin-bottom: 20px; /* Adjust as needed */
+      margin-bottom: 20px;
     }
   
     .inputRow {
       align-items: center;
-      flex-direction: column; /* Adjust as needed */
+      flex-direction: column; 
       width: 90%;
     }
   
     .inputContainer {
       margin-right: 0;
-      margin-bottom: 15px; /* Adjust as needed */
+      margin-bottom: 15px;
     }
   
     .select {
@@ -385,7 +375,7 @@
   
     .genderContainer,
     .roleContainer {
-      margin: 10px 0; /* Adjust as needed */
+      margin: 10px 0;
     }
   
     .button {

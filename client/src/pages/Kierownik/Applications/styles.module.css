@@ -1,0 +1,133 @@
+.daneLista {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 650px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px;
+	margin-left: 29%;
+	margin-right: auto;
+	margin-top: 2%;
+	background-color: #F4F0EC;
+	border-radius: 55px;
+	overflow: hidden;
+}
+
+.nameContainerLista {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 400px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 33%;
+}
+
+.signName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 45px;
+	color: #292F36;
+}
+
+.filterContainer {
+	display: flex;
+}
+
+.inputContainer {
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+	margin-right: 30px;
+}
+
+.select {
+	outline: none;
+	border: none;
+	width: 100%;
+	max-width: 300px;
+	padding: 15px;
+	border-radius: 10px;
+	border-bottom: 2px solid #292F36;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 17px;
+	background-color: transparent;
+    font-family: 'Jost', sans-serif;
+}
+
+.inputSearch {
+	width: 250px;
+	height: 40px;
+	border: 1px solid #292F36;
+	border-radius: 8px;
+	padding: 8px;
+	font-size: 16px;
+	font-family: 'Jost', serif;
+	margin-top: 10px;
+}
+
+.applicationsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 1200px;
+	margin-right: auto;
+  	margin-left: auto;
+	justify-content: center;
+	align-items: center;
+	overflow-y: auto; 
+  	max-height: 400px;
+}
+
+.applicationBlock {
+	width: calc(33.33% - 20px);
+	height: 170px;
+	margin: 10px;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.applicationText {
+	font-family: 'Jost';
+	color: #292F36;
+	font-size: 20px;
+}
+
+@media (max-width: 769px) {
+	.daneLista {
+		margin-left: 10px;
+		height: 600px;
+		width: 85%;
+	}
+
+	.applicationBlock {
+		width: calc(43.33% - 10px);
+		height: 320px;
+		margin: 10px;
+	}
+
+	.nameContainerLista {
+		margin-left: 80px;
+	}
+
+	.filterContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: 20px;
+	}
+
+	.searchContainer {
+		margin-right: 30px;
+	}
+}
+

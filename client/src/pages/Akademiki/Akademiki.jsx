@@ -6,22 +6,18 @@ const Akademiki = () => {
   const navigate = useNavigate();
 
   const handleErrorClick = () => {
-    // Redirect to the 404 page
     navigate('/404');
   };
 
   const handleDS2Click =() => {
-    //Redirect to the DS2 page
     navigate('/DS2/Korytarz')
   }
 
   const handleDS3Click =() => {
-    //Redirect to the DS3 page
     navigate('/DS3/Korytarz')
   }
 
   const handleDS4Click =() => {
-    //Redirect to the DS3 page
     navigate('/DS4/Korytarz')
   }
   return (
@@ -32,7 +28,6 @@ const Akademiki = () => {
           </div>
       </div>
 
-      {/* Akademiki Container*/}
       <div className={styles.akademikiContainer}>
         <div className={styles.heading}>
           <h2 className={styles.headingText}>Nasze akademiki</h2>

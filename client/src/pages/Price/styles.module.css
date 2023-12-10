@@ -178,11 +178,11 @@
 
   @media (max-width: 768px) {
     .bannerName {
-      height: 100px; /* Adjust the height as needed for larger screens */
+      height: 100px;
     }
   
     .Name {
-      font-size: 40px; /* Adjust the font size as needed for larger screens */
+      font-size: 40px;
     }
 
     .price {

@@ -79,7 +79,7 @@
   font-size: 18px;
   max-width: 500px;
   margin-top: 0;
-  margin-bottom: 0; /* Add margin between firstName and additionalText */
+  margin-bottom: 0;
 }
 
 .firstDoc {
@@ -99,15 +99,15 @@
   font-family: 'DM Serif Display';
   font-weight: 400;
   cursor: pointer;
-  height: 40px; /* Set a fixed height */
-  margin-bottom: 5px; /* Add margin between each firstName */
+  height: 40px;
+  margin-bottom: 5px;
 }
 
 .vector {
-  width: 17px; /* Adjust the width as needed */
-  height: 15px; /* Adjust the height as needed */
-  fill: #fff; /* Color of the vector icon */
-  stroke: #c49e85; /* Color of the vector stroke */
+  width: 17px;
+  height: 15px;
+  fill: #fff;
+  stroke: #c49e85;
   transition: fill 0.3s, stroke 0.3s;
 }
 
@@ -127,25 +127,25 @@
   margin-top: 10px;
   margin-left: 50%;
   margin-bottom: 0;
-  z-index: 1; /* Ensure button appears over the image */
+  z-index: 1;
   transition: background-color 0.3s;
 }
 
 .button:hover {
-  background-color: #292F36; /* Change the background color on hover */
+  background-color: #292F36;
 }  
 
 .vectorButton {
-  width: 17px; /* Adjust the width as needed */
-  height: 15px; /* Adjust the height as needed */
-  margin-left: 15px; /* Adjust the margin as needed */
-  fill: #c49e85; /* Color of the vector icon */
-  stroke: #292F36; /* Color of the vector stroke */
+  width: 17px;
+  height: 15px;
+  margin-left: 15px;
+  fill: #c49e85;
+  stroke: #292F36;
   transition: fill 0.3s, stroke 0.3s;
 }
 
 .button:hover .vectorButton {
-  fill: #292F36; /* Change the fill color on hover */
+  fill: #292F36;
   stroke: #c49e85;
 }
 
@@ -218,11 +218,11 @@
 
 @media (max-width: 768px) {
   .bannerName {
-    height: 100px; /* Adjust the height as needed for larger screens */
+    height: 100px;
   }
 
   .Name {
-    font-size: 40px; /* Adjust the font size as needed for larger screens */
+    font-size: 40px;
   }
 
   .dokumenty {

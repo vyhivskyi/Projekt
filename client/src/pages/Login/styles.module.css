@@ -73,7 +73,7 @@
     font-size: 18px;
 	  font-family: 'Jost';
     margin: 10px 0;
-    background-color: transparent; /* Remove background color */
+    background-color: transparent;
 }
 
 .label {
@@ -81,7 +81,7 @@
 	font-weight: 600;
     font-size: 18px;
     margin-bottom: 5px;
-    color: #333; /* Add color for better visibility */
+    color: #333;
 }
 
 .inputContainer {
@@ -116,25 +116,25 @@
     cursor: pointer;
 	  margin-top: 18%;
     margin-left: 50%;
-    z-index: 1; /* Ensure button appears over the image */
+    z-index: 1;
     transition: background-color 0.3s;
   }
 
   .button:hover {
-    background-color: #86A397; /* Change the background color on hover */
+    background-color: #86A397;
   }  
 
   .vector {
-    width: 17px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
-    margin-left: 15px; /* Adjust the margin as needed */
-    fill: #c49e85; /* Color of the vector icon */
-    stroke: #292F36; /* Color of the vector stroke */
+    width: 17px;
+    height: 15px;
+    margin-left: 15px;
+    fill: #c49e85;
+    stroke: #292F36; 
     transition: fill 0.3s, stroke 0.3s;
   }
 
   .button:hover .vector {
-    fill: #86A397; /* Change the fill color on hover */
+    fill: #86A397;
     stroke: #292F36;
   }
 
@@ -168,25 +168,25 @@
     cursor: pointer;
 	margin-top: 18%;
     margin-left: 50%;
-    z-index: 1; /* Ensure button appears over the image */
+    z-index: 1;
     transition: background-color 0.3s;
   }
 
   .buttonRight:hover {
-    background-color: #c49e85; /* Change the background color on hover */
+    background-color: #c49e85;
   }  
 
   .vectorRight {
-    width: 17px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
-    margin-left: 15px; /* Adjust the margin as needed */
-    fill: #E7E7E7; /* Color of the vector icon */
-    stroke: #c49e85; /* Color of the vector stroke */
+    width: 17px;
+    height: 15px;
+    margin-left: 15px;
+    fill: #E7E7E7;
+    stroke: #c49e85;
     transition: fill 0.3s, stroke 0.3s;
   }
 
   .buttonRight:hover .vectorRight {
-    fill: #c49e85; /* Change the fill color on hover */
+    fill: #c49e85;
     stroke: #292F36;
   }
 

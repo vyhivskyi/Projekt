@@ -86,7 +86,7 @@
     font-style: normal;
     font-weight: 400;
     margin-top: 10px;
-    margin-bottom: 0px; /* Added margin to separate from firstName */
+    margin-bottom: 0px;
   }
 
   .name {
@@ -114,35 +114,35 @@
     cursor: pointer;
     margin-top: 40px;
     margin-left: 50%;
-    z-index: 1; /* Ensure button appears over the image */
+    z-index: 1;
     transition: background-color 0.3s;
   }
 
   .button:hover {
-    background-color: #86A397; /* Change the background color on hover */
+    background-color: #86A397; 
   }  
 
   .vector {
-    width: 17px; /* Adjust the width as needed */
-    height: 15px; /* Adjust the height as needed */
-    margin-left: 15px; /* Adjust the margin as needed */
-    fill: #292F36; /* Color of the vector icon */
-    stroke: #c49e85; /* Color of the vector stroke */
+    width: 17px;
+    height: 15px;
+    margin-left: 15px; 
+    fill: #292F36;
+    stroke: #c49e85; 
     transition: fill 0.3s, stroke 0.3s;
   }
 
   .button:hover .vector {
-    fill: #86A397; /* Change the fill color on hover */
+    fill: #86A397;
     stroke: #292F36;
   }
 
   @media (max-width: 768px) {
     .bannerName {
-      height: 100px; /* Adjust the height as needed for larger screens */
+      height: 100px;
     }
   
     .Name {
-      font-size: 40px; /* Adjust the font size as needed for larger screens */
+      font-size: 40px;
     }
   
     .akademikiContainer {
@@ -155,7 +155,7 @@
     }
   
     .headingText {
-      font-size: 50px; /* Adjust the font size as needed for larger screens */
+      font-size: 50px;
     }
   
     .akademik {
@@ -169,11 +169,11 @@
     }
   
     .number {
-      font-size: 120px; /* Adjust the font size as needed for larger screens */
+      font-size: 120px;
     }
   
     .name {
-      font-size: 35px; /* Adjust the font size as needed for larger screens */
+      font-size: 35px; 
     }
   
     .button {
@@ -181,8 +181,8 @@
     }
   
     .vector {
-      width: 17px; /* Adjust the width as needed for larger screens */
-      height: 15px; /* Adjust the height as needed for larger screens */
-      margin-left: 15px; /* Adjust the margin as needed for larger screens */
+      width: 17px;
+      height: 15px;
+      margin-left: 15px;
     }
   }

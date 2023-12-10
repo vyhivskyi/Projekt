@@ -26,7 +26,7 @@ const PreferenceEdit = ({ user }) => {
               'Content-Type': 'application/json',
               'x-access-token': token,
             },
-            data: { preference: data }, // Ensure that 'data' contains the correct preferences
+            data: { preference: data },
           };
     
           console.log("Config:", config);
@@ -34,7 +34,7 @@ const PreferenceEdit = ({ user }) => {
           const response = await axios(config);
           console.log("Response:", response.data);
         } catch (error) {
-            console.error("API Request Error:", error);  // <-- Log the error
+            console.error("API Request Error:", error); 
             setError("Error updating preferences. Please try again.");  
         }
       };
