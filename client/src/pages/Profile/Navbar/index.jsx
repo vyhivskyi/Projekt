@@ -63,7 +63,6 @@ const Profile = ({ setDane, user }) => {
                         className={styles.userPhoto}
                     />
                     )}
-                    
                 </div>
             </div>
             <div className={styles.navContainer}>

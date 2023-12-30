@@ -32,8 +32,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-  
-//middleware
 app.use(express.json())
 app.use(cors())
 const port = process.env.PORT || 8080
