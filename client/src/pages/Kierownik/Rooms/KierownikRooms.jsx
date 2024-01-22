@@ -64,7 +64,6 @@ const KierownikRooms = () => {
               />
             </div>
             <div className={styles.filter}>
-              <label>Wybierz akademik:</label>
               <select
                 value={selectedDormitory}
                 onChange={(e) => setSelectedDormitory(e.target.value)}
