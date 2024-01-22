@@ -124,38 +124,36 @@
 	border-radius: 50%;
 }
 
-@media (max-width: 769px) {
-	.dane {
-		margin-left: 0;
-		margin-right: 0;
-		height: 1050px;
-		width: 87%;
-	}
-
-	.content {
-		margin-left: 0;
-	}
-
-	.nameContainer {
-		margin-top: 0;
-	}
-
-	.fieldRow {
-      align-items: center;
-      flex-direction: column;
-      width: 100%;
+@media (max-width: 1200px) and (max-height: 900px) {
+    .dane {
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 950px;
     }
 
-	.field {
-		margin-bottom: 0;
-	}
+    .content {
+        margin-left: 0;
+    }
 
-	.fieldMail {
-		margin-left: 58px;
-	}
+    .nameContainer {
+        margin-top: 0;
+    }
 
-	.fieldPhoto {
-		margin-right: 0;
-	}
-	
+    .fieldRow {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .field {
+        margin-bottom: 0;
+    }
+
+    .fieldMail {
+        margin-left: 58px;
+    }
+
+    .fieldPhoto {
+        margin-right: 0;
+    }
 }

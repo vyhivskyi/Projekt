@@ -331,9 +331,14 @@
     stroke: #292F36;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1250px) {
+    .banner {
+      width: 1200px;
+    }
+
     .bannerName {
       height: 100px;
+      margin-right: 12px;
     }
   
     .Name {
@@ -345,7 +350,8 @@
     }
   
     .form_container {
-      width: 590px;
+      margin-left: 27px;
+      width: 1150px;
       border-radius: 0;
       border-radius: 55px;
     }

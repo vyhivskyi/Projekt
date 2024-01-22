@@ -13,6 +13,13 @@
 	border-radius: 55px;
 }
 
+.signName {
+	font-family: 'DM Serif Display';
+	font-weight: 400;
+	font-size: 45px;
+	color: #292F36;
+}
+
 .checkoutContent {
 	width: 100%;
 	max-width: 1000px;

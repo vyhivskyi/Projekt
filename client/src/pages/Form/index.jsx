@@ -26,6 +26,15 @@ const Form = () => {
         preference: preferences,
         profile_picture: "1234"
     })
+
+    const isEmailValid = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+    const isPasswordValid = (password) => {
+        return password.length >= 8;
+    }
 const [error, setError] = useState("")
 const navigate = useNavigate()
 const [selectedFaculty, setSelectedFaculty] = useState("");
@@ -68,6 +77,13 @@ const handleChange = ({ currentTarget: input }) => {
         setSelectedFaculty(value);
         setAvailableDirections(facultyOptions[value] || []);
     }
+    if (name === "email") {
+        if (!isEmailValid(value)) {
+            setError("Sprawdż poprawnośc adresu email.");
+            return;
+        }
+    }
+    setError("");
 };
 
 const handleFileChange = (e) => {
@@ -79,12 +95,21 @@ const handleSubmit = async (e) => {
     try {
         const formData = new FormData();
         formData.append("file", file);
+
+        if (!formData.has("file")) {
+            throw new Error("File is required.");
+        }
+
         const url = "http://localhost:8080/api/users"
         const requestData = {
             ...data,
             preference: preferences,
         };
-        axios.post('http://localhost:8080/upload', formData)
+        await axios.post('http://localhost:8080/upload', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        })
         .then((res) => {
         requestData.profile_picture = res.data.fileUrl;
         return axios.post('http://localhost:8080/api/users', requestData);
@@ -150,7 +175,7 @@ return (
                         </div>
                         <div className={styles.inputRow}>
                             <div className={styles.inputContainer}>
-                                <label className={styles.label}>First Name</label>
+                                <label className={styles.label}>Imię</label>
                                     <input
                                         type="text"
                                         name="first_name"
@@ -161,7 +186,7 @@ return (
                                     />
                             </div>
                             <div className={styles.inputContainer}>
-                                <label className={styles.label}>Last Name</label>
+                                <label className={styles.label}>Nazwisko</label>
                                     <input
                                         type="text"
                                         name="last_name"
@@ -173,7 +198,7 @@ return (
                             </div>
                         </div>
                         <div className={styles.inputContainer}>
-                            <label className={styles.label}>Date of Birth</label>
+                            <label className={styles.label}>Data urodzenia</label>
                             <div className={styles.dateInputContainer}>
                                 <input
                                     type="date"
@@ -207,9 +232,11 @@ return (
                                         required
                                         className={styles.input}
                                     />
+                                    {error && <div
+                            className={styles.error_msg}>{error}</div>}
                             </div>
                             <div className={styles.inputContainer}>
-                                <label className={styles.label}>Password</label>
+                                <label className={styles.label}>Hasło</label>
                                     <input
                                         type="text"
                                         name="password"
@@ -396,8 +423,6 @@ return (
                                 className={styles.inputImg}
                             />
                         </div>
-                        {error && <div
-                            className={styles.error_msg}>{error}</div>}
                         <button type="submit" className={styles.button}>
                             Złóż wniosek
                             <svg

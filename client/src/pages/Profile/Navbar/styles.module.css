@@ -124,7 +124,7 @@
 	font-weight: 200;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	.navbar {
 		display: flex;
 		flex-direction: column;
